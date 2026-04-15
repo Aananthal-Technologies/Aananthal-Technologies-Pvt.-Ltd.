@@ -1,255 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Home</title>
-    <style>
-        :root {
-            --bg-color: #0d0f12;
-            --text-primary: #ffffff;
-            --text-secondary: #a0aab2;
-            --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
+    <title>Aananthal Technologies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="/images/logo_transparent.png" type="image/png">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .background-blobs {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-        }
-
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            opacity: 0.6;
-            animation: float 20s infinite ease-in-out alternate;
-            border-radius: 50%;
-        }
-
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: #4facfe;
-            top: -100px;
-            left: -100px;
-            animation-delay: 0s;
-        }
-
-        .blob-2 {
-            width: 500px;
-            height: 500px;
-            background: #8e2de2;
-            bottom: -200px;
-            right: -100px;
-            animation-delay: -5s;
-        }
-        
-        .blob-3 {
-            width: 300px;
-            height: 300px;
-            background: #00f2fe;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -10s;
-            opacity: 0.4;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 4rem;
-            max-width: 600px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes slideUpFade {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .icon-container {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 2rem;
-            background: var(--accent-gradient);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
-            transform: rotate(-10deg);
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover .icon-container {
-            transform: rotate(0deg) scale(1.05);
-        }
-
-        .icon-container svg {
-            width: 40px;
-            height: 40px;
-            fill: none;
-            stroke: white;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #ffffff, #a0aab2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.875rem 1.75rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent-gradient);
-            color: white;
-            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid var(--glass-border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .code-snippet {
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            font-family: monospace;
-            color: #4facfe;
-            text-align: left;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 2.5rem 1.5rem;
-            }
-            h1 {
-                font-size: 2.25rem;
-            }
-            .button-group {
-                flex-direction: column;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Our perfectly compiled external stylesheet -->
+    <link rel="stylesheet" href="/css/global.css">
 </head>
-<body>
-    <div class="background-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
 
-    <main class="container">
-        <div class="icon-container">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z" />
-            </svg>
+<body>
+
+    <!-- Navbar using Max Bootstrap 5 Utilities -->
+    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
+        <!-- Logo -->
+        <a href="/" class="text-decoration-none">
+            <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
+        </a>
+
+        <!-- Links -->
+        <div class="d-flex gap-4">
+            <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
+            <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
+            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
         </div>
-        
-        <h1>Welcome Home</h1>
-        <p>Your server is successfully running and routing requests. This is your beautifully rendered starting point.</p>
-        
-        <div class="button-group">
-            <a href="#" class="btn btn-primary">Get Started</a>
-            <a href="#" class="btn btn-secondary">Documentation</a>
+    </nav>
+
+    <!-- Canvas Hero Section for Scroll Animation -->
+    <section id="hero-sequence" style="height: 400vh; position: relative;">
+        <!-- Sticky container holds the canvas to the viewport over the 400vh scroll travel -->
+        <div class="sticky-top w-100 d-flex justify-content-center align-items-center"
+            style="height: 100vh; overflow: hidden;">
+
+            <!-- Hero Overlay Content -->
+            <div class="hero-overlay-content">
+                <h1 class="hero-title">THANU:</h1>
+                <h1 class="hero-title-text">THE HUMANOID ROBOT</h1>
+                <p class="hero-subtitle">Design & Development of Humanoid Robot with AI Based Human interaction</p>
+                <a href="#" class="hero-btn text-decoration-none">
+                    KNOW MORE
+                </a>
+            </div>
+
+            <canvas id="hero-canvas"></canvas>
         </div>
-        
-        <div class="code-snippet">
-            // Rendered from:<br>
-            server.get('Home', ...)
+    </section>
+
+    <!-- What's New Section -->
+    <section id="whats-new" class="container" style="padding-top: 50px; padding-bottom: 100px;">
+        <h2 class="section-title">What’s New!</h2>
+
+        <div class="news-carousel mt-4">
+            <!-- Card 1 -->
+            <div class="news-card-wrapper">
+                <div class="news-card">
+                    <div class="news-img"></div>
+                    <div class="news-content-block">
+                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
+                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="divider"></div>
+                        <a href="#" class="read-more-wrapper">
+                            <span class="read-more">Read more</span>
+                            <div class="arrow-icon">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
+                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="news-card-wrapper">
+                <div class="news-card">
+                    <div class="news-img"></div>
+                    <div class="news-content-block">
+                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
+                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="divider"></div>
+                        <a href="#" class="read-more-wrapper">
+                            <span class="read-more">Read more</span>
+                            <div class="arrow-icon">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
+                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="news-card-wrapper">
+                <div class="news-card">
+                    <div class="news-img"></div>
+                    <div class="news-content-block">
+                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
+                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="divider"></div>
+                        <a href="#" class="read-more-wrapper">
+                            <span class="read-more">Read more</span>
+                            <div class="arrow-icon">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
+                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="news-card-wrapper">
+                <div class="news-card">
+                    <div class="news-img"></div>
+                    <div class="news-content-block">
+                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
+                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="divider"></div>
+                        <a href="#" class="read-more-wrapper">
+                            <span class="read-more">Read more</span>
+                            <div class="arrow-icon">
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
+                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Innovation Section -->
+    <section id="innovation-section" class="container d-flex flex-column align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12">
+                <h2 class="innovation-headline">Where Innovation Meets Technology.</h2>
+                <p class="innovation-subheadline">Aananthal Technologies — Your trusted partner in leveraging AI,
+                    machine learning, and scalable technologies to build intelligent solutions for the next generation
+                    of businesses.</p>
+            </div>
+        </div>
+
+        <div class="process-flow-container">
+            <!-- Step 1: Requirements Engineering -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">folder</span>
+                </div>
+                <div class="step-label">Requirements Engineering</div>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">east</span>
+            </div>
+
+            <!-- Step 2: Solution Development -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">settings</span>
+                </div>
+                <div class="step-label">Solution Development</div>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">east</span>
+            </div>
+
+            <!-- Step 3: API & System Integration -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">swap_vert</span>
+                </div>
+                <div class="step-label">API & System Integration</div>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">east</span>
+            </div>
+
+            <!-- Step 4: Quality Assurance -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">star</span>
+                </div>
+                <div class="step-label">Quality Assurance</div>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">east</span>
+            </div>
+
+            <!-- Step 5: Data Migration -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">cloud_upload</span>
+                </div>
+                <div class="step-label">Data Migration</div>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">east</span>
+            </div>
+
+            <!-- Step 6: Go-Live Deployment -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">person</span>
+                </div>
+                <div class="step-label">Go-Live Deployment</div>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">east</span>
+            </div>
+
+            <!-- Step 7: Operational Support -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <span class="material-icons">language</span>
+                </div>
+                <div class="step-label">Operational Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voices Section -->
+    <section id="voices-section" class="container-fluid py-5">
+        <h1 class="voices-headline text-center mb-5">Voices from the team</h1>
+
+        <div class="voices-carousel align-items-center justify-content-center">
+            <!-- Voice 1 -->
+            <div class="voice-card">
+                <div class="voice-img-placeholder"></div>
+                <p class="voice-text">“At Aananthal, we don't just build software; we build intelligence that empowers
+                    businesses to leap into the future. Our passion for AI and robotics is what drives every line of
+                    code we write.”</p>
+                <div class="voice-footer">
+                    <span class="material-icons mic-icon">mic</span>
+                    <div class="voice-info">
+                        <div class="voice-name">Test user</div>
+                        <div class="voice-role">Founder & CEO</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice 2 -->
+            <div class="voice-card">
+                <div class="voice-img-placeholder"></div>
+                <p class="voice-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam”</p>
+                <div class="voice-footer">
+                    <span class="material-icons mic-icon">mic</span>
+                    <div class="voice-info">
+                        <div class="voice-name">Test user</div>
+                        <div class="voice-role">Robotics Technical Head</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice 3 -->
+            <div class="voice-card">
+                <div class="voice-img-placeholder"></div>
+                <p class="voice-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam”</p>
+                <div class="voice-footer">
+                    <span class="material-icons mic-icon">mic</span>
+                    <div class="voice-info">
+                        <div class="voice-name">Test user</div>
+                        <div class="voice-role">Development Head</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice 4 -->
+            <div class="voice-card">
+                <div class="voice-img-placeholder"></div>
+                <p class="voice-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam”</p>
+                <div class="voice-footer">
+                    <span class="material-icons mic-icon">mic</span>
+                    <div class="voice-info">
+                        <div class="voice-name">Test user</div>
+                        <div class="voice-role">Development Head</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hiring Scrolling Bar (Rectangle 4) -->
+    <section id="hiring-bar">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the team Section -->
+    <section id="contact-section" class="container py-5">
+        <div class="row">
+            <!-- Left Side: Branding & Info -->
+            <div class="col-lg-6">
+                <h1 class="contact-headline mb-4">Join the team!</h1>
+
+                <div class="team-avatar-stack mb-5">
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <span class="avatar-count">+20</span>
+                </div>
+
+                <h2 class="contact-brand-text mb-4 mt-5">No degrees.<br>No DSA.<br>Just passion 🔥</h2>
+
+                <!-- Hidden for now if extra visual needed -->
+                <div class="contact-visual-placeholder d-none"></div>
+            </div>
+
+            <!-- Right Side: Form Container (Rectangle 14 style) -->
+            <div class="col-lg-6">
+                <div class="rectangle-14-form">
+                    <form id="collaboration-form">
+                        <!-- Name -->
+                        <div class="m3-text-field">
+                            <label class="m3-label">Name</label>
+                            <input type="text" class="m3-input">
+                            <div class="m3-indicator"></div>
+                            <div class="m3-support">What we should call you? *</div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="m3-text-field">
+                            <label class="m3-label">Phone number</label>
+                            <input type="tel" class="m3-input">
+                            <div class="m3-indicator"></div>
+                            <div class="m3-support">How can we call you? *</div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="m3-text-field">
+                            <label class="m3-label">Email</label>
+                            <input type="email" class="m3-input">
+                            <div class="m3-indicator"></div>
+                            <div class="m3-support">How can we mail you? *</div>
+                        </div>
+
+                        <!-- Highest Qualification -->
+                        <div class="m3-text-field">
+                            <label class="m3-label">Highest Qualification</label>
+                            <input type="text" class="m3-input">
+                            <div class="m3-indicator"></div>
+                            <div class="m3-support">How many years you wasted? *</div>
+                        </div>
+
+                        <!-- Passion Levels -->
+                        <div class="m3-text-field">
+                            <label class="m3-label">Passion Levels</label>
+                            <input type="text" class="m3-input">
+                            <div class="m3-indicator"></div>
+                            <div class="m3-support">Rate yourself out of 10! *</div>
+                        </div>
+
+                        <!-- Radio Group -->
+                        <div class="radio-group-container">
+                            <div class="divider"></div>
+                            <div class="d-flex gap-4">
+                                <label class="radio-item">
+                                    <input type="radio" name="ai-replace" value="yes">
+                                    <span class="radio-custom material-icons">radio_button_unchecked</span>
+                                    <span class="radio-label">Yes</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="ai-replace" value="no">
+                                    <span class="radio-custom material-icons">radio_button_unchecked</span>
+                                    <span class="radio-label">No</span>
+                                </label>
+                            </div>
+                            <div class="m3-support">Do you believe AI replace humans?? *</div>
+                        </div>
+
+                        <!-- Why -->
+                        <div class="m3-text-field textarea-field">
+                            <label class="m3-label">Why?</label>
+                            <textarea class="m3-input" rows="4"></textarea>
+                            <div class="m3-indicator"></div>
+                            <div class="m3-support">Why we should hire you? *</div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="submit-container">
+                            <button type="submit" class="submit-btn large-submit">
+                                <span>SUBMIT</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll tracking logic & Canvas renderer -->
+    <script>
+        // 1. Liquid Glass Navbar Logic
+        const navbar = document.getElementById('liquid-nav');
+
+        // 2. Canvas Animation Logic
+        const canvas = document.getElementById('hero-canvas');
+        const context = canvas.getContext('2d');
+        const frameCount = 207;
+
+        const currentFrame = index => {
+            // Generates path like /hero-frames/ezgif-frame-001.jpg
+            return `/hero-frames/ezgif-frame-${index.toString().padStart(3, '0')}.jpg`;
+        };
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const images = [];
+        // Preload for smooth playback
+        const preloadImages = () => {
+            for (let i = 1; i <= frameCount; i++) {
+                const loader = new Image();
+                loader.src = currentFrame(i);
+                images.push(loader);
+            }
+        };
+        preloadImages();
+
+        images[0].onload = function () {
+            drawImageCover(context, images[0], 0, 0, canvas.width, canvas.height);
+        }
+
+        const updateImage = index => {
+            const img = images[index - 1];
+            if (img && img.complete) {
+                drawImageCover(context, img, 0, 0, canvas.width, canvas.height);
+            } else if (img) {
+                img.onload = () => {
+                    drawImageCover(context, img, 0, 0, canvas.width, canvas.height);
+                };
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            updateImage(1);
+        });
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            // Update Navbar
+            const heroSequence = document.getElementById('hero-sequence');
+            const heroBottom = heroSequence.offsetTop + heroSequence.offsetHeight;
+
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            navbar.classList.toggle('nav-dark', window.scrollY > (heroBottom - 100)); // Change color slightly before crossing completely
+
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Update Canvas Frame based on scroll distance
+                    const scrollTop = document.documentElement.scrollTop;
+                    const heroSequence = document.getElementById('hero-sequence');
+                    const maxScroll = heroSequence.scrollHeight - window.innerHeight;
+
+                    if (maxScroll > 0) {
+                        // Number clamped between 0 and 1
+                        const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
+
+                        // Map fraction to frame index
+                        const frameIndex = Math.min(
+                            frameCount - 1,
+                            Math.floor(scrollFraction * frameCount)
+                        );
+
+                        // Render
+                        updateImage(frameIndex + 1);
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Helper function: Mimics 'object-fit: cover' behavior for Canvas
+        function drawImageCover(ctx, img, x, y, w, h, offsetX, offsetY) {
+            if (arguments.length === 2) {
+                x = y = 0; w = ctx.canvas.width; h = ctx.canvas.height;
+            }
+            offsetX = typeof offsetX === "number" ? offsetX : 0.5;
+            offsetY = typeof offsetY === "number" ? offsetY : 0.5;
+            if (offsetX < 0) offsetX = 0; if (offsetY < 0) offsetY = 0;
+            if (offsetX > 1) offsetX = 1; if (offsetY > 1) offsetY = 1;
+
+            let iw = img.width, ih = img.height, r = Math.min(w / iw, h / ih),
+                nw = iw * r, nh = ih * r, cx, cy, cw, ch, ar = 1;
+
+            if (nw < w) ar = w / nw;
+            if (Math.abs(ar - 1) < 1e-14 && nh < h) ar = h / nh;
+            nw *= ar; nh *= ar;
+
+            cw = iw / (nw / w); ch = ih / (nh / h);
+            cx = (iw - cw) * offsetX; cy = (ih - ch) * offsetY;
+
+            if (cx < 0) cx = 0; if (cy < 0) cy = 0;
+            if (cw > iw) cw = iw; if (ch > ih) ch = ih;
+
+            ctx.clearRect(x, y, w, h);
+            ctx.drawImage(img, cx, cy, cw, ch, x, y, w, h);
+        }
+    </script>
+    <footer id="main-footer">
+        <div class="container py-5">
+            <!-- Top Row: Motto & LinkedIn -->
+            <div class="footer-top-row d-flex justify-content-between align-items-center mb-5">
+                <span class="italic-motto">Escape the reality!</span>
+                <a href="#" class="linkedin-top"><span class="icon-linkedin"></span></a>
+            </div>
+
+            <!-- Middle Row: Links & Contact Info -->
+            <div class="footer-middle-row row align-items-start mt-4">
+                <!-- Links Blocks -->
+                <div class="col-lg-6 d-flex gap-5">
+                    <div class="footer-nav-col">
+                        <h3 class="footer-heading">Stalk us</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">About</a></li>
+                            <li><a href="/services">Service</a></li>
+                            <li><a href="/contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-col">
+                        <h3 class="footer-heading">Products</h3>
+                        <ul class="footer-links">
+                            <li><a href="/products">Thanu</a></li>
+                            <li><a href="/products">Petcura</a></li>
+                            <li><a href="/products">RaoPool</a></li>
+                            <li><a href="/products">SolarScan</a></li>
+                            <li><a href="/products">VFD</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="col-lg-6">
+                    <div class="contact-details-grid d-flex flex-column align-items-end text-end">
+                        <div class="contact-entry d-flex gap-3 mb-3">
+                            <p class="mb-0">Aananthal Technologies Pvt. Ltd., <br>Horamavu Agara Main Road, <br>Banglore, Karnataka, 560043.</p>
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="contact-entry d-flex align-items-center gap-3 mb-3">
+                            <p class="mb-0">+91 7386990245</p>
+                            <span class="material-icons">phone</span>
+                        </div>
+                        <div class="contact-entry d-flex align-items-center gap-3">
+                            <p class="mb-0">aananthaltechnologies@gmail.com</p>
+                            <span class="material-icons">mail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branding Row with Lines -->
+            <div class="footer-branding-section d-flex align-items-center justify-content-center gap-4 mt-5">
+                <div class="footer-line horiz-line"></div>
+                <h1 class="footer-branding">Humans × AI</h1>
+                <div class="footer-line horiz-line"></div>
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="footer-bottom-bar d-flex justify-content-between align-items-center mt-5 pt-4">
+                <p class="copyright">© 2026 Aananthal Technologies Pvt. Ltd., all rights reserved</p>
+                <a href="#" class="privacy-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,47 @@
+/* Global SCSS styles */
+@use "home";
+@use "navbar";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Kaisei+HarunoUmi:wght@400;500;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400;1,700&family=Moon+Dance&family=Roboto:wght@100..900&display=swap');
+
+.libre-caslon-text {
+  font-family: "Libre Caslon Text", serif;
+
+  &-regular {
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  &-bold {
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  &-regular-italic {
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+.inter-text {
+  font-family: "Inter", sans-serif;
+
+  &-regular {
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  &-bold {
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  &-black {
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  &-italic {
+    font-weight: 400;
+    font-style: italic;
+  }
+}

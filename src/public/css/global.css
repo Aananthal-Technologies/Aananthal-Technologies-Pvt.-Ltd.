@@ -1,0 +1,785 @@
+/* Global SCSS styles */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Kaisei+HarunoUmi:wght@400;500;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400;1,700&family=Moon+Dance&family=Roboto:wght@100..900&display=swap");
+:root {
+  --bg-color: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  min-height: 200vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.hero-overlay-content {
+  position: absolute;
+  z-index: 10;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: 630px;
+  text-align: left;
+}
+.hero-overlay-content .hero-title,
+.hero-overlay-content .hero-title-text {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+  color: #ffffff;
+  max-width: auto;
+}
+.hero-overlay-content .hero-subtitle {
+  font-family: "Kaisei HarunoUmi";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+.hero-overlay-content .hero-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 54px;
+  background: #BA070A;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.hero-overlay-content .hero-btn:hover {
+  transform: scale(1.02);
+  background: rgb(161.4248704663, 6.0751295337, 8.6787564767);
+  color: #FFFFFF;
+}
+
+/* What's New Section */
+#whats-new .section-title {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+  margin-bottom: 50px;
+}
+#whats-new .news-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding-bottom: 20px;
+  /* Hide scrollbar for a clean carousel look */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+#whats-new .news-carousel::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+#whats-new .news-carousel .news-card-wrapper {
+  flex: 0 0 85%;
+  max-width: 410px;
+  scroll-snap-align: start;
+}
+#whats-new .news-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 410px;
+  margin: 0 auto;
+}
+#whats-new .news-card .news-img {
+  width: 100%;
+  height: 230px;
+  background: #D9D9D9;
+  margin-bottom: 25px;
+}
+#whats-new .news-card .news-content-block {
+  display: flex;
+  flex-direction: column;
+}
+#whats-new .news-card .news-content-block .news-title {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+#whats-new .news-card .news-content-block .news-desc {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+#whats-new .news-card .news-content-block .divider {
+  width: 100%;
+  height: 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 25px;
+}
+#whats-new .news-card .news-content-block .read-more-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+#whats-new .news-card .news-content-block .read-more-wrapper .read-more {
+  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 34px;
+  color: #000000;
+}
+#whats-new .news-card .news-content-block .read-more-wrapper .arrow-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#whats-new .news-card .news-content-block .read-more-wrapper .arrow-icon svg {
+  width: 100%;
+  height: 100%;
+}
+#whats-new .news-card .news-content-block .read-more-wrapper:hover {
+  opacity: 0.7;
+}
+
+/* Innovation Section */
+#innovation-section .innovation-headline {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+  margin-bottom: 25px;
+  width: 100%;
+  text-align: center;
+}
+#innovation-section .innovation-subheadline {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 33px;
+  color: #000000;
+  width: 100%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+#innovation-section .process-flow-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 40px 0;
+}
+#innovation-section .process-flow-container::-webkit-scrollbar {
+  height: 4px;
+}
+#innovation-section .process-flow-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+#innovation-section .process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 125px;
+}
+#innovation-section .process-step .icon-wrapper {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 4px;
+}
+#innovation-section .process-step .icon-wrapper .material-icons {
+  color: #000000;
+  font-size: 20px;
+}
+#innovation-section .process-step .step-label {
+  font-family: "Libre Caslon Text";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+  width: 125px;
+}
+#innovation-section .process-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+#innovation-section .process-arrow .material-icons {
+  font-size: 16px;
+  color: #1E1E1E;
+}
+
+/* Voices from the team Section */
+#voices-section .voices-headline {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 50px;
+}
+#voices-section .voices-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  padding: 20px 0;
+}
+#voices-section .voices-carousel::-webkit-scrollbar {
+  display: none;
+}
+#voices-section .voice-card {
+  flex: 0 0 auto;
+  width: 288px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#voices-section .voice-card .voice-img-placeholder {
+  width: 288px;
+  height: 200px;
+  background: #D9D9D9;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  background-size: cover;
+  background-position: center 15%;
+  background-repeat: no-repeat;
+}
+#voices-section .voice-card .voice-text {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  height: 100px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+#voices-section .voice-card .voice-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#voices-section .voice-card .voice-footer .mic-icon {
+  font-size: 12px;
+  color: #000000;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+#voices-section .voice-card .voice-footer .voice-info .voice-name {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+#voices-section .voice-card .voice-footer .voice-info .voice-role {
+  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #000000;
+}
+
+/* Contact / Collaboration Section */
+#contact-section .contact-headline {
+  font-family: "Libre Caslon Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000000;
+  margin-top: 20px;
+}
+#contact-section .team-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+#contact-section .team-avatar-stack .avatar {
+  width: 48px;
+  height: 48px;
+  background: #D9D9D9;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  margin-left: -15px;
+}
+#contact-section .team-avatar-stack .avatar:first-child {
+  margin-left: 0;
+}
+#contact-section .team-avatar-stack .avatar-count {
+  font-family: "Inter";
+  font-weight: 100;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+  margin-left: 15px;
+}
+#contact-section .contact-brand-text {
+  font-family: "Libre Caslon Text";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+  max-width: 252px;
+}
+#contact-section .rectangle-14-form {
+  background: #D9D9D9;
+  width: 100%;
+  max-width: 785px;
+  min-height: 481px;
+  padding: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact-section .rectangle-14-form form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 210px 210px 210px;
+  column-gap: 25px;
+  row-gap: 40px;
+  justify-content: center;
+}
+#contact-section {
+  /* M3 Text Fields */
+}
+#contact-section .m3-text-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  /* Fill the grid cell */
+  height: 56px;
+  padding: 8px 16px;
+  isolation: isolate;
+}
+#contact-section .m3-text-field .m3-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #49454F;
+  margin-bottom: 2px;
+}
+#contact-section .m3-text-field .m3-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #1D1B20;
+  padding: 0;
+  outline: none;
+}
+#contact-section .m3-text-field .m3-input::placeholder {
+  color: rgba(0, 0, 0, 0.1);
+}
+#contact-section .m3-text-field.textarea-field {
+  grid-column: span 2;
+  height: 140px;
+  /* Adjust height for textarea variant */
+}
+#contact-section .m3-text-field.textarea-field textarea.m3-input {
+  height: 100px;
+  resize: none;
+}
+#contact-section .m3-text-field .m3-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #49454F;
+}
+#contact-section .m3-text-field .m3-support {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #49454F;
+  white-space: nowrap;
+}
+#contact-section {
+  /* Radio Group Row alignment */
+}
+#contact-section .radio-group-container {
+  width: 100%;
+  position: relative;
+}
+#contact-section .radio-group-container .divider {
+  width: 100%;
+  height: 1px;
+  background: #49454F;
+  margin-bottom: 15px;
+}
+#contact-section .radio-group-container .m3-support {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #49454F;
+  margin-top: 5px;
+}
+#contact-section .radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+#contact-section .radio-item input {
+  width: 20px;
+  height: 20px;
+}
+#contact-section .radio-item .radio-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #1D1B20;
+}
+#contact-section .submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 1;
+}
+#contact-section .submit-btn.large-submit {
+  width: 149px;
+  height: 50px;
+  background: #BA070A;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#contact-section .submit-btn.large-submit span {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  color: #FFFFFF;
+}
+#contact-section .submit-btn.large-submit:hover {
+  transform: scale(1.05);
+}
+
+/* Hiring Scrolling Bar (Rectangle 4) */
+#hiring-bar {
+  width: 100%;
+  height: 49px;
+  background: #F5F5F5;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 40px 0;
+}
+#hiring-bar .marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+#hiring-bar .marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding-right: 60px;
+}
+#hiring-bar .marquee-content span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Main Footer Styles */
+#main-footer {
+  background: #000000;
+  color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 10;
+}
+#main-footer .italic-motto {
+  font-family: "Inconsolata", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+#main-footer .linkedin-top .icon-linkedin {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 4px solid #FFFFFF;
+  position: relative;
+  border-radius: 8px;
+}
+#main-footer .linkedin-top .icon-linkedin::after {
+  content: "in";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+#main-footer .footer-heading {
+  font-family: "Libre Caslon Text";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+#main-footer .footer-links {
+  list-style: none;
+  padding: 0;
+}
+#main-footer .footer-links li {
+  margin-bottom: 10px;
+}
+#main-footer .footer-links li a {
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  opacity: 0.9;
+}
+#main-footer .footer-links li a:hover {
+  opacity: 1;
+}
+#main-footer .contact-entry {
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  line-height: 1.2;
+}
+#main-footer .contact-entry p {
+  margin: 0;
+  opacity: 0.9;
+}
+#main-footer .contact-entry .material-icons {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+#main-footer .footer-branding-section {
+  margin-top: 80px;
+}
+#main-footer .footer-branding-section .horiz-line {
+  width: 322px;
+  height: 0px;
+  border: 1px solid #FFFFFF;
+  opacity: 1;
+}
+#main-footer .footer-branding-section .footer-branding {
+  font-family: "Moon Dance", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: normal;
+  color: #FFFFFF;
+  margin: 0;
+  white-space: nowrap;
+}
+#main-footer .footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+#main-footer .footer-bottom-bar .copyright {
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.7;
+}
+#main-footer .footer-bottom-bar .privacy-link {
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  opacity: 0.7;
+}
+#main-footer .footer-bottom-bar .privacy-link:hover {
+  text-decoration: underline;
+}
+
+#liquid-nav {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Ultra-transparent base state */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: saturate(180%) blur(25px);
+  -webkit-backdrop-filter: saturate(180%) blur(25px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  left: 0;
+  width: 100%;
+}
+#liquid-nav.scrolled {
+  top: 20px;
+  width: 70%;
+  left: 15%;
+  padding: 0.75rem 2rem !important;
+  border-radius: 50px;
+  /* Apple visionOS hyper-transparent volume */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  /* Specular top highlight */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+#liquid-nav img.brand-logo {
+  mix-blend-mode: multiply;
+}
+
+.nav-link-custom {
+  position: relative;
+  transition: all 0.3s ease;
+  color: #fff !important;
+}
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+.nav-link-custom:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+#liquid-nav.nav-dark .nav-link-custom {
+  color: #000 !important;
+}
+#liquid-nav.nav-dark .nav-link-custom::after {
+  background: #000;
+}
+#liquid-nav.nav-dark .nav-link-custom:hover {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.libre-caslon-text {
+  font-family: "Libre Caslon Text", serif;
+}
+.libre-caslon-text-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+.libre-caslon-text-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+.libre-caslon-text-regular-italic {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inter-text {
+  font-family: "Inter", sans-serif;
+}
+.inter-text-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+.inter-text-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+.inter-text-black {
+  font-weight: 900;
+  font-style: normal;
+}
+.inter-text-italic {
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=global.css.map */
