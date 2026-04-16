@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Aananthal Technologies</title>
+    <title>Aananthal Technologies</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="/images/logo_transparent.png" type="image/png">
-    <link rel="stylesheet" href="/css/global.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
-        body { background-color: #ffffff; color: #000; }
-        .page-header { padding-top: 150px; padding-bottom: 80px; background: #BA070A; color: #fff; }
-        #contact-section { background: #fbfbfb; margin-top: -50px; border-radius: 40px; }
+        .fade-section {
+            opacity: 1;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0px) !important;
+        }
+
+        .card-in {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .card-stagger {
+            opacity: 1;
+            transform: translateY(0px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
     </style>
+    <link rel="stylesheet" href="/css/global.css">
 </head>
+
 <body>
+    <!-- Navbar using Max Bootstrap 5 Utilities -->
     <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
-        <a href="/" class="text-decoration-none">
-            <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
+        <!-- Logo -->
+        <a href="/" class="text-decoration-none" style="display: flex; align-items: center;">
+            <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo"
+                style="height: 40px; width: auto; max-width: 150px; object-fit: contain; display: block;" />
         </a>
+
+        <!-- Links -->
         <div class="d-flex gap-4">
             <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
             <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
@@ -27,88 +55,438 @@
         </div>
     </nav>
 
-    <header class="page-header">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold">Let's Work Together</h1>
-            <p class="lead">Reach out to our team for inquiries and collaboration.</p>
-        </div>
-    </header>
 
-    <section id="contact-section" class="container py-5 shadow-sm">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 p-5">
-                        <h2 class="fw-bold mb-4">Contact Info</h2>
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <span class="material-icons text-danger">location_on</span>
-                            <p class="mb-0">Horamavu Agara Main Road, Banglore</p>
-                        </div>
-                        <div class="d-flex align-items-center gap-3 mb-4">
-                            <span class="material-icons text-danger">phone</span>
-                            <p class="mb-0">+91 7386990245</p>
-                        </div>
-                        <div class="d-flex align-items-center gap-3">
-                            <span class="material-icons text-danger">mail</span>
-                            <p class="mb-0">aananthaltechnologies@gmail.com</p>
-                        </div>
+    <div class="w-full bg-[#f5f5f5] text-black overflow-x-hidden">
+        <section id="hero"
+            class="fade-section relative w-full py-20 px-4 md:px-6 flex justify-center text-center min-h-[700px]">
+            <div class="w-full max-w-3xl">
+                <p class="text-sm text-gray-500 mb-2">
+                    <span>Aananthal</span> · <span class="text-black">Contact Us</span>
+                </p>
+                <h1 class="text-4xl md:text-6xl font-serif mb-6">Contact us</h1>
+                <p class="text-gray-600 mb-12 leading-relaxed">
+                    Get in touch with Aananthal Technologies and feel free to ask us anything.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                    <div class="relative">
+                        <input
+                            class="w-full pr-10 rounded-full border border-gray-300 bg-gray-100 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500"
+                            placeholder="Your Name" />
+                        <span class="absolute right-4 top-3">*</span>
                     </div>
-                    <div class="col-lg-7 p-5 bg-white rounded-4">
-                         <h2 class="fw-bold mb-4">Send a Message</h2>
-                         <form action="#" class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Full Name</label>
-                                <input type="text" class="form-control" placeholder="John Doe">
+                    <div class="relative">
+                        <input
+                            class="w-full pr-10 rounded-full border border-gray-300 bg-gray-100 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500"
+                            placeholder="Email" />
+                        <span class="absolute right-4 top-3">*</span>
+                    </div>
+                    <div
+                        class="relative flex w-full border-2 border-gray-500 rounded-full bg-gray-100 overflow-visible">
+
+                        <!-- Selected Country -->
+                        <div id="country-toggle"
+                            class="flex items-center gap-2 px-4 border-r border-gray-400 cursor-pointer relative select-none">
+
+                            <img id="country-flag" src="https://flagcdn.com/w80/in.png" alt="India flag"
+                                class="h-5 w-7 object-cover rounded-sm border border-gray-300" />
+
+                            <span id="country-code" class="text-sm font-medium">+91</span>
+                            <span class="text-xs">▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+
+                        <!-- Dropdown -->
+                        <div id="country-menu"
+                            class="hidden absolute top-14 left-0 bg-white border rounded-lg shadow-md z-50 w-56 text-left max-h-60 overflow-y-auto">
+
+                            <!-- India -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+91" data-flag-url="https://flagcdn.com/w80/in.png">
+                                <img src="https://flagcdn.com/w80/in.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+91</span>
+                                <span class="text-xs text-gray-500">India</span>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" placeholder="john@example.com">
+
+                            <!-- USA -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+1" data-flag-url="https://flagcdn.com/w80/us.png">
+                                <img src="https://flagcdn.com/w80/us.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+1</span>
+                                <span class="text-xs text-gray-500">USA</span>
                             </div>
-                            <div class="col-12">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" placeholder="Tell us about your project"></textarea>
+
+                            <!-- UK -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+44" data-flag-url="https://flagcdn.com/w80/gb.png">
+                                <img src="https://flagcdn.com/w80/gb.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+44</span>
+                                <span class="text-xs text-gray-500">UK</span>
                             </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-danger px-5 py-3 rounded-pill fw-bold">SUBMIT</button>
+
+                            <!-- Australia -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+61" data-flag-url="https://flagcdn.com/w80/au.png">
+                                <img src="https://flagcdn.com/w80/au.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+61</span>
+                                <span class="text-xs text-gray-500">Australia</span>
                             </div>
-                         </form>
+
+                            <!-- UAE -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+971" data-flag-url="https://flagcdn.com/w80/ae.png">
+                                <img src="https://flagcdn.com/w80/ae.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+971</span>
+                                <span class="text-xs text-gray-500">UAE</span>
+                            </div>
+
+                            <!-- Germany -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+49" data-flag-url="https://flagcdn.com/w80/de.png">
+                                <img src="https://flagcdn.com/w80/de.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+49</span>
+                                <span class="text-xs text-gray-500">Germany</span>
+                            </div>
+
+                            <!-- France -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+33" data-flag-url="https://flagcdn.com/w80/fr.png">
+                                <img src="https://flagcdn.com/w80/fr.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+33</span>
+                                <span class="text-xs text-gray-500">France</span>
+                            </div>
+
+                            <!-- Japan -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+81" data-flag-url="https://flagcdn.com/w80/jp.png">
+                                <img src="https://flagcdn.com/w80/jp.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+81</span>
+                                <span class="text-xs text-gray-500">Japan</span>
+                            </div>
+
+                            <!-- Brazil -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+55" data-flag-url="https://flagcdn.com/w80/br.png">
+                                <img src="https://flagcdn.com/w80/br.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+55</span>
+                                <span class="text-xs text-gray-500">Brazil</span>
+                            </div>
+
+                            <!-- Canada -->
+                            <div class="px-3 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                data-code="+1" data-flag-url="https://flagcdn.com/w80/ca.png">
+                                <img src="https://flagcdn.com/w80/ca.png"
+                                    class="h-5 w-7 object-cover rounded-sm border" />
+                                <span class="text-sm">+1</span>
+                                <span class="text-xs text-gray-500">Canada</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Phone Input -->
+                        <div class="relative w-full">
+                            <input id="phone-input" class="w-full px-4 py-3 bg-transparent focus:outline-none"
+                                placeholder="Phone Number" inputmode="numeric" />
+                            <span class="absolute right-4 top-3">*</span>
+                        </div>
+
+                    </div>
+                    <div class="relative">
+                        <input
+                            class="w-full pr-10 rounded-full border border-gray-300 bg-gray-100 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500"
+                            placeholder="Interested in" />
+                        <span class="absolute right-4 top-3">*</span>
+                    </div>
+                    <div class="relative md:col-span-2">
+                        <textarea
+                            class="w-full h-40 resize-none rounded-3xl border border-gray-300 bg-gray-100 px-4 py-3 text-base focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500 pr-10"
+                            placeholder="How can we help?"></textarea>
+                        <span class="absolute right-4 top-3">*</span>
+                    </div>
+                </div>
+                <button
+                    class="mt-10 px-10 py-3 border border-black rounded-full shadow-md hover:bg-black hover:text-white transition">
+                    Send Your Message
+                </button>
+                <p class="text-sm text-gray-500 mt-6 leading-relaxed">
+                    By clicking, you agree to our <span class="underline cursor-pointer">Terms &
+                        Conditions</span>,<br />
+                    <span class="underline cursor-pointer">Privacy and Data Protection Policy</span>
+                </p>
+            </div>
+        </section>
+        <section id="map-details" class="fade-section w-full px-4 md:px-6 py-16 flex justify-center">
+            <div class="w-full max-w-6xl">
+                <p class="text-center text-gray-500 text-sm mb-2">INDIA</p>
+                <h2 class="text-3xl md:text-5xl text-center mb-12">Get in touch with Aananthal</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="rounded-2xl overflow-hidden border border-blue-400">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d970!2d77.65156454686021!3d13.037516081974616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17002e1bd503%3A0x45ae16e99f47905f!2sAANANTHAL%20TECHNOLOGIES%20Pvt.%20Ltd!5e0!3m2!1sen!2sus!4v1775123191431!5m2!1sen!2sus"
+                            allowfullscreen referrerpolicy="no-referrer-when-downgrade" class="w-full h-[300px]"
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="border rounded-2xl p-6 bg-white">
+                        <h3 class="text-gray-500 text-sm mb-2">Address</h3>
+                        <p class="mb-4">
+                            Aananthal Technologies Pvt. Ltd.,<br />
+                            Horamavu Agara Main Road,<br />
+                            Bangalore, Karnataka, 560043.
+                        </p>
+                        <h3 class="text-gray-500 text-sm mb-2">Email address</h3>
+                        <p class="mb-4">aananthaltechnologies@gmail.com</p>
+                        <h3 class="text-gray-500 text-sm mb-2">Phone</h3>
+                        <p class="mb-6">+91 7386990245</p>
+                        <div class="flex gap-4 text-xl">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <section id="trust" class="fade-section text-center py-12">
+            <p class="text-gray-500 mb-6">Trusted by many award-winning agencies and firms</p>
+            <div class="flex justify-center gap-10 md:gap-16 flex-wrap">
+                <div>
+                    <p class="text-3xl md:text-4xl font-semibold">4.8 ★★★★★</p>
+                    <p class="text-gray-600">Google Reviews</p>
+                </div>
+                <div>
+                    <p class="text-3xl md:text-4xl font-semibold">4.5 ★★★★★</p>
+                    <p class="text-gray-600">Customers</p>
+                </div>
+                <div>
+                    <p class="text-3xl md:text-4xl font-semibold">4.5 ★★★★★</p>
+                    <p class="text-gray-600">Clients</p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="fade-section w-full px-4 md:px-6 py-16 flex justify-center">
+            <div class="w-full max-w-6xl">
+
+                <h2 class="text-3xl md:text-4xl mb-12">Loved by customers</h2>
+
+                <!-- Top Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="card-stagger bg-white border border-gray-300 shadow-md p-6 flex flex-col justify-between">
+                        <p class="text-sm text-gray-800 leading-relaxed">
+                            “Nam interdum, metus ac accumsan facilisis, lectus ipsum fermentum velit,
+                            ut sagittis purus risus sed augue.”
+                        </p>
+                        <div class="flex items-center gap-3 mt-6">
+                            <img src="https://i.pravatar.cc/100?img=12" class="w-10 h-10 rounded-full" />
+                            <div>
+                                <p class="text-sm font-medium">Client Name</p>
+                                <p class="text-xs text-gray-400">@username</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="card-stagger bg-white border border-gray-300 shadow-md p-6 flex flex-col justify-between">
+                        <p class="text-sm text-gray-800 leading-relaxed">
+                            “Nam interdum, metus ac accumsan facilisis, lectus ipsum fermentum velit,
+                            ut sagittis purus risus sed augue.”
+                        </p>
+                        <div class="flex items-center gap-3 mt-6">
+                            <img src="https://i.pravatar.cc/100?img=13" class="w-10 h-10 rounded-full" />
+                            <div>
+                                <p class="text-sm font-medium">Client Name</p>
+                                <p class="text-xs text-gray-400">@username</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="card-stagger bg-white border border-gray-300 shadow-md p-6 flex flex-col justify-between">
+                        <p class="text-sm text-gray-800 leading-relaxed">
+                            “Nam interdum, metus ac accumsan facilisis, lectus ipsum fermentum velit,
+                            ut sagittis purus risus sed augue.”
+                        </p>
+                        <div class="flex items-center gap-3 mt-6">
+                            <img src="https://i.pravatar.cc/100?img=14" class="w-10 h-10 rounded-full" />
+                            <div>
+                                <p class="text-sm font-medium">Client Name</p>
+                                <p class="text-xs text-gray-400">@username</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Card 4 -->
+                    <div
+                        class="card-stagger bg-white border border-gray-300 shadow-md p-6 flex flex-col justify-between">
+                        <p class="text-sm text-gray-800 leading-relaxed">
+                            “Nam interdum, metus ac accumsan facilisis, lectus ipsum fermentum velit,
+                            ut sagittis purus risus sed augue.”
+                        </p>
+                        <div class="flex items-center gap-3 mt-6">
+                            <img src="https://i.pravatar.cc/100?img=15" class="w-10 h-10 rounded-full" />
+                            <div>
+                                <p class="text-sm font-medium">Client Name</p>
+                                <p class="text-xs text-gray-400">@username</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Large Card -->
+                    <div
+                        class="card-stagger md:col-span-2 bg-white border border-gray-400 shadow-sm p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+                        <div class="max-w-lg">
+                            <p class="text-sm text-gray-800 leading-relaxed">
+                                “Nam interdum, metus ac accumsan facilisis, lectus ipsum fermentum velit,
+                                ut sagittis purus risus sed augue.”
+                            </p>
+
+                            <div class="flex items-center gap-3 mt-5">
+                                <img src="https://i.pravatar.cc/100?img=32" class="w-10 h-10 rounded-full" />
+                                <div>
+                                    <p class="text-sm font-medium">Client Name</p>
+                                    <p class="text-xs text-gray-400">@username</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-300 w-full h-40 md:w-[293px] md:h-[172px] rounded-lg"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const countryToggle = document.getElementById('country-toggle');
+            const countryMenu = document.getElementById('country-menu');
+            const countryFlag = document.getElementById('country-flag');
+            const countryCode = document.getElementById('country-code');
+            const phoneInput = document.getElementById('phone-input');
+
+            // Toggle dropdown
+            countryToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                countryMenu.classList.toggle('hidden');
+            });
+
+            // Select country
+            countryMenu.querySelectorAll('[data-code]').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.stopPropagation();
+
+                    countryFlag.src = item.dataset.flagUrl;
+                    countryFlag.alt = item.dataset.name + " flag";
+                    countryCode.textContent = item.dataset.code;
+
+                    countryMenu.classList.add('hidden');
+                });
+            });
+
+            // ✅ Smart outside click (FIXED)
+            document.addEventListener('click', function (e) {
+                if (!countryMenu.contains(e.target) && !countryToggle.contains(e.target)) {
+                    countryMenu.classList.add('hidden');
+                }
+            });
+
+            // Phone input validation
+            phoneInput.addEventListener('input', function (event) {
+                const onlyNumbers = event.target.value.replace(/\D/g, '');
+                event.target.value = onlyNumbers.slice(0, 10);
+            });
+
+            // Fade animations
+            const observerOptions = { threshold: 0.1 };
+
+            document.querySelectorAll('.fade-section').forEach(section => {
+                const observer = new IntersectionObserver(([entry], obs) => {
+                    if (entry.isIntersecting) {
+                        section.classList.add('animate-in');
+                        obs.disconnect();
+                    }
+                }, observerOptions);
+                observer.observe(section);
+            });
+
+            const staggerItems = document.querySelectorAll('.card-stagger');
+            if ('IntersectionObserver' in window) {
+                staggerItems.forEach((item, index) => {
+                    const observer = new IntersectionObserver(([entry], obs) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => item.classList.add('card-in'), index * 120);
+                            obs.disconnect();
+                        }
+                    }, observerOptions);
+                    observer.observe(item);
+                });
+            } else {
+                staggerItems.forEach(item => item.classList.add('card-in'));
+            }
+        });
+    </script>
 
     <footer id="main-footer">
         <div class="container py-5">
+            <!-- Top Row: Motto & LinkedIn -->
             <div class="footer-top-row d-flex justify-content-between align-items-center mb-5">
                 <span class="italic-motto">Escape the reality!</span>
                 <a href="#" class="linkedin-top"><span class="icon-linkedin"></span></a>
             </div>
+
+            <!-- Middle Row: Links & Contact Info -->
             <div class="footer-middle-row row align-items-start mt-4">
+                <!-- Links Blocks -->
                 <div class="col-lg-6 d-flex gap-5">
                     <div class="footer-nav-col">
                         <h3 class="footer-heading">Stalk us</h3>
                         <ul class="footer-links">
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Service</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="/services">Service</a></li>
+                            <li><a href="/contact">Contact us</a></li>
                         </ul>
                     </div>
                     <div class="footer-nav-col">
                         <h3 class="footer-heading">Products</h3>
                         <ul class="footer-links">
-                            <li><a href="#">Thanu</a></li>
-                            <li><a href="#">Petcura</a></li>
-                            <li><a href="#">RaoPool</a></li>
-                            <li><a href="#">SolarScan</a></li>
-                            <li><a href="#">VFD</a></li>
+                            <li><a href="/products">Thanu</a></li>
+                            <li><a href="/products">Petcura</a></li>
+                            <li><a href="/products">RaoPool</a></li>
+                            <li><a href="/products">SolarScan</a></li>
+                            <li><a href="/products">VFD</a></li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- Contact Details -->
                 <div class="col-lg-6">
                     <div class="contact-details-grid d-flex flex-column align-items-end text-end">
                         <div class="contact-entry d-flex gap-3 mb-3">
-                            <p class="mb-0">Aananthal Technologies Pvt. Ltd., <br>Horamavu Agara Main Road, <br>Banglore, Karnataka, 560043.</p>
+                            <p class="mb-0">Aananthal Technologies Pvt. Ltd., <br>Horamavu Agara Main Road,
+                                <br>Banglore,
+                                Karnataka, 560043.</p>
                             <span class="material-icons">location_on</span>
                         </div>
                         <div class="contact-entry d-flex align-items-center gap-3 mb-3">
@@ -122,11 +500,15 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Branding Row with Lines -->
             <div class="footer-branding-section d-flex align-items-center justify-content-center gap-4 mt-5">
                 <div class="footer-line horiz-line"></div>
                 <h1 class="footer-branding">Humans × AI</h1>
                 <div class="footer-line horiz-line"></div>
             </div>
+
+            <!-- Bottom Legal Bar -->
             <div class="footer-bottom-bar d-flex justify-content-between align-items-center mt-5 pt-4">
                 <p class="copyright">© 2026 Aananthal Technologies Pvt. Ltd., all rights reserved</p>
                 <a href="#" class="privacy-link">Privacy Policy</a>
@@ -134,4 +516,5 @@
         </div>
     </footer>
 </body>
+
 </html>
