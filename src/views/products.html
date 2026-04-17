@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,47 @@
     <link rel="icon" href="/images/logo_transparent.png" type="image/png">
     <link rel="stylesheet" href="/css/global.css">
     <style>
-        body { background-color: #ffffff; color: #000; }
-        .page-header { padding-top: 150px; padding-bottom: 80px; background: #f5f5f5; }
-        .product-card { background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #eee; transition: transform 0.3s ease; }
-        .product-card:hover { transform: translateY(-10px); }
+        body {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: #f5f5f5;
+        }
+
+
+        .product-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
     </style>
 </head>
+
 <body>
-    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
-        <a href="/" class="text-decoration-none">
-            <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
+    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3" style="
+            background: linear-gradient(90deg, #1f1f1f 0%, #2a2a2a 50%, #1f1f1f 100%);
+        ">
+        <!-- Logo -->
+        <a href="/" class="text-decoration-none" style="display:flex; align-items:center;">
+            <img src="/images/logo_transparent.png" style="height:40px; max-width:150px;" />
         </a>
+
+        <!-- Links -->
         <div class="d-flex gap-4">
-            <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
-            <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
-            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
-            <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
+            <a href="/" style="color:#fff; text-decoration:none;">Home</a>
+            <a href="/products" style="color:#fff; text-decoration:none;">Products</a>
+            <a href="/services" style="color:#fff; text-decoration:none;">Services</a>
+            <a href="/contact" style="color:#fff; text-decoration:none;">Contact Us</a>
         </div>
     </nav>
 
@@ -58,60 +84,156 @@
         </div>
     </main>
 
-    <footer id="main-footer">
-        <div class="container py-5">
-            <div class="footer-top-row d-flex justify-content-between align-items-center mb-5">
-                <span class="italic-motto">Escape the reality!</span>
-                <a href="#" class="linkedin-top"><span class="icon-linkedin"></span></a>
-            </div>
-            <div class="footer-middle-row row align-items-start mt-4">
-                <div class="col-lg-6 d-flex gap-5">
-                    <div class="footer-nav-col">
-                        <h3 class="footer-heading">Stalk us</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Service</a></li>
-                            <li><a href="#">Contact us</a></li>
+    <footer style="background:#000; color:#fff; font-family:'Inconsolata', monospace;">
+
+        <div style="
+        max-width:1300px;
+        margin:0 auto;
+        padding:50px 20px 50px 10px;
+    ">
+
+            <!-- TOP TEXT -->
+            <p style="color:#aaa; margin-bottom:50px; font-size:14px;">
+                Escape the reality!
+            </p>
+
+            <!-- MAIN ROW -->
+            <div style="display:flex; align-items:center;">
+
+                <!-- LEFT -->
+                <div style="display:flex; gap:60px; flex:1;">
+
+                    <!-- Product -->
+                    <div>
+                        <h3 style="margin-bottom:20px;">Product</h3>
+                        <ul style="list-style:none; padding:0; line-height:2;">
+                            <li><a href="#" style="color:#9aa; text-decoration:none;">Features</a></li>
+                            <li><a href="#" style="color:#9aa; text-decoration:none;">Pricing</a></li>
+                            <li><a href="#" style="color:#9aa; text-decoration:none;">Testimonials</a></li>
+                            <li><a href="#" style="color:#9aa; text-decoration:none;">Integration</a></li>
                         </ul>
                     </div>
-                    <div class="footer-nav-col">
-                        <h3 class="footer-heading">Products</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Thanu</a></li>
-                            <li><a href="#">Petcura</a></li>
-                            <li><a href="#">RaoPool</a></li>
-                            <li><a href="#">SolarScan</a></li>
-                            <li><a href="#">VFD</a></li>
+
+                    <!-- Company -->
+                    <div>
+                        <h3 style="margin-bottom:20px;">Company</h3>
+                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
+                            <li>FAQs</li>
+                            <li>About Us</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms of Services</li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="contact-details-grid d-flex flex-column align-items-end text-end">
-                        <div class="contact-entry d-flex gap-3 mb-3">
-                            <p class="mb-0">Aananthal Technologies Pvt. Ltd., <br>Horamavu Agara Main Road, <br>Banglore, Karnataka, 560043.</p>
-                            <span class="material-icons">location_on</span>
-                        </div>
-                        <div class="contact-entry d-flex align-items-center gap-3 mb-3">
-                            <p class="mb-0">+91 7386990245</p>
-                            <span class="material-icons">phone</span>
-                        </div>
-                        <div class="contact-entry d-flex align-items-center gap-3">
-                            <p class="mb-0">aananthaltechnologies@gmail.com</p>
-                            <span class="material-icons">mail</span>
-                        </div>
+
+                    <!-- Resources -->
+                    <div>
+                        <h3 style="margin-bottom:20px;">Resources</h3>
+                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
+                            <li>Blog</li>
+                            <li>Changelog</li>
+                            <li>Brand</li>
+                            <li>Help</li>
+                        </ul>
                     </div>
+
+                    <!-- SOCIAL -->
+                    <div>
+                        <h3 style="margin-bottom:20px;">Stalk Us</h3>
+                        <ul style="list-style:none; padding:0; line-height:2;">
+
+                            <li style="display:flex; align-items:center; gap:10px;">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </li>
+
+                            <li style="display:flex; align-items:center; gap:10px;">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </li>
+
+                            <li style="display:flex; align-items:center; gap:10px;">
+                                <i class="fa-brands fa-youtube"></i> Youtube
+                            </li>
+
+                            <li style="display:flex; align-items:center; gap:10px;">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </li>
+
+                        </ul>
+                    </div>
+
                 </div>
+
+                <!-- RIGHT GLOBE -->
+                <div style="
+                position:relative;
+                width:260px;
+                height:260px;
+                border-radius:50%;
+                flex-shrink:0;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                margin-left:40px;
+            ">
+
+                    <!-- MAIN SPHERE -->
+                    <div style="
+                    width:100%;
+                    height:100%;
+                    border-radius:50%;
+                    background:
+                        radial-gradient(circle at 30% 30%, #ffffff, #bfbfbf 60%, #8a8a8a 100%);
+                    box-shadow:
+                        0 0 60px rgba(255,255,255,0.35),
+                        inset -20px -30px 60px rgba(0,0,0,0.4),
+                        inset 20px 20px 40px rgba(255,255,255,0.2);
+                "></div>
+
+                    <!-- OUTER GLOW -->
+                    <div style="
+                    position:absolute;
+                    width:120%;
+                    height:120%;
+                    border-radius:50%;
+                    background:radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+                    filter:blur(20px);
+                    z-index:-1;
+                "></div>
+
+                </div>
+
             </div>
-            <div class="footer-branding-section d-flex align-items-center justify-content-center gap-4 mt-5">
-                <div class="footer-line horiz-line"></div>
-                <h1 class="footer-branding">Humans × AI</h1>
-                <div class="footer-line horiz-line"></div>
+
+            <!-- HUMANS × AI -->
+            <div style="
+            display:flex;
+            align-items:center;
+            margin:60px 0 25px;
+        ">
+
+                <div style="flex:1; height:1px; background:#222;"></div>
+
+                <h1 style="
+                font-family:'Moon Dance', cursive;
+                font-size:52px;
+                margin:0 30px;
+                white-space:nowrap;
+                color:#fff;
+            ">
+                    Humans × AI
+                </h1>
+
+                <div style="flex:1; height:1px; background:#222;"></div>
+
             </div>
-            <div class="footer-bottom-bar d-flex justify-content-between align-items-center mt-5 pt-4">
-                <p class="copyright">© 2026 Aananthal Technologies Pvt. Ltd., all rights reserved</p>
-                <a href="#" class="privacy-link">Privacy Policy</a>
+
+            <!-- COPYRIGHT -->
+            <div style="text-align:center; color:#777; font-size:12px;">
+                © 2026 Aananthal Technologies Pvt. Ltd., all rights reserved
             </div>
+
         </div>
+
     </footer>
 </body>
+
 </html>
