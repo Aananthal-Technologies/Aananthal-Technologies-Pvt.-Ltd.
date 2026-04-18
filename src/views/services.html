@@ -78,7 +78,7 @@
     <section class="services-hero fade-up">
         <div class="services-hero__grid"></div>
         <div class="section-label" data-anim="fade-down">Our Services</div>
-        <h1 class="services-hero-title" data-anim="fade-up" data-delay="80">What We Can<br><em>Build For You.</em></h1>
+        <h1 class="services-hero-title" data-anim="fade-up" data-delay="80" data-scramble>What We Can<br><em>Build For You.</em></h1>
         <p class="services-hero-sub" data-anim="fade-up" data-delay="180">From requirements engineering to operational support — we partner with you at every step to deliver intelligent, scalable solutions.</p>
     </section>
 
@@ -291,7 +291,7 @@
         <div class="services-cta-eyebrow" data-anim="fade-down">Let's Build</div>
         <h2 class="services-cta-headline" data-anim="fade-up" data-delay="80">Start Your<br><em>Next Project.</em></h2>
         <p class="services-cta-sub" data-anim="fade-up" data-delay="160">Tell us what you're building. We'll tell you how to make it exceptional.</p>
-        <a href="/contact" class="services-cta-btn">
+        <a href="/contact" class="services-cta-btn btn-magnetic ripple-btn">
             Get in Touch <span class="material-icons">arrow_forward</span>
         </a>
     </section>
@@ -317,7 +317,7 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/products">Products</a></li>
                             <li><a href="/contact">Contact</a></li>
-                            <li>About Us</li>
+                            <li><a href="/about">About Us</a></li>
                         </ul>
                     </div>
                     <div class="footer-col footer-col-social">
@@ -348,7 +348,7 @@
                     </div>
                 </div>
                 <div class="footer-globe">
-                    <div class="globe-sphere"></div>
+                    <canvas id="footer-globe-canvas"></canvas>
                     <div class="globe-glow"></div>
                 </div>
             </div>
@@ -371,6 +371,7 @@
     </div>
 
     <script src="/js/nav-theme.js"></script>
+    <script src="/js/scroll-animations.js"></script>
     <script src="/js/scroll-animations.js"></script>
     <script>
         // ─── Page Loader (instant on return visits) ───────────
@@ -548,5 +549,14 @@
         });
     </script>
 
+    <!-- Floating CTA -->
+    <div id="floating-cta">
+        <a href="/contact" class="floating-cta-link">
+            <span class="material-icons">chat_bubble_outline</span>
+            Let's Talk
+        </a>
+    </div>
+
+    <script src="/js/ui-components.js" defer></script>
 </body>
 </html>

@@ -80,13 +80,13 @@
         <div class="products-hero__grid-overlay"></div>
         <div class="products-hero__content">
             <div class="section-label" data-anim="fade-down">Our Products</div>
-            <h1 class="hero-page-title" data-anim="fade-up" data-delay="80">Innovation<br><em>Made Real.</em></h1>
+            <h1 class="hero-page-title" data-anim="fade-up" data-delay="80" data-scramble>Innovation<br><em>Made Real.</em></h1>
             <p class="hero-page-sub" data-anim="fade-up" data-delay="180">Three groundbreaking products at the frontier of AI, robotics, and industrial automation — each one designed to redefine what's possible.</p>
         </div>
     </section>
 
     <!-- Product 01: THANU -->
-    <section class="product-full-section product-full-section--dark fade-up" id="thanu">
+    <section class="product-full-section product-full-section--dark fade-up spotlight-section" id="thanu">
         <div class="product-border-top"></div>
         <div class="product-full-inner">
             <div class="product-full-text" data-anim="fade-right">
@@ -107,7 +107,7 @@
                     <div class="feature-chip"><span class="material-icons">visibility</span>Computer Vision</div>
                     <div class="feature-chip"><span class="material-icons">battery_charging_full</span>8h Battery Life</div>
                 </div>
-                <a href="/contact" class="product-full-cta">
+                <a href="/contact" class="product-full-cta btn-magnetic ripple-btn">
                     Request Demo <span class="material-icons">arrow_forward</span>
                 </a>
             </div>
@@ -155,7 +155,7 @@
                     <div class="feature-chip"><span class="material-icons">cloud_sync</span>Cloud Sync</div>
                     <div class="feature-chip"><span class="material-icons">local_hospital</span>Vet Integration</div>
                 </div>
-                <a href="/contact" class="product-full-cta">
+                <a href="/contact" class="product-full-cta btn-magnetic ripple-btn">
                     Request Demo <span class="material-icons">arrow_forward</span>
                 </a>
             </div>
@@ -186,7 +186,7 @@
     </section>
 
     <!-- Product 03: VFD -->
-    <section class="product-full-section product-full-section--dark fade-up" id="vfd">
+    <section class="product-full-section product-full-section--dark fade-up spotlight-section" id="vfd">
         <div class="product-border-top"></div>
         <div class="product-full-inner">
             <div class="product-full-text" data-anim="fade-right">
@@ -207,7 +207,7 @@
                     <div class="feature-chip"><span class="material-icons">analytics</span>Real-time Analytics</div>
                     <div class="feature-chip"><span class="material-icons">shield</span>Industrial Grade</div>
                 </div>
-                <a href="/contact" class="product-full-cta">
+                <a href="/contact" class="product-full-cta btn-magnetic ripple-btn">
                     Request Demo <span class="material-icons">arrow_forward</span>
                 </a>
             </div>
@@ -274,8 +274,8 @@
         <h2 class="cta-headline" data-anim="fade-up" data-delay="80">Ready to Build<br><em>the Future?</em></h2>
         <p class="cta-sub" data-anim="fade-up" data-delay="160">Let's discuss how our products can transform your operations and open new possibilities.</p>
         <div class="cta-btn-group">
-            <a href="/contact" class="cta-btn-primary">Start a Conversation</a>
-            <a href="/services" class="cta-btn-secondary">Explore Services</a>
+            <a href="/contact" class="cta-btn-primary btn-magnetic ripple-btn">Start a Conversation</a>
+            <a href="/services" class="cta-btn-secondary btn-magnetic">Explore Services</a>
         </div>
     </section>
 
@@ -299,7 +299,7 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/services">Services</a></li>
                             <li><a href="/contact">Contact</a></li>
-                            <li>About Us</li>
+                            <li><a href="/about">About Us</a></li>
                         </ul>
                     </div>
                     <div class="footer-col footer-col-social">
@@ -330,7 +330,7 @@
                     </div>
                 </div>
                 <div class="footer-globe">
-                    <div class="globe-sphere"></div>
+                    <canvas id="footer-globe-canvas"></canvas>
                     <div class="globe-glow"></div>
                 </div>
             </div>
@@ -343,6 +343,7 @@
     </footer>
 
     <script src="/js/nav-theme.js"></script>
+    <script src="/js/scroll-animations.js"></script>
     <script src="/js/scroll-animations.js"></script>
     <script>
         // ─── Page Loader (instant on return visits) ───────────
@@ -419,5 +420,14 @@
         });
     </script>
 
+    <!-- Floating CTA -->
+    <div id="floating-cta">
+        <a href="/contact" class="floating-cta-link">
+            <span class="material-icons">chat_bubble_outline</span>
+            Let's Talk
+        </a>
+    </div>
+
+    <script src="/js/ui-components.js" defer></script>
 </body>
 </html>

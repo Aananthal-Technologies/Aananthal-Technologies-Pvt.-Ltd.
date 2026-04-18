@@ -76,11 +76,16 @@
         navbar.setAttribute('data-theme', getSectionTheme());
     }
 
+    function updateScrolled() {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
+
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
             requestAnimationFrame(() => {
                 updateNavTheme();
+                updateScrolled();
                 ticking = false;
             });
             ticking = true;
@@ -88,6 +93,7 @@
     }, { passive: true });
 
     updateNavTheme();
+    updateScrolled();
     setTimeout(updateNavTheme, 200);
     window.addEventListener('load', updateNavTheme);
 })();

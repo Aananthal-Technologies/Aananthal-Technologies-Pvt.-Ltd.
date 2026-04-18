@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="form-submit-row">
-                    <button type="submit" class="form-submit-btn">
+                    <button type="submit" class="form-submit-btn btn-magnetic ripple-btn">
                         Send Message <span class="material-icons">send</span>
                     </button>
                     <p class="form-submit-note">
@@ -209,16 +209,7 @@
                         </div>
                         <span class="material-icons location-card-arrow">north_east</span>
                     </div>
-                    <div class="location-card" data-stagger-child>
-                        <div class="location-card-icon">
-                            <span class="material-icons">schedule</span>
-                        </div>
-                        <div class="location-card-content">
-                            <div class="location-card-label">Working Hours</div>
-                            <p class="location-card-value">Monday – Friday<br>9:00 AM – 6:00 PM IST</p>
-                        </div>
-                        <span class="material-icons location-card-arrow">north_east</span>
-                    </div>
+
                 </div>
                 <div class="contact-socials" data-anim="fade-up" data-delay="400">
                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -317,7 +308,7 @@
         </div>
 
         <div class="test-grid" data-stagger data-stagger-step="80">
-            <div class="test-card" data-stagger-child>
+            <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
                 <p class="test-text">"Aananthal's approach to building THANU was unlike anything I'd seen — they treated every iteration as a step toward a vision, not just a deliverable. The result speaks for itself."</p>
                 <div class="test-author">
@@ -331,7 +322,7 @@
                 </div>
             </div>
 
-            <div class="test-card" data-stagger-child>
+            <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
                 <p class="test-text">"PHMS transformed how our clinic operates. Early diagnostics, real-time monitoring, and the AI accuracy has genuinely improved outcomes for our patients."</p>
                 <div class="test-author">
@@ -345,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="test-card" data-stagger-child>
+            <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
                 <p class="test-text">"The VFD Gen-2 cut our factory's energy costs by 32% in the first quarter. Their engineering team was thorough, communicative, and delivered exactly what they promised."</p>
                 <div class="test-author">
@@ -359,7 +350,7 @@
                 </div>
             </div>
 
-            <div class="test-card" data-stagger-child>
+            <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
                 <p class="test-text">"The team's depth in AI and robotics is rare. They don't just code solutions — they understand the problem domain deeply and that shows in everything they build."</p>
                 <div class="test-author">
@@ -373,7 +364,7 @@
                 </div>
             </div>
 
-            <div class="test-card" data-stagger-child>
+            <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
                 <p class="test-text">"Working with Aananthal felt like having a co-founder who happened to be an AI engineer. They took ownership of outcomes, not just tasks — and that made all the difference."</p>
                 <div class="test-author">
@@ -387,7 +378,7 @@
                 </div>
             </div>
 
-            <div class="test-card" data-stagger-child>
+            <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
                 <p class="test-text">"They shipped our integration in 3 weeks — something two previous agencies couldn't do in 3 months. And the code quality was exceptional. Highly recommended."</p>
                 <div class="test-author">
@@ -422,8 +413,8 @@
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="/services">Services</a></li>
-                            <li>About Us</li>
-                            <li>Privacy Policy</li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col footer-col-social">
@@ -454,7 +445,7 @@
                     </div>
                 </div>
                 <div class="footer-globe">
-                    <div class="globe-sphere"></div>
+                    <canvas id="footer-globe-canvas"></canvas>
                     <div class="globe-glow"></div>
                 </div>
             </div>
@@ -589,5 +580,14 @@
         });
     </script>
 
+    <!-- Floating CTA (scroll to form) -->
+    <div id="floating-cta">
+        <a href="#contact-form" class="floating-cta-link">
+            <span class="material-icons">edit_note</span>
+            Send Message
+        </a>
+    </div>
+
+    <script src="/js/ui-components.js" defer></script>
 </body>
 </html>
