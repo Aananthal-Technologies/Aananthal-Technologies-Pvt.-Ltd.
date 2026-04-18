@@ -16,6 +16,20 @@
     <link rel="stylesheet" href="/css/global.css">
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
+    <style>
+        .footer-globe {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+        }
+
+        .footer-globe canvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            cursor: grab;
+        }
+    </style>
 </head>
 
 <body class="contact-page">
@@ -486,8 +500,7 @@
                     </div>
                 </div>
                 <div class="footer-globe">
-                    <canvas id="footer-globe-canvas"></canvas>
-                    <div class="globe-glow"></div>
+                    <canvas id="globeCanvas"></canvas>
                 </div>
             </div>
             <div class="footer-divider"></div>
@@ -630,7 +643,63 @@
     </div>
 
     <script src="/js/ui-components.js" defer></script>
-    <script src="/js/globe.js" defer></script>
+    <!-- <script src="/js/globe.js" defer></script> -->
+    <script type="module">
+        import createGlobe from "https://cdn.skypack.dev/cobe";
+
+        const canvas = document.getElementById("globeCanvas");
+
+        let phi = 0;
+        let isPaused = false;
+
+        const globe = createGlobe(canvas, {
+            devicePixelRatio: Math.min(window.devicePixelRatio, 2),
+            width: 300,
+            height: 300,
+
+            phi: 0,
+            theta: 0.2,
+
+            dark: 0,
+            diffuse: 1.5,
+            mapSamples: 16000,
+            mapBrightness: 10,
+
+            baseColor: [1, 1, 1],
+            markerColor: [1, 0, 0],
+            glowColor: [0.94, 0.93, 0.91],
+
+            // Bengaluru
+            markers: [
+                { location: [13.0340, 77.6600], size: 0.03 }
+            ],
+
+            arcs: [],
+            arcWidth: 0,
+            opacity: 1
+        });
+
+        function animate() {
+            if (!isPaused) phi += 0.003;
+
+            globe.update({
+                phi,
+                theta: 0.2
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        canvas.addEventListener("pointerdown", () => {
+            isPaused = true;
+        });
+
+        canvas.addEventListener("pointerup", () => {
+            isPaused = false;
+        });
+    </script>
 </body>
 
 </html>
