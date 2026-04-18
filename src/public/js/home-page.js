@@ -247,7 +247,7 @@ function launchConfetti() {
 
 // ─── Footer Particle Text ─────────────────────────────────
 (function () {
-    const revealCanvas = document.getElementById('particle-canvas');
+    const revealCanvas = document.getElementById('canvas');
     if (!revealCanvas) return;
     const revealCtx = revealCanvas.getContext('2d');
     const revealWrapper = document.getElementById('wrapper');
