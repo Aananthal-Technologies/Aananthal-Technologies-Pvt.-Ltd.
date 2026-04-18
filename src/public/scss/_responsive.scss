@@ -213,6 +213,8 @@
 // ════════════════════════════════════════════════════════════
 @media (max-width: 1024px) {
 
+  .hero-scroll-hint { display: none; }
+
   // ── Navbar ─────────────────────────────────────────────
   #liquid-nav { padding: 14px 24px !important; }
   #liquid-nav .desktop-nav { gap: 20px; font-size: 13px; }

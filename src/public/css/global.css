@@ -4077,6 +4077,9 @@ body {
   }
 }
 @media (max-width: 1024px) {
+  .hero-scroll-hint {
+    display: none;
+  }
   #liquid-nav {
     padding: 14px 24px !important;
   }
