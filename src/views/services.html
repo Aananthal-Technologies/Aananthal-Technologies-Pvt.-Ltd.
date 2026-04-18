@@ -4,40 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Aananthal Technologies</title>
+    <title>Services — Aananthal Technologies</title>
+    <meta name="description" content="From requirements engineering to operational support — Aananthal delivers end-to-end AI and robotics solutions.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="/images/logo_transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/global.css">
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #000;
-        }
-
-        .page-header {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            background: #000;
-            color: #fff;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            border-color: #000;
-            background: #fafafa;
-        }
-    </style>
 </head>
 
 <body>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-logo">Aananthal</div>
+            <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navbar -->
     <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
         <a href="/" class="text-decoration-none">
             <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
@@ -45,201 +36,339 @@
         <div class="d-flex gap-4">
             <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
             <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
-            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/services" class="text-decoration-none fw-medium nav-link-custom" style="opacity:1;">Services</a>
             <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
         </div>
     </nav>
 
-    <header class="page-header">
-        <div class="container">
-            <h1 class="display-3 fw-bold">Our Services</h1>
-            <p class="lead">From engineering to deployment, we deliver excellence.</p>
+    <!-- Services Hero -->
+    <section class="services-hero fade-up">
+        <div class="services-hero__grid"></div>
+        <div class="section-label">Our Services</div>
+        <h1 class="services-hero-title">What We Can<br><em>Build For You.</em></h1>
+        <p class="services-hero-sub">From requirements engineering to operational support — we partner with you at every step to deliver intelligent, scalable solutions.</p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid-section fade-up">
+        <div class="services-section-header">
+            <h2 class="services-section-title">Six Ways<br>We Can Help.</h2>
+            <p class="services-section-sub">Every engagement is tailored to your unique needs — we don't do cookie-cutter solutions.</p>
         </div>
-    </header>
 
-    <main class="container py-5">
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="service-card h-100">
-                    <h3 class="fw-bold">Requirements Engineering</h3>
-                    <p class="text-muted">Analyzing complex business needs to define technical specifications for AI and
-                        Robotics solutions.</p>
+        <div class="services-cards-grid">
+            <!-- Card 1 -->
+            <div class="service-card-item">
+                <span class="service-card-num">01</span>
+                <div class="service-card-icon-wrap">
+                    <span class="material-icons">folder_open</span>
                 </div>
+                <h3 class="service-card-title">Requirements Engineering</h3>
+                <p class="service-card-desc">We analyze your complex business challenges and translate them into precise technical specifications — ensuring every solution we build is grounded in real need.</p>
+                <span class="service-card-arrow"><span class="material-icons">north_east</span></span>
             </div>
-            <div class="col-md-6">
-                <div class="service-card h-100">
-                    <h3 class="fw-bold">Solution Development</h3>
-                    <p class="text-muted">End-to-end development of software and hardware integrations tailored to your
-                        industry.</p>
+
+            <!-- Card 2 -->
+            <div class="service-card-item">
+                <span class="service-card-num">02</span>
+                <div class="service-card-icon-wrap">
+                    <span class="material-icons">precision_manufacturing</span>
                 </div>
+                <h3 class="service-card-title">Solution Development</h3>
+                <p class="service-card-desc">End-to-end development of AI-powered software and hardware systems. From architecture to deployment, we own the entire build cycle with obsessive attention to quality.</p>
+                <span class="service-card-arrow"><span class="material-icons">north_east</span></span>
             </div>
-            <div class="col-md-6">
-                <div class="service-card h-100">
-                    <h3 class="fw-bold">VFD & Automation</h3>
-                    <p class="text-muted">Specialized automation services including Variable Frequency Drive integration
-                        for industrial efficiency.</p>
+
+            <!-- Card 3 -->
+            <div class="service-card-item">
+                <span class="service-card-num">03</span>
+                <div class="service-card-icon-wrap">
+                    <span class="material-icons">swap_horiz</span>
                 </div>
+                <h3 class="service-card-title">API & System Integration</h3>
+                <p class="service-card-desc">Seamless integration of AI models, IoT devices, cloud platforms, and legacy systems. We make complex ecosystems talk to each other with precision and reliability.</p>
+                <span class="service-card-arrow"><span class="material-icons">north_east</span></span>
             </div>
-            <div class="col-md-6">
-                <div class="service-card h-100">
-                    <h3 class="fw-bold">System Deployment</h3>
-                    <p class="text-muted">Seamless deployment and scaling of intelligent systems in real-world
-                        environments.</p>
+
+            <!-- Card 4 -->
+            <div class="service-card-item">
+                <span class="service-card-num">04</span>
+                <div class="service-card-icon-wrap">
+                    <span class="material-icons">verified</span>
+                </div>
+                <h3 class="service-card-title">Quality Assurance</h3>
+                <p class="service-card-desc">Rigorous testing across unit, integration, and performance layers. We validate every output against real-world scenarios before anything goes live.</p>
+                <span class="service-card-arrow"><span class="material-icons">north_east</span></span>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-card-item">
+                <span class="service-card-num">05</span>
+                <div class="service-card-icon-wrap">
+                    <span class="material-icons">bolt</span>
+                </div>
+                <h3 class="service-card-title">VFD & Automation</h3>
+                <p class="service-card-desc">Specialised industrial automation services including Variable Frequency Drive integration, motor control optimization, and energy-efficient operation for manufacturing environments.</p>
+                <span class="service-card-arrow"><span class="material-icons">north_east</span></span>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-card-item">
+                <span class="service-card-num">06</span>
+                <div class="service-card-icon-wrap">
+                    <span class="material-icons">support_agent</span>
+                </div>
+                <h3 class="service-card-title">Operational Support</h3>
+                <p class="service-card-desc">Long-term partnership after deployment. Monitoring, maintenance, updates, and rapid-response support to keep your systems operating at peak performance.</p>
+                <span class="service-card-arrow"><span class="material-icons">north_east</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Process -->
+    <section class="services-process-section fade-up">
+        <div class="process-header">
+            <div class="section-label">How We Work</div>
+            <h2>Our Proven Process</h2>
+        </div>
+
+        <div class="process-timeline">
+            <div class="process-timeline-item">
+                <div class="timeline-num">01</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">folder_open</span></div>
+                <div class="timeline-title">Discovery & Requirements</div>
+                <p class="timeline-desc">Deep-dive workshops to understand your business goals, technical constraints, and success metrics.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">02</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">architecture</span></div>
+                <div class="timeline-title">Architecture & Design</div>
+                <p class="timeline-desc">System architecture blueprints, technology selection, and solution design validated against your requirements.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">03</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">code</span></div>
+                <div class="timeline-title">Build & Develop</div>
+                <p class="timeline-desc">Iterative development with continuous feedback loops — delivering working software every two weeks.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">04</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">verified</span></div>
+                <div class="timeline-title">Test & QA</div>
+                <p class="timeline-desc">Comprehensive testing across all layers: unit, integration, performance, and real-world scenario validation.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">05</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">cloud_upload</span></div>
+                <div class="timeline-title">Deploy & Launch</div>
+                <p class="timeline-desc">Zero-downtime deployment with full data migration support and go-live assistance from our team.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">06</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">monitoring</span></div>
+                <div class="timeline-title">Monitor & Optimise</div>
+                <p class="timeline-desc">Post-launch monitoring, performance tuning, and continuous improvement to keep systems at their best.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">07</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">support_agent</span></div>
+                <div class="timeline-title">Ongoing Support</div>
+                <p class="timeline-desc">Long-term partnership, proactive maintenance, and rapid incident response — we're with you for the long run.</p>
+            </div>
+
+            <div class="process-timeline-item">
+                <div class="timeline-num">08</div>
+                <div class="timeline-icon-wrap"><span class="material-icons">autorenew</span></div>
+                <div class="timeline-title">Scale & Evolve</div>
+                <p class="timeline-desc">As your business grows, we help you scale intelligently — adding capabilities, improving efficiency, and staying ahead.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Aananthal -->
+    <section class="why-section fade-up">
+        <div class="why-inner">
+            <div class="why-left">
+                <h2 class="why-title">Why Partner<br>with Aananthal?</h2>
+                <p class="why-sub">We're not a typical IT vendor. We're a deep-tech startup that builds from first principles — bringing the energy of a startup with the rigour of an engineering firm.</p>
+            </div>
+            <div class="why-right">
+                <div class="why-item">
+                    <div class="why-item-num">01</div>
+                    <div class="why-item-content">
+                        <div class="why-item-title">We Build, Not Just Advise</div>
+                        <p class="why-item-desc">Every member of our team is a builder. We don't hand off to subcontractors — the same engineers who designed your system will build and maintain it. That means accountability at every level.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-item-num">02</div>
+                    <div class="why-item-content">
+                        <div class="why-item-title">AI-Native from Day One</div>
+                        <p class="why-item-desc">AI isn't an add-on for us — it's the foundation. Every solution we design has intelligence baked in: learning systems that improve over time, not static software that stagnates.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-item-num">03</div>
+                    <div class="why-item-content">
+                        <div class="why-item-title">Speed Without Cutting Corners</div>
+                        <p class="why-item-desc">Our lean team moves fast — but not recklessly. We combine agile execution with engineering discipline to deliver in weeks, not months, while maintaining production-grade quality.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="why-item-num">04</div>
+                    <div class="why-item-content">
+                        <div class="why-item-title">Radical Transparency</div>
+                        <p class="why-item-desc">No hidden dependencies. No surprise scope changes. You have full visibility into what we're building, how far along we are, and what comes next — at all times.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer style="background:#000; color:#fff; font-family:'Inconsolata', monospace;">
+    <!-- Stats Strip -->
+    <section class="services-stats-strip">
+        <div class="stats-inner">
+            <div class="stat-box">
+                <div class="stat-val">7</div>
+                <div class="stat-lbl">Services Offered</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val">20+</div>
+                <div class="stat-lbl">Team Members</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val">3</div>
+                <div class="stat-lbl">Products Launched</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val">∞</div>
+                <div class="stat-lbl">Ambition</div>
+            </div>
+        </div>
+    </section>
 
-        <div style="
-        max-width:1300px;
-        margin:0 auto;
-        padding:50px 20px 50px 10px;
-    ">
+    <!-- Services CTA -->
+    <section class="services-cta-section fade-up">
+        <div class="services-cta-eyebrow">Let's Build</div>
+        <h2 class="services-cta-headline">Start Your<br><em>Next Project.</em></h2>
+        <p class="services-cta-sub">Tell us what you're building. We'll tell you how to make it exceptional.</p>
+        <a href="/contact" class="services-cta-btn">
+            Get in Touch <span class="material-icons">arrow_forward</span>
+        </a>
+    </section>
 
-            <!-- TOP TEXT -->
-            <p style="color:#aaa; margin-bottom:50px; font-size:14px;">
-                Escape the reality!
-            </p>
-
-            <!-- MAIN ROW -->
-            <div style="display:flex; align-items:center;">
-
-                <!-- LEFT -->
-                <div style="display:flex; gap:60px; flex:1;">
-
-                    <!-- Product -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Product</h3>
-                        <ul style="list-style:none; padding:0; line-height:2;">
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Features</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Pricing</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Testimonials</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Integration</a></li>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-tagline">Escape the reality.</p>
+            <div class="footer-cols">
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>Requirements Engineering</li>
+                            <li>Solution Development</li>
+                            <li>API Integration</li>
+                            <li>VFD & Automation</li>
                         </ul>
                     </div>
-
-                    <!-- Company -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Company</h3>
-                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
-                            <li>FAQs</li>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/products">Products</a></li>
+                            <li><a href="/contact">Contact</a></li>
                             <li>About Us</li>
-                            <li>Privacy Policy</li>
-                            <li>Terms of Services</li>
                         </ul>
                     </div>
-
-                    <!-- Resources -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Resources</h3>
-                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
-                            <li>Blog</li>
-                            <li>Changelog</li>
-                            <li>Brand</li>
-                            <li>Help</li>
+                    <div class="footer-col footer-col-social">
+                        <h4>Stalk Us</h4>
+                        <ul>
+                            <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+                            <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+                            <li><i class="fa-brands fa-youtube"></i> Youtube</li>
+                            <li><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
                         </ul>
                     </div>
-
-                    <!-- SOCIAL -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Stalk Us</h3>
-                        <ul style="list-style:none; padding:0; line-height:2;">
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-facebook"></i> Facebook
-                            </li>
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </li>
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-youtube"></i> Youtube
-                            </li>
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-linkedin"></i> LinkedIn
-                            </li>
-
-                        </ul>
-                    </div>
-
                 </div>
-
-                <!-- RIGHT GLOBE -->
-                <div style="
-                position:relative;
-                width:260px;
-                height:260px;
-                border-radius:50%;
-                flex-shrink:0;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                margin-left:40px;
-            ">
-
-                    <!-- MAIN SPHERE -->
-                    <div style="
-                    width:100%;
-                    height:100%;
-                    border-radius:50%;
-                    background:
-                        radial-gradient(circle at 30% 30%, #ffffff, #bfbfbf 60%, #8a8a8a 100%);
-                    box-shadow:
-                        0 0 60px rgba(255,255,255,0.35),
-                        inset -20px -30px 60px rgba(0,0,0,0.4),
-                        inset 20px 20px 40px rgba(255,255,255,0.2);
-                "></div>
-
-                    <!-- OUTER GLOW -->
-                    <div style="
-                    position:absolute;
-                    width:120%;
-                    height:120%;
-                    border-radius:50%;
-                    background:radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
-                    filter:blur(20px);
-                    z-index:-1;
-                "></div>
-
+                <div class="footer-contact-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-row">
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <p>+91 7386990245</p>
+                            <span class="material-icons">phone</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <p>aananthaltechnologies@gmail.com</p>
+                            <span class="material-icons">mail</span>
+                        </div>
+                    </div>
                 </div>
-
+                <div class="footer-globe">
+                    <div class="globe-sphere"></div>
+                    <div class="globe-glow"></div>
+                </div>
             </div>
-
-            <!-- HUMANS × AI -->
-            <div style="
-            display:flex;
-            align-items:center;
-            margin:60px 0 25px;
-        ">
-
-                <div style="flex:1; height:1px; background:#222;"></div>
-
-                <h1 style="
-                font-family:'Moon Dance', cursive;
-                font-size:52px;
-                margin:0 30px;
-                white-space:nowrap;
-                color:#fff;
-            ">
-                    Humans × AI
-                </h1>
-
-                <div style="flex:1; height:1px; background:#222;"></div>
-
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <h1 class="footer-brand">Humans × AI</h1>
+                <div class="footer-copy">© 2026 Aananthal Technologies Pvt. Ltd.<br>All rights reserved.</div>
             </div>
-
-            <!-- COPYRIGHT -->
-            <div style="text-align:center; color:#777; font-size:12px;">
-                © 2026 Aananthal Technologies Pvt. Ltd., all rights reserved
-            </div>
-
         </div>
-
     </footer>
-</body>
 
+    <script src="/js/nav-theme.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('page-loader').classList.add('loaded'), 1200);
+        });
+
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        let mx=0,my=0,rx=0,ry=0;
+        document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+        function animateRing() { rx+=(mx-rx)*0.13; ry+=(my-ry)*0.13; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animateRing); }
+        animateRing();
+        document.querySelectorAll('a,button,.service-card-item,.why-item').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    // stagger service cards
+                    entry.target.querySelectorAll('.service-card-item').forEach((card, i) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        card.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
+                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'none'; }, 50 + i * 80);
+                    });
+                    // stagger process items
+                    entry.target.querySelectorAll('.process-timeline-item').forEach((item, i) => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        item.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'none'; }, 50 + i * 70);
+                    });
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+
+</body>
 </html>

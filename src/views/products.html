@@ -4,236 +4,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Aananthal Technologies</title>
+    <title>Products — Aananthal Technologies</title>
+    <meta name="description" content="Explore THANU, PHMS, and VFD — three breakthrough products from Aananthal Technologies.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="/images/logo_transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/global.css">
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #000;
-        }
-
-        .page-header {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            background: #f5f5f5;
-        }
-
-
-        .product-card {
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #eee;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-    </style>
 </head>
 
 <body>
-    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3" style="
-            background: linear-gradient(90deg, #1f1f1f 0%, #2a2a2a 50%, #1f1f1f 100%);
-        ">
-        <!-- Logo -->
-        <a href="/" class="text-decoration-none" style="display:flex; align-items:center;">
-            <img src="/images/logo_transparent.png" style="height:40px; max-width:150px;" />
-        </a>
 
-        <!-- Links -->
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-logo">Aananthal</div>
+            <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
+        <a href="/" class="text-decoration-none">
+            <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
+        </a>
         <div class="d-flex gap-4">
-            <a href="/" style="color:#fff; text-decoration:none;">Home</a>
-            <a href="/products" style="color:#fff; text-decoration:none;">Products</a>
-            <a href="/services" style="color:#fff; text-decoration:none;">Services</a>
-            <a href="/contact" style="color:#fff; text-decoration:none;">Contact Us</a>
+            <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
+            <a href="/products" class="text-decoration-none fw-medium nav-link-custom" style="opacity:1;">Products</a>
+            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
         </div>
     </nav>
 
-    <header class="page-header">
-        <div class="container">
-            <h1 class="display-3 fw-bold">Innovative Products</h1>
-            <p class="lead">Building the future of Humans x AI.</p>
+    <!-- Products Hero -->
+    <section class="products-hero fade-up">
+        <div class="products-hero__bg-text">PRODUCTS</div>
+        <div class="products-hero__grid-overlay"></div>
+        <div class="products-hero__content">
+            <div class="section-label">Our Products</div>
+            <h1 class="hero-page-title">Innovation<br><em>Made Real.</em></h1>
+            <p class="hero-page-sub">Three groundbreaking products at the frontier of AI, robotics, and industrial automation — each one designed to redefine what's possible.</p>
         </div>
-    </header>
+    </section>
 
-    <main class="container py-5">
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="product-card h-100">
-                    <h3 class="fw-bold">THANU</h3>
-                    <p class="text-muted">The flagship humanoid robot designed for intelligent human interaction.</p>
+    <!-- Product 01: THANU -->
+    <section class="product-full-section product-full-section--dark fade-up" id="thanu">
+        <div class="product-border-top"></div>
+        <div class="product-full-inner">
+            <div class="product-full-text">
+                <div class="product-full-number">Product 01 / 03</div>
+                <div class="product-full-category">Humanoid Robotics</div>
+                <div class="product-full-name">THANU</div>
+                <div class="product-full-tagline">The Humanoid Robot</div>
+                <p class="product-full-desc">
+                    THANU is Aananthal's flagship humanoid robot — engineered for natural, intelligent
+                    human interaction. Powered by advanced AI, THANU perceives its environment through
+                    multi-sensor fusion, responds in real time, and learns continuously from every interaction.
+                </p>
+                <div class="product-features-grid">
+                    <div class="feature-chip"><span class="material-icons">smart_toy</span>AI-Powered Motion</div>
+                    <div class="feature-chip"><span class="material-icons">record_voice_over</span>Natural Language</div>
+                    <div class="feature-chip"><span class="material-icons">sensors</span>Multi-Sensor Fusion</div>
+                    <div class="feature-chip"><span class="material-icons">self_improvement</span>Continuous Learning</div>
+                    <div class="feature-chip"><span class="material-icons">visibility</span>Computer Vision</div>
+                    <div class="feature-chip"><span class="material-icons">battery_charging_full</span>8h Battery Life</div>
                 </div>
+                <a href="/contact" class="product-full-cta">
+                    Request Demo <span class="material-icons">arrow_forward</span>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="product-card h-100">
-                    <h3 class="fw-bold">SolarScan</h3>
-                    <p class="text-muted">Precision AI for solar energy optimization and maintenance.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="product-card h-100">
-                    <h3 class="fw-bold">Petcura</h3>
-                    <p class="text-muted">Smart monitoring systems for advanced pet health management.</p>
+            <div class="product-full-visual">
+                <div class="thanu-visual">
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-ring"></div>
+                    <div class="robot-glyph">
+                        <div class="r-head"></div>
+                        <div class="r-neck"></div>
+                        <div class="r-torso">
+                            <div class="r-core"></div>
+                        </div>
+                        <div class="r-hips"></div>
+                        <div class="r-legs">
+                            <div class="r-leg"></div>
+                            <div class="r-leg"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer style="background:#000; color:#fff; font-family:'Inconsolata', monospace;">
+    <!-- Product 02: PHMS -->
+    <section class="product-full-section product-full-section--reverse fade-up" id="phms">
+        <div class="product-border-top"></div>
+        <div class="product-full-inner">
+            <div class="product-full-text">
+                <div class="product-full-number">Product 02 / 03</div>
+                <div class="product-full-category">Pet Healthcare Technology</div>
+                <div class="product-full-name">PHMS</div>
+                <div class="product-full-tagline">Pet Health Management System</div>
+                <p class="product-full-desc">
+                    PHMS is an intelligent pet health monitoring platform that gives veterinarians and
+                    pet owners real-time visibility into animal health metrics. Advanced AI diagnostics
+                    detect anomalies early, enabling faster intervention and better outcomes.
+                </p>
+                <div class="product-features-grid">
+                    <div class="feature-chip"><span class="material-icons">favorite</span>Vitals Monitoring</div>
+                    <div class="feature-chip"><span class="material-icons">psychology</span>AI Diagnostics</div>
+                    <div class="feature-chip"><span class="material-icons">notifications_active</span>Real-time Alerts</div>
+                    <div class="feature-chip"><span class="material-icons">history</span>Health Timeline</div>
+                    <div class="feature-chip"><span class="material-icons">cloud_sync</span>Cloud Sync</div>
+                    <div class="feature-chip"><span class="material-icons">local_hospital</span>Vet Integration</div>
+                </div>
+                <a href="/contact" class="product-full-cta">
+                    Request Demo <span class="material-icons">arrow_forward</span>
+                </a>
+            </div>
+            <div class="product-full-visual">
+                <div class="phms-visual">
+                    <div class="phms-graphic">
+                        <div class="phms-circle-outer">
+                            <span class="material-icons">pets</span>
+                        </div>
+                        <div class="phms-stats-row">
+                            <div class="phms-stat">
+                                <div class="phms-stat-val">98%</div>
+                                <div class="phms-stat-lbl">Accuracy</div>
+                            </div>
+                            <div class="phms-stat">
+                                <div class="phms-stat-val">24/7</div>
+                                <div class="phms-stat-lbl">Monitoring</div>
+                            </div>
+                            <div class="phms-stat">
+                                <div class="phms-stat-val">50+</div>
+                                <div class="phms-stat-lbl">Beta Clinics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div style="
-        max-width:1300px;
-        margin:0 auto;
-        padding:50px 20px 50px 10px;
-    ">
+    <!-- Product 03: VFD -->
+    <section class="product-full-section product-full-section--dark fade-up" id="vfd">
+        <div class="product-border-top"></div>
+        <div class="product-full-inner">
+            <div class="product-full-text">
+                <div class="product-full-number">Product 03 / 03</div>
+                <div class="product-full-category">Industrial Automation</div>
+                <div class="product-full-name">VFD</div>
+                <div class="product-full-tagline">Variable Frequency Drive</div>
+                <p class="product-full-desc">
+                    Our VFD is a high-performance industrial controller that precisely manages motor
+                    speed, torque, and energy consumption. With AI-driven predictive maintenance,
+                    it anticipates failures before they happen — maximising uptime and minimising cost.
+                </p>
+                <div class="product-features-grid">
+                    <div class="feature-chip"><span class="material-icons">speed</span>Precision Control</div>
+                    <div class="feature-chip"><span class="material-icons">bolt</span>35% Energy Savings</div>
+                    <div class="feature-chip"><span class="material-icons">build</span>Predictive Maintenance</div>
+                    <div class="feature-chip"><span class="material-icons">devices_other</span>IoT Integration</div>
+                    <div class="feature-chip"><span class="material-icons">analytics</span>Real-time Analytics</div>
+                    <div class="feature-chip"><span class="material-icons">shield</span>Industrial Grade</div>
+                </div>
+                <a href="/contact" class="product-full-cta">
+                    Request Demo <span class="material-icons">arrow_forward</span>
+                </a>
+            </div>
+            <div class="product-full-visual">
+                <div class="vfd-visual">
+                    <div class="vfd-graphic">
+                        <div class="vfd-board">
+                            <div class="vfd-display">
+                                <div class="vfd-readout" id="vfd-readout">50.0 Hz</div>
+                                <div class="vfd-unit">Output Frequency</div>
+                            </div>
+                            <div class="vfd-bars">
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                                <div class="vfd-bar"></div>
+                            </div>
+                            <div class="vfd-controls">
+                                <div class="vfd-btn"></div>
+                                <div class="vfd-btn"></div>
+                                <div class="vfd-btn"></div>
+                                <div class="vfd-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- TOP TEXT -->
-            <p style="color:#aaa; margin-bottom:50px; font-size:14px;">
-                Escape the reality!
-            </p>
+    <!-- Technology Stack -->
+    <section class="tech-stack-section fade-up">
+        <div class="section-label" style="justify-content:center;">Powered By</div>
+        <h2 class="tech-section-title" style="margin-top:8px;">Technology at the Core</h2>
+        <p class="tech-section-sub">Built on cutting-edge frameworks, hardware, and AI platforms.</p>
 
-            <!-- MAIN ROW -->
-            <div style="display:flex; align-items:center;">
+        <div class="tech-pills-row">
+            <div class="tech-pill"><span class="material-icons">psychology</span>TensorFlow</div>
+            <div class="tech-pill"><span class="material-icons">whatshot</span>PyTorch</div>
+            <div class="tech-pill"><span class="material-icons">smart_toy</span>ROS2</div>
+            <div class="tech-pill"><span class="material-icons">memory</span>NVIDIA Jetson</div>
+            <div class="tech-pill"><span class="material-icons">developer_board</span>ESP32</div>
+            <div class="tech-pill"><span class="material-icons">cloud</span>Cloud AI</div>
+            <div class="tech-pill"><span class="material-icons">visibility</span>OpenCV</div>
+            <div class="tech-pill"><span class="material-icons">hub</span>MQTT / IoT</div>
+            <div class="tech-pill"><span class="material-icons">storage</span>Time-Series DB</div>
+            <div class="tech-pill"><span class="material-icons">code</span>Python / C++</div>
+            <div class="tech-pill"><span class="material-icons">api</span>REST & GraphQL</div>
+            <div class="tech-pill"><span class="material-icons">security</span>Edge AI</div>
+        </div>
+    </section>
 
-                <!-- LEFT -->
-                <div style="display:flex; gap:60px; flex:1;">
+    <!-- CTA Section -->
+    <section class="product-page-cta fade-up">
+        <div class="cta-eyebrow">Get Started</div>
+        <h2 class="cta-headline">Ready to Build<br><em>the Future?</em></h2>
+        <p class="cta-sub">Let's discuss how our products can transform your operations and open new possibilities.</p>
+        <div class="cta-btn-group">
+            <a href="/contact" class="cta-btn-primary">Start a Conversation</a>
+            <a href="/services" class="cta-btn-secondary">Explore Services</a>
+        </div>
+    </section>
 
-                    <!-- Product -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Product</h3>
-                        <ul style="list-style:none; padding:0; line-height:2;">
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Features</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Pricing</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Testimonials</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Integration</a></li>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-tagline">Escape the reality.</p>
+            <div class="footer-cols">
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#thanu">THANU</a></li>
+                            <li><a href="#phms">PHMS</a></li>
+                            <li><a href="#vfd">VFD</a></li>
                         </ul>
                     </div>
-
-                    <!-- Company -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Company</h3>
-                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
-                            <li>FAQs</li>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/services">Services</a></li>
+                            <li><a href="/contact">Contact</a></li>
                             <li>About Us</li>
-                            <li>Privacy Policy</li>
-                            <li>Terms of Services</li>
                         </ul>
                     </div>
-
-                    <!-- Resources -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Resources</h3>
-                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
-                            <li>Blog</li>
-                            <li>Changelog</li>
-                            <li>Brand</li>
-                            <li>Help</li>
+                    <div class="footer-col footer-col-social">
+                        <h4>Stalk Us</h4>
+                        <ul>
+                            <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+                            <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+                            <li><i class="fa-brands fa-youtube"></i> Youtube</li>
+                            <li><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
                         </ul>
                     </div>
-
-                    <!-- SOCIAL -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Stalk Us</h3>
-                        <ul style="list-style:none; padding:0; line-height:2;">
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-facebook"></i> Facebook
-                            </li>
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </li>
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-youtube"></i> Youtube
-                            </li>
-
-                            <li style="display:flex; align-items:center; gap:10px;">
-                                <i class="fa-brands fa-linkedin"></i> LinkedIn
-                            </li>
-
-                        </ul>
-                    </div>
-
                 </div>
-
-                <!-- RIGHT GLOBE -->
-                <div style="
-                position:relative;
-                width:260px;
-                height:260px;
-                border-radius:50%;
-                flex-shrink:0;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                margin-left:40px;
-            ">
-
-                    <!-- MAIN SPHERE -->
-                    <div style="
-                    width:100%;
-                    height:100%;
-                    border-radius:50%;
-                    background:
-                        radial-gradient(circle at 30% 30%, #ffffff, #bfbfbf 60%, #8a8a8a 100%);
-                    box-shadow:
-                        0 0 60px rgba(255,255,255,0.35),
-                        inset -20px -30px 60px rgba(0,0,0,0.4),
-                        inset 20px 20px 40px rgba(255,255,255,0.2);
-                "></div>
-
-                    <!-- OUTER GLOW -->
-                    <div style="
-                    position:absolute;
-                    width:120%;
-                    height:120%;
-                    border-radius:50%;
-                    background:radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
-                    filter:blur(20px);
-                    z-index:-1;
-                "></div>
-
+                <div class="footer-contact-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-row">
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <p>+91 7386990245</p>
+                            <span class="material-icons">phone</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <p>aananthaltechnologies@gmail.com</p>
+                            <span class="material-icons">mail</span>
+                        </div>
+                    </div>
                 </div>
-
+                <div class="footer-globe">
+                    <div class="globe-sphere"></div>
+                    <div class="globe-glow"></div>
+                </div>
             </div>
-
-            <!-- HUMANS × AI -->
-            <div style="
-            display:flex;
-            align-items:center;
-            margin:60px 0 25px;
-        ">
-
-                <div style="flex:1; height:1px; background:#222;"></div>
-
-                <h1 style="
-                font-family:'Moon Dance', cursive;
-                font-size:52px;
-                margin:0 30px;
-                white-space:nowrap;
-                color:#fff;
-            ">
-                    Humans × AI
-                </h1>
-
-                <div style="flex:1; height:1px; background:#222;"></div>
-
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <h1 class="footer-brand">Humans × AI</h1>
+                <div class="footer-copy">© 2026 Aananthal Technologies Pvt. Ltd.<br>All rights reserved.</div>
             </div>
-
-            <!-- COPYRIGHT -->
-            <div style="text-align:center; color:#777; font-size:12px;">
-                © 2026 Aananthal Technologies Pvt. Ltd., all rights reserved
-            </div>
-
         </div>
-
     </footer>
-</body>
 
+    <script src="/js/nav-theme.js"></script>
+    <script>
+        // Page loader
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('page-loader').classList.add('loaded'), 1200);
+        });
+
+        // Custom cursor
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx+'px'; dot.style.top = my+'px'; });
+        function animateRing() { rx += (mx-rx)*0.13; ry += (my-ry)*0.13; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
+        animateRing();
+        document.querySelectorAll('a,button,.feature-chip,.tech-pill').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // VFD readout animation
+        const readout = document.getElementById('vfd-readout');
+        if (readout) {
+            let freq = 50.0;
+            let dir = 1;
+            setInterval(() => {
+                freq += dir * (Math.random() * 0.3);
+                if (freq > 60) dir = -1;
+                if (freq < 30) dir = 1;
+                readout.textContent = freq.toFixed(1) + ' Hz';
+            }, 800);
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    // stagger children
+                    entry.target.querySelectorAll('.feature-chip, .tech-pill').forEach((el, i) => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(16px)';
+                        el.style.transition = `opacity 0.5s ease ${i * 0.06}s, transform 0.5s ease ${i * 0.06}s`;
+                        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, 100 + i * 60);
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+
+</body>
 </html>

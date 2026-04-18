@@ -1,0 +1,498 @@
+// ─── Contact Page ────────────────────────────────────────
+@use "sass:color";
+
+$black:     #000000;
+$white:     #ffffff;
+$off-white: #f4f4f4;
+$dim:       #111111;
+$mid:       #888888;
+
+// ─── Contact Hero ─────────────────────────────────────────
+.contact-page {
+
+    .contact-hero-section {
+        background: $off-white;
+        padding: 160px 60px 80px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(0,0,0,0.08);
+        }
+
+        .contact-hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            font-family: 'Inconsolata', monospace;
+            font-size: 11px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: $mid;
+            margin-bottom: 32px;
+
+            &::before, &::after {
+                content: '';
+                display: block;
+                width: 28px;
+                height: 1px;
+                background: $mid;
+            }
+        }
+
+        .contact-hero-title {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: clamp(56px, 8vw, 100px);
+            font-weight: 400;
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            color: $black;
+            margin-bottom: 28px;
+        }
+
+        .contact-hero-sub {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            color: #555;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    }
+
+    // ─── Form Section ─────────────────────────────────────
+    .contact-form-section {
+        background: $white;
+        padding: 100px 60px;
+
+        .contact-form-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .contact-form-heading {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: $black;
+            margin-bottom: 48px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+
+            &.full-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-field {
+            position: relative;
+
+            label {
+                display: block;
+                font-family: 'Inconsolata', monospace;
+                font-size: 10px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: $mid;
+                margin-bottom: 10px;
+            }
+
+            input,
+            textarea,
+            select {
+                width: 100%;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(0,0,0,0.14);
+                padding: 10px 0 12px;
+                font-family: 'Libre Caslon Text', serif;
+                font-size: 16px;
+                color: $black;
+                outline: none;
+                transition: border-color 0.25s ease;
+                appearance: none;
+                -webkit-appearance: none;
+                border-radius: 0;
+
+                &::placeholder {
+                    color: rgba(0,0,0,0.2);
+                    font-family: 'Libre Caslon Text', serif;
+                }
+
+                &:focus {
+                    border-color: $black;
+                }
+            }
+
+            textarea {
+                resize: none;
+                height: 130px;
+            }
+
+            select {
+                cursor: pointer;
+                padding-right: 24px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 4px center;
+            }
+
+            .phone-row {
+                display: flex;
+                align-items: center;
+                gap: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.14);
+                transition: border-color 0.25s ease;
+
+                &:focus-within { border-color: $black; }
+
+                select {
+                    border: none;
+                    width: auto;
+                    min-width: 90px;
+                    padding: 10px 28px 12px 0;
+                    font-size: 15px;
+                    flex-shrink: 0;
+
+                    &:focus { border: none; }
+                }
+
+                .phone-divider {
+                    width: 1px;
+                    height: 20px;
+                    background: rgba(0,0,0,0.12);
+                    flex-shrink: 0;
+                    margin-right: 12px;
+                }
+
+                input {
+                    border: none;
+                    flex: 1;
+                    padding: 10px 0 12px;
+
+                    &:focus { border: none; }
+                }
+            }
+        }
+
+        .form-submit-row {
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+
+            .form-submit-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 14px;
+                padding: 15px 42px;
+                background: $black;
+                color: $white;
+                border: 1.5px solid $black;
+                font-family: 'Inter', sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: transparent;
+                    color: $black;
+                }
+
+                .material-icons { font-size: 16px; }
+            }
+
+            .form-submit-note {
+                font-family: 'Inconsolata', monospace;
+                font-size: 11px;
+                letter-spacing: 0.06em;
+                color: $mid;
+                max-width: 260px;
+                line-height: 1.7;
+
+                a {
+                    color: $black;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                    text-decoration-color: rgba(0,0,0,0.3);
+                }
+            }
+        }
+    }
+
+    // ─── Info + Map Section ───────────────────────────────
+    .contact-info-section {
+        background: $off-white;
+        padding: 100px 60px;
+
+        .contact-info-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info-heading {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 40px;
+            font-weight: 400;
+            letter-spacing: -0.025em;
+            color: $black;
+            margin-bottom: 52px;
+            line-height: 1.1;
+        }
+
+        .contact-info-items {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-item {
+            .info-label {
+                font-family: 'Inconsolata', monospace;
+                font-size: 10px;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: $mid;
+                margin-bottom: 8px;
+            }
+
+            .info-value {
+                font-family: 'Libre Caslon Text', serif;
+                font-size: 17px;
+                line-height: 1.75;
+                color: $black;
+            }
+
+            a.info-value {
+                text-decoration: none;
+                border-bottom: 1px solid rgba(0,0,0,0.18);
+                padding-bottom: 1px;
+                transition: border-color 0.2s;
+                display: inline;
+
+                &:hover { border-color: $black; }
+            }
+        }
+
+        .contact-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 44px;
+
+            a {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(0,0,0,0.12);
+                color: $black;
+                font-size: 15px;
+                text-decoration: none;
+                transition: all 0.25s ease;
+
+                &:hover {
+                    background: $black;
+                    color: $white;
+                    border-color: $black;
+                }
+            }
+        }
+
+        .contact-map-frame {
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.08);
+            height: 420px;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                display: block;
+                filter: grayscale(20%);
+            }
+        }
+    }
+
+    // ─── Trust Section ────────────────────────────────────
+    .contact-trust-section {
+        background: $black;
+        padding: 80px 60px;
+
+        .trust-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .trust-item {
+            background: $black;
+            padding: 52px 40px;
+            text-align: center;
+
+            .trust-score {
+                font-family: 'Libre Caslon Text', serif;
+                font-size: 52px;
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                color: $white;
+                line-height: 1;
+                margin-bottom: 8px;
+            }
+
+            .trust-stars {
+                letter-spacing: 3px;
+                color: rgba(255,255,255,0.5);
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .trust-label {
+                font-family: 'Inconsolata', monospace;
+                font-size: 11px;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: rgba(255,255,255,0.28);
+            }
+        }
+    }
+
+    // ─── Testimonials Section ─────────────────────────────
+    .contact-testimonials-section {
+        background: $white;
+        padding: 100px 60px;
+
+        .test-header {
+            margin-bottom: 60px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .test-title {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            color: $black;
+            line-height: 1.05;
+        }
+
+        .test-sub {
+            font-family: 'Inconsolata', monospace;
+            font-size: 13px;
+            letter-spacing: 0.07em;
+            color: $mid;
+            max-width: 240px;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .test-card {
+            padding: 40px;
+            border: 1px solid rgba(0,0,0,0.07);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 24px 60px rgba(0,0,0,0.07);
+            }
+
+            .test-quote-mark {
+                font-family: 'Libre Caslon Text', serif;
+                font-size: 72px;
+                line-height: 0.5;
+                color: $black;
+                opacity: 0.05;
+                position: absolute;
+                top: 28px;
+                left: 32px;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            .test-text {
+                font-family: 'Libre Caslon Text', serif;
+                font-style: italic;
+                font-size: 15px;
+                line-height: 1.8;
+                color: #333;
+                margin-bottom: 32px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .test-author {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding-top: 20px;
+                border-top: 1px solid rgba(0,0,0,0.06);
+
+                .test-avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    background: $off-white;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .test-name {
+                    font-family: 'Libre Caslon Text', serif;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $black;
+                }
+
+                .test-handle {
+                    font-family: 'Inconsolata', monospace;
+                    font-size: 11px;
+                    letter-spacing: 0.06em;
+                    color: $mid;
+                }
+            }
+        }
+    }
+}

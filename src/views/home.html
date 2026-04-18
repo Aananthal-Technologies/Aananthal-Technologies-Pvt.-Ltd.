@@ -4,29 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aananthal Technologies</title>
+    <title>Aananthal Technologies — Humans × AI</title>
+    <meta name="description" content="Aananthal Technologies — Building the future of AI, Robotics and intelligent systems.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="/images/logo_transparent.png" type="image/png">
-
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-
-    <!-- Our perfectly compiled external stylesheet -->
     <link rel="stylesheet" href="/css/global.css">
 </head>
 
 <body>
 
-    <!-- Navbar using Max Bootstrap 5 Utilities -->
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-logo">Aananthal</div>
+            <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navbar -->
     <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
-        <!-- Logo -->
         <a href="/" class="text-decoration-none">
             <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
         </a>
-
-        <!-- Links -->
         <div class="d-flex gap-4">
             <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
             <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
@@ -35,39 +41,60 @@
         </div>
     </nav>
 
-    <!-- Canvas Hero Section for Scroll Animation -->
+    <!-- Hero Section -->
     <section id="hero-sequence" style="height: 400vh; position: relative;">
-        <!-- Sticky container holds the canvas to the viewport over the 400vh scroll travel -->
         <div class="sticky-top w-100" style="height: 100vh; overflow: hidden;">
 
-            <!-- Hero Background Canvas -->
             <canvas id="hero-canvas"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"></canvas>
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
 
-            <!-- Carousel Layer -->
             <div id="hero-carousel" class="h-100 w-100 position-relative">
                 <!-- Slide 1: Robotics -->
-                <div class="hero-slide active" data-theme="robotics" data-frames="207"
-                    data-folder="hero-frames-robotics">
+                <div class="hero-slide active" data-theme="robotics" data-frames="207" data-folder="hero-frames-robotics">
                     <div class="hero-overlay-content">
+                        <div class="section-label" style="color:rgba(255,255,255,0.5);">
+                            <span style="background:rgba(255,255,255,0.4);width:28px;height:1px;display:block;"></span>
+                            Product 01
+                        </div>
                         <h1 class="hero-title">THANU:</h1>
                         <h1 class="hero-title-text">THE HUMANOID ROBOT</h1>
-                        <p class="hero-subtitle">Design & Development of Humanoid Robot with AI Based Human interaction
-                        </p>
-                        <a href="#" class="hero-btn text-decoration-none">KNOW MORE</a>
+                        <p class="hero-subtitle">Design & Development of Humanoid Robot with AI Based Human Interaction</p>
+                        <a href="/products" class="hero-btn text-decoration-none">KNOW MORE</a>
                     </div>
                 </div>
 
                 <!-- Slide 2: PHMS -->
                 <div class="hero-slide" data-theme="phms" data-frames="240" data-folder="hero-frames-phms">
                     <div class="hero-overlay-content">
+                        <div class="section-label" style="color:rgba(0,0,0,0.5);">
+                            <span style="background:rgba(0,0,0,0.3);width:28px;height:1px;display:block;"></span>
+                            Product 02
+                        </div>
                         <h1 class="hero-title">PHMS:</h1>
                         <h1 class="hero-title-text">PET CARE SYSTEM</h1>
-                        <p class="hero-subtitle">Advanced Health Management System for Pets with Real-time AI
-                            Diagnostics</p>
-                        <a href="#" class="hero-btn text-decoration-none">KNOW MORE</a>
+                        <p class="hero-subtitle">Advanced Health Management System for Pets with Real-time AI Diagnostics</p>
+                        <a href="/products" class="hero-btn text-decoration-none">KNOW MORE</a>
                     </div>
                 </div>
+
+                <!-- Slide 3: VFD -->
+                <div class="hero-slide" data-theme="vfd" data-frames="222" data-folder="hero-frames-vfd">
+                    <div class="hero-overlay-content">
+                        <div class="section-label" style="color:rgba(255,255,255,0.5);">
+                            <span style="background:rgba(255,255,255,0.4);width:28px;height:1px;display:block;"></span>
+                            Product 03
+                        </div>
+                        <h1 class="hero-title">VFD:</h1>
+                        <h1 class="hero-title-text">VARIABLE FREQUENCY DRIVE</h1>
+                        <p class="hero-subtitle">High-Performance Variable Frequency Drive for Industrial Applications</p>
+                        <a href="/products" class="hero-btn text-decoration-none">KNOW MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="hero-scroll-hint">
+                <span>Scroll</span>
             </div>
 
             <!-- Controls -->
@@ -76,34 +103,163 @@
                 <div class="hero-indicators">
                     <span class="indicator active" data-index="0"></span>
                     <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
                 </div>
                 <button id="next-hero" class="hero-ctrl-btn"><span class="material-icons">chevron_right</span></button>
             </div>
         </div>
     </section>
 
+    <!-- Dual Marquee Strip -->
+    <section id="dual-marquee">
+        <div class="marquee-row">
+            <div class="marquee-inner marquee-inner--left">
+                <span class="marquee-word">Humanoid Robotics</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">AI Systems</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Pet Health Tech</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Variable Frequency Drive</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Machine Learning</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Industrial Automation</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Computer Vision</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Humanoid Robotics</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">AI Systems</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Pet Health Tech</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Variable Frequency Drive</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Machine Learning</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Industrial Automation</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Computer Vision</span><span class="marquee-sep">·</span>
+            </div>
+        </div>
+        <div class="marquee-row">
+            <div class="marquee-inner marquee-inner--right">
+                <span class="marquee-word">Aananthal Technologies</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Bangalore · India</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Humans × AI</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Innovation Lab</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Deep Tech Startup</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Future of Robotics</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Aananthal Technologies</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Bangalore · India</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Humans × AI</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Innovation Lab</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Deep Tech Startup</span><span class="marquee-sep">·</span>
+                <span class="marquee-word">Future of Robotics</span><span class="marquee-sep">·</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section id="stats-strip" class="fade-section">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">AI</div>
+                    <div class="stat-label">Powered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Ambition</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview (Bento Grid) -->
+    <section id="products-preview" class="fade-section">
+        <div class="preview-header">
+            <h2 class="preview-title">Products That<br>Define the Future.</h2>
+            <a href="/products" class="preview-link">
+                View all products <span class="material-icons">arrow_forward</span>
+            </a>
+        </div>
+
+        <div class="products-bento">
+            <!-- THANU: Large -->
+            <a href="/products" class="product-bento-card product-bento-card--thanu text-decoration-none">
+                <span class="pbc-bg-text">THANU</span>
+                <div class="pbc-inner">
+                    <span class="pbc-num">01</span>
+                    <div class="pbc-name">THANU</div>
+                    <div class="pbc-sub">Humanoid Robot · AI Interaction</div>
+                    <div class="pbc-arrow">
+                        <span class="material-icons">north_east</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- PHMS -->
+            <a href="/products" class="product-bento-card product-bento-card--phms text-decoration-none">
+                <div class="pbc-inner">
+                    <span class="pbc-num">02</span>
+                    <div class="pbc-name">PHMS</div>
+                    <div class="pbc-sub">Pet Health Management System</div>
+                    <div class="pbc-arrow">
+                        <span class="material-icons" style="color:rgba(0,0,0,0.5);">north_east</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- VFD -->
+            <a href="/products" class="product-bento-card product-bento-card--vfd text-decoration-none">
+                <div class="pbc-inner">
+                    <span class="pbc-num">03</span>
+                    <div class="pbc-name">VFD</div>
+                    <div class="pbc-sub">Variable Frequency Drive</div>
+                    <div class="pbc-arrow">
+                        <span class="material-icons">north_east</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission-section" class="fade-section">
+        <div class="mission-inner">
+            <span class="mission-line">We Build</span>
+            <span class="mission-line mission-line--muted">Tomorrow.</span>
+            <div class="mission-divider"></div>
+            <p class="mission-detail">
+                Aananthal Technologies sits at the intersection of AI, robotics, and human potential.
+                We create products that don't just solve problems — they redefine what's possible
+                for the next generation of businesses and people.
+            </p>
+            <a href="/services" class="mission-cta">
+                Explore Our Services <span class="material-icons">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
     <!-- What's New Section -->
-    <section id="whats-new" class="container fade-section" style="padding-top: 50px; padding-bottom: 100px;">
-        <h2 class="section-title">What’s New!</h2>
+    <section id="whats-new" class="container fade-section">
+        <div class="section-label">Latest Updates</div>
+        <h2 class="section-title">What's New!</h2>
+        <p style="font-family:'Inconsolata',monospace; font-size:13px; letter-spacing:0.05em; color:#888; margin-bottom:56px;">
+            Insights, announcements, and milestones from Aananthal Technologies.
+        </p>
 
         <div class="news-carousel mt-4">
-            <!-- Card 1 -->
             <div class="news-card-wrapper">
                 <div class="news-card">
                     <div class="news-img"></div>
                     <div class="news-content-block">
-                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
-                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="card-number">01 — 2026</div>
+                        <h3 class="news-title">THANU Achieves First Autonomous Walk Milestone</h3>
+                        <p class="news-desc">Our humanoid robot THANU successfully completed its first fully autonomous walking sequence, marking a major breakthrough in our robotics development program.</p>
                         <div class="divider"></div>
                         <a href="#" class="read-more-wrapper">
                             <span class="read-more">Read more</span>
                             <div class="arrow-icon">
-                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
-                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
                                 </svg>
                             </div>
                         </a>
@@ -111,23 +267,19 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="news-card-wrapper">
                 <div class="news-card">
                     <div class="news-img"></div>
                     <div class="news-content-block">
-                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
-                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="card-number">02 — 2026</div>
+                        <h3 class="news-title">PHMS Enters Beta with 50 Pet Clinics in Bangalore</h3>
+                        <p class="news-desc">Our Pet Health Management System is now live in beta across 50 veterinary clinics, delivering real-time AI diagnostics and health monitoring for pets.</p>
                         <div class="divider"></div>
                         <a href="#" class="read-more-wrapper">
                             <span class="read-more">Read more</span>
                             <div class="arrow-icon">
-                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
-                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
                                 </svg>
                             </div>
                         </a>
@@ -135,23 +287,19 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="news-card-wrapper">
                 <div class="news-card">
                     <div class="news-img"></div>
                     <div class="news-content-block">
-                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
-                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="card-number">03 — 2026</div>
+                        <h3 class="news-title">VFD Gen-2 Now Available for Industrial Clients</h3>
+                        <p class="news-desc">The second generation of our Variable Frequency Drive has launched with 35% improved energy efficiency and enhanced AI-driven predictive maintenance capabilities.</p>
                         <div class="divider"></div>
                         <a href="#" class="read-more-wrapper">
                             <span class="read-more">Read more</span>
                             <div class="arrow-icon">
-                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
-                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
                                 </svg>
                             </div>
                         </a>
@@ -159,23 +307,19 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="news-card-wrapper">
                 <div class="news-card">
                     <div class="news-img"></div>
                     <div class="news-content-block">
-                        <h3 class="news-title">Lorem ipsum dolor sit amet, consectetur</h3>
-                        <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                        <div class="card-number">04 — 2026</div>
+                        <h3 class="news-title">Aananthal Raises Seed Round, Eyes Expansion</h3>
+                        <p class="news-desc">We are thrilled to announce the closing of our seed funding round, enabling us to expand our team, accelerate R&D, and bring our products to a global audience.</p>
                         <div class="divider"></div>
                         <a href="#" class="read-more-wrapper">
                             <span class="read-more">Read more</span>
                             <div class="arrow-icon">
-                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6"
-                                        stroke-linecap="square" stroke-linejoin="miter" />
+                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                    <path d="M5 13H21M21 13L14 6M21 13L14 20" stroke="#1E1E1E" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/>
                                 </svg>
                             </div>
                         </a>
@@ -185,202 +329,152 @@
         </div>
     </section>
 
-    <!-- Innovation Section -->
-    <section id="innovation-section" class="container d-flex flex-column align-items-center justify-content-center fade-section">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-12">
-                <h2 class="innovation-headline">Where Innovation Meets Technology.</h2>
-                <p class="innovation-subheadline">Aananthal Technologies — Your trusted partner in leveraging AI,
-                    machine learning, and scalable technologies to build intelligent solutions for the next generation
-                    of businesses.</p>
+    <!-- Innovation Section (Dark) -->
+    <section id="innovation-section" class="d-flex flex-column align-items-center justify-content-center fade-section">
+        <div style="max-width:1200px;width:100%;">
+            <div class="section-label" style="color:rgba(255,255,255,0.25); justify-content:center;">
+                How We Work
             </div>
-        </div>
+            <h2 class="innovation-headline">Where Innovation<br>Meets Technology.</h2>
+            <p class="innovation-subheadline">Aananthal Technologies — Your trusted partner in leveraging AI,
+                machine learning, and scalable technologies to build intelligent solutions for the next generation
+                of businesses.</p>
 
-        <div class="process-flow-container">
-            <!-- Step 1: Requirements Engineering -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">folder</span>
+            <div class="process-flow-container">
+                <div class="process-step" data-num="01">
+                    <div class="icon-wrapper"><span class="material-icons">folder</span></div>
+                    <div class="step-label">Requirements Engineering</div>
                 </div>
-                <div class="step-label">Requirements Engineering</div>
-            </div>
+                <div class="process-arrow"><span class="material-icons">east</span></div>
 
-            <div class="process-arrow">
-                <span class="material-icons">east</span>
-            </div>
-
-            <!-- Step 2: Solution Development -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">settings</span>
+                <div class="process-step" data-num="02">
+                    <div class="icon-wrapper"><span class="material-icons">settings</span></div>
+                    <div class="step-label">Solution Development</div>
                 </div>
-                <div class="step-label">Solution Development</div>
-            </div>
+                <div class="process-arrow"><span class="material-icons">east</span></div>
 
-            <div class="process-arrow">
-                <span class="material-icons">east</span>
-            </div>
-
-            <!-- Step 3: API & System Integration -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">swap_vert</span>
+                <div class="process-step" data-num="03">
+                    <div class="icon-wrapper"><span class="material-icons">swap_vert</span></div>
+                    <div class="step-label">API & System Integration</div>
                 </div>
-                <div class="step-label">API & System Integration</div>
-            </div>
+                <div class="process-arrow"><span class="material-icons">east</span></div>
 
-            <div class="process-arrow">
-                <span class="material-icons">east</span>
-            </div>
-
-            <!-- Step 4: Quality Assurance -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">star</span>
+                <div class="process-step" data-num="04">
+                    <div class="icon-wrapper"><span class="material-icons">star</span></div>
+                    <div class="step-label">Quality Assurance</div>
                 </div>
-                <div class="step-label">Quality Assurance</div>
-            </div>
+                <div class="process-arrow"><span class="material-icons">east</span></div>
 
-            <div class="process-arrow">
-                <span class="material-icons">east</span>
-            </div>
-
-            <!-- Step 5: Data Migration -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">cloud_upload</span>
+                <div class="process-step" data-num="05">
+                    <div class="icon-wrapper"><span class="material-icons">cloud_upload</span></div>
+                    <div class="step-label">Data Migration</div>
                 </div>
-                <div class="step-label">Data Migration</div>
-            </div>
+                <div class="process-arrow"><span class="material-icons">east</span></div>
 
-            <div class="process-arrow">
-                <span class="material-icons">east</span>
-            </div>
-
-            <!-- Step 6: Go-Live Deployment -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">person</span>
+                <div class="process-step" data-num="06">
+                    <div class="icon-wrapper"><span class="material-icons">rocket_launch</span></div>
+                    <div class="step-label">Go-Live Deployment</div>
                 </div>
-                <div class="step-label">Go-Live Deployment</div>
-            </div>
+                <div class="process-arrow"><span class="material-icons">east</span></div>
 
-            <div class="process-arrow">
-                <span class="material-icons">east</span>
-            </div>
-
-            <!-- Step 7: Operational Support -->
-            <div class="process-step">
-                <div class="icon-wrapper">
-                    <span class="material-icons">language</span>
+                <div class="process-step" data-num="07">
+                    <div class="icon-wrapper"><span class="material-icons">support_agent</span></div>
+                    <div class="step-label">Operational Support</div>
                 </div>
-                <div class="step-label">Operational Support</div>
             </div>
         </div>
     </section>
 
     <!-- Voices Section -->
     <section id="voices-section" class="container-fluid py-5 fade-section">
+        <div class="container">
+            <div class="section-label">Our People</div>
+        </div>
         <h1 class="voices-headline text-center mb-5">Voices from the team</h1>
 
         <div class="voices-carousel align-items-center justify-content-center">
-            <!-- Voice 1 -->
             <div class="voice-card">
-                <div class="voice-img-placeholder"></div>
-                <p class="voice-text">“At Aananthal, we don't just build software; we build intelligence that empowers
+                <div class="quote-mark">"</div>
+                <p class="voice-text">"At Aananthal, we don't just build software; we build intelligence that empowers
                     businesses to leap into the future. Our passion for AI and robotics is what drives every line of
-                    code we write.”</p>
+                    code we write."</p>
                 <div class="voice-footer">
                     <span class="material-icons mic-icon">mic</span>
                     <div class="voice-info">
-                        <div class="voice-name">Test user</div>
-                        <div class="voice-role">Founder & CEO</div>
+                        <div class="voice-name">Founder & CEO</div>
+                        <div class="voice-role">Aananthal Technologies</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Voice 2 -->
             <div class="voice-card">
-                <div class="voice-img-placeholder"></div>
-                <p class="voice-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam”</p>
+                <div class="quote-mark">"</div>
+                <p class="voice-text">"Building THANU taught me that the line between human and machine is not a boundary — it's a collaboration. Every joint, every algorithm, every response is designed with empathy."</p>
                 <div class="voice-footer">
                     <span class="material-icons mic-icon">mic</span>
                     <div class="voice-info">
-                        <div class="voice-name">Test user</div>
-                        <div class="voice-role">Robotics Technical Head</div>
+                        <div class="voice-name">Robotics Technical Head</div>
+                        <div class="voice-role">Aananthal Technologies</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Voice 3 -->
             <div class="voice-card">
-                <div class="voice-img-placeholder"></div>
-                <p class="voice-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam”</p>
+                <div class="quote-mark">"</div>
+                <p class="voice-text">"PHMS changed how I think about pet care. We're not building an app — we're building a guardian. One that never sleeps, never misses a symptom, and always has your pet's best interest."</p>
                 <div class="voice-footer">
                     <span class="material-icons mic-icon">mic</span>
                     <div class="voice-info">
-                        <div class="voice-name">Test user</div>
-                        <div class="voice-role">Development Head</div>
+                        <div class="voice-name">Product Lead, PHMS</div>
+                        <div class="voice-role">Aananthal Technologies</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Voice 4 -->
             <div class="voice-card">
-                <div class="voice-img-placeholder"></div>
-                <p class="voice-text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam”</p>
+                <div class="quote-mark">"</div>
+                <p class="voice-text">"No degrees, no DSA — just passion and a relentless drive to solve real problems. That's the Aananthal way. I joined a startup; I found a mission."</p>
                 <div class="voice-footer">
                     <span class="material-icons mic-icon">mic</span>
                     <div class="voice-info">
-                        <div class="voice-name">Test user</div>
-                        <div class="voice-role">Development Head</div>
+                        <div class="voice-name">Full Stack Engineer</div>
+                        <div class="voice-role">Aananthal Technologies</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hiring Scrolling Bar (Rectangle 4) -->
+    <!-- Hiring Scrolling Bar -->
     <section id="hiring-bar">
         <div class="marquee-track">
             <div class="marquee-content">
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
             </div>
             <div class="marquee-content" aria-hidden="true">
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
-                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
+                <span>We're Hiring, Apply Now</span><span>— Join the team —</span>
             </div>
         </div>
     </section>
 
-    <!-- Join the team Section -->
+    <!-- Join the Team Section -->
     <section id="contact-section" class="container py-5 fade-section">
         <div class="row">
-            <!-- Left Side: Branding & Info -->
-            <div class="col-lg-6">
-                <h1 class="contact-headline mb-4">Join the team!</h1>
+            <div class="col-lg-6 d-flex flex-column justify-content-center" style="padding-right: 60px;">
+                <div class="section-label">Careers</div>
+                <h1 class="contact-headline mb-4">Join the<br>team.</h1>
 
-                <div class="team-avatar-stack mb-5">
+                <div class="team-avatar-stack mb-4">
                     <div class="avatar"></div>
                     <div class="avatar"></div>
                     <div class="avatar"></div>
@@ -389,57 +483,52 @@
                     <span class="avatar-count">+20</span>
                 </div>
 
-                <h2 class="contact-brand-text mb-4 mt-5">No degrees.<br>No DSA.<br>Just passion 🔥</h2>
+                <h2 class="contact-brand-text mb-4 mt-4">No degrees.<br>No DSA.<br>Just passion 🔥</h2>
 
-                <!-- Hidden for now if extra visual needed -->
-                <div class="contact-visual-placeholder d-none"></div>
+                <p style="font-family:'Inconsolata',monospace; font-size:13px; letter-spacing:0.04em; color:#666; line-height:1.8; max-width:360px; margin-top:16px;">
+                    We believe the best people are defined by their hunger, not their credentials. If you're obsessed
+                    with building the future — we want to talk.
+                </p>
             </div>
 
-            <!-- Right Side: Form Container (Rectangle 14 style) -->
             <div class="col-lg-6">
                 <div class="rectangle-14-form">
                     <form id="collaboration-form">
-                        <!-- Name -->
                         <div class="m3-text-field">
                             <label class="m3-label">Name</label>
-                            <input type="text" class="m3-input">
+                            <input type="text" class="m3-input" placeholder="Your name">
                             <div class="m3-indicator"></div>
                             <div class="m3-support">What we should call you? *</div>
                         </div>
 
-                        <!-- Phone -->
                         <div class="m3-text-field">
                             <label class="m3-label">Phone number</label>
-                            <input type="tel" class="m3-input">
+                            <input type="tel" class="m3-input" placeholder="+91 XXXXX XXXXX">
                             <div class="m3-indicator"></div>
                             <div class="m3-support">How can we call you? *</div>
                         </div>
 
-                        <!-- Email -->
                         <div class="m3-text-field">
                             <label class="m3-label">Email</label>
-                            <input type="email" class="m3-input">
+                            <input type="email" class="m3-input" placeholder="you@example.com">
                             <div class="m3-indicator"></div>
                             <div class="m3-support">How can we mail you? *</div>
                         </div>
 
-                        <!-- Highest Qualification -->
                         <div class="m3-text-field">
                             <label class="m3-label">Highest Qualification</label>
-                            <input type="text" class="m3-input">
+                            <input type="text" class="m3-input" placeholder="B.Tech / Diploma / Self-taught">
                             <div class="m3-indicator"></div>
                             <div class="m3-support">How many years you wasted? *</div>
                         </div>
 
-                        <!-- Passion Levels -->
                         <div class="m3-text-field">
                             <label class="m3-label">Passion Levels</label>
-                            <input type="text" class="m3-input">
+                            <input type="text" class="m3-input" placeholder="9 / 10">
                             <div class="m3-indicator"></div>
                             <div class="m3-support">Rate yourself out of 10! *</div>
                         </div>
 
-                        <!-- Radio Group -->
                         <div class="radio-group-container">
                             <div class="divider"></div>
                             <div class="d-flex gap-4">
@@ -454,18 +543,16 @@
                                     <span class="radio-label">No</span>
                                 </label>
                             </div>
-                            <div class="m3-support">Do you believe AI replace humans?? *</div>
+                            <div class="m3-support">Do you believe AI will replace humans? *</div>
                         </div>
 
-                        <!-- Why -->
                         <div class="m3-text-field textarea-field">
                             <label class="m3-label">Why?</label>
-                            <textarea class="m3-input" rows="4"></textarea>
+                            <textarea class="m3-input" rows="4" placeholder="Tell us why we should hire you..."></textarea>
                             <div class="m3-indicator"></div>
                             <div class="m3-support">Why we should hire you? *</div>
                         </div>
 
-                        <!-- Submit -->
                         <div class="submit-container">
                             <button type="submit" class="submit-btn large-submit">
                                 <span>SUBMIT</span>
@@ -477,28 +564,61 @@
         </div>
     </section>
 
-    <!-- Scroll tracking logic & Canvas renderer -->
+    <!-- Canvas renderer & scroll logic -->
     <script>
-        // 1. Theme Configuration
+        // ─── Page Loader ──────────────────────────────────────
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('page-loader').classList.add('loaded');
+            }, 1400);
+        });
+
+        // ─── Custom Cursor ────────────────────────────────────
+        const dot  = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        let mouseX = 0, mouseY = 0;
+        let ringX  = 0, ringY  = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = mouseX + 'px';
+            dot.style.top  = mouseY + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.14;
+            ringY += (mouseY - ringY) * 0.14;
+            ring.style.left = ringX + 'px';
+            ring.style.top  = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button, .product-bento-card, .news-card, .voice-card, .process-step').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // ─── Hero Canvas ──────────────────────────────────────
         const themes = [
             { id: 'robotics', folder: 'hero-frames-robotics', start: 1, end: 207 },
-            { id: 'phms', folder: 'hero-frames-phms', start: 153, end: 240 }
+            { id: 'phms',     folder: 'hero-frames-phms',     start: 1, end: 208 },
+            { id: 'vfd',      folder: 'hero-frames-vfd',      start: 1, end: 222 }
         ];
         let currentThemeIndex = 0;
-        const imagesCache = { robotics: [], phms: [] };
+        const imagesCache = { robotics: [], phms: [], vfd: [] };
 
-        const navbar = document.getElementById('liquid-nav');
-        const canvas = document.getElementById('hero-canvas');
-        const context = canvas.getContext('2d');
-        const slides = document.querySelectorAll('.hero-slide');
+        const navbar     = document.getElementById('liquid-nav');
+        const canvas     = document.getElementById('hero-canvas');
+        const context    = canvas.getContext('2d');
+        const slides     = document.querySelectorAll('.hero-slide');
         const indicators = document.querySelectorAll('.indicator');
 
-        // Preload function
         const preloadTheme = (index) => {
             const theme = themes[index];
             const cache = imagesCache[theme.id];
-            if (cache.length > 0) return; // Already loading/loaded
-
+            if (cache.length > 0) return;
             for (let i = theme.start; i <= theme.end; i++) {
                 const img = new Image();
                 img.src = `/hero-main-frames/${theme.folder}/ezgif-frame-${i.toString().padStart(3, '0')}.jpg`;
@@ -506,14 +626,14 @@
             }
         };
 
-        // Initial Load
         preloadTheme(0);
-        setTimeout(() => preloadTheme(1), 2000); // Load second theme with delay
+        setTimeout(() => preloadTheme(1), 2000);
+        setTimeout(() => preloadTheme(2), 4000);
 
         function updateCanvas(frameIndex) {
             const themeId = themes[currentThemeIndex].id;
-            const cache = imagesCache[themeId];
-            const img = cache[frameIndex];
+            const cache   = imagesCache[themeId];
+            const img     = cache[frameIndex];
             if (img && img.complete) {
                 drawImageCover(context, img);
             } else if (img) {
@@ -523,58 +643,42 @@
 
         function switchTheme(index) {
             if (index === currentThemeIndex) return;
-
-            // UI Updates
             slides[currentThemeIndex].classList.remove('active');
             indicators[currentThemeIndex].classList.remove('active');
-
             currentThemeIndex = index;
-
             slides[currentThemeIndex].classList.add('active');
             indicators[currentThemeIndex].classList.add('active');
-
-            // Ensure first frame is shown immediately
+            window.scrollTo({ top: 0, behavior: 'instant' });
             updateCanvas(0);
         }
 
-        // Controls
         document.getElementById('next-hero').onclick = () => switchTheme((currentThemeIndex + 1) % themes.length);
         document.getElementById('prev-hero').onclick = () => switchTheme((currentThemeIndex - 1 + themes.length) % themes.length);
         indicators.forEach((ind, i) => ind.onclick = () => switchTheme(i));
 
-        // Resize
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
+            canvas.width  = window.innerWidth;
             canvas.height = window.innerHeight;
             updateCanvas(0);
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Scroll Logic
         let ticking = false;
         window.addEventListener('scroll', () => {
-            // Navbar update
             const heroSequence = document.getElementById('hero-sequence');
-            const heroBottom = heroSequence.offsetTop + heroSequence.offsetHeight;
+            const heroBottom   = heroSequence.offsetTop + heroSequence.offsetHeight;
             navbar.classList.toggle('scrolled', window.scrollY > 50);
-            navbar.classList.toggle('nav-dark', window.scrollY > (heroBottom - 100));
 
             if (!ticking) {
                 requestAnimationFrame(() => {
-                    const scrollTop = window.scrollY;
-                    const maxScroll = heroSequence.scrollHeight - window.innerHeight;
-                    
+                    const scrollTop  = window.scrollY;
+                    const maxScroll  = heroSequence.scrollHeight - window.innerHeight;
                     if (maxScroll > 0) {
-                        const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScroll));
-                        const themeId = themes[currentThemeIndex].id;
-                        const cache = imagesCache[themeId];
-                        
+                        const fraction   = Math.max(0, Math.min(1, scrollTop / maxScroll));
+                        const cache      = imagesCache[themes[currentThemeIndex].id];
                         if (cache.length > 0) {
-                            const frameIndex = Math.min(
-                                cache.length - 1,
-                                Math.floor(scrollFraction * cache.length)
-                            );
+                            const frameIndex = Math.min(cache.length - 1, Math.floor(fraction * cache.length));
                             updateCanvas(frameIndex);
                         }
                     }
@@ -584,180 +688,171 @@
             }
         });
 
-        // Helper: Canvas Object-Fit Cover
         function drawImageCover(ctx, img) {
-            const canvas = ctx.canvas;
-            const hRatio = canvas.width / img.width;
-            const vRatio = canvas.height / img.height;
-            const ratio = Math.max(hRatio, vRatio);
-            const centerShift_x = (canvas.width - img.width * ratio) / 2;
-            const centerShift_y = (canvas.height - img.height * ratio) / 2;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0, img.width, img.height,
-                centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
+            const c = ctx.canvas;
+            const hR = c.width  / img.width;
+            const vR = c.height / img.height;
+            const r  = Math.max(hR, vR);
+            const cx = (c.width  - img.width  * r) / 2;
+            const cy = (c.height - img.height * r) / 2;
+            ctx.clearRect(0, 0, c.width, c.height);
+            ctx.drawImage(img, 0, 0, img.width, img.height, cx, cy, img.width * r, img.height * r);
         }
 
-        // 6. Scroll Reveal Logic (Intersection Observer)
+        // ─── Scroll Reveal ────────────────────────────────────
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { threshold: 0.1 };
-            const revealObserver = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-in');
-                        observer.unobserve(entry.target);
+                        // counter animation for stats
+                        entry.target.querySelectorAll('.stat-number[data-target]').forEach(el => {
+                            animateCounter(el, parseInt(el.dataset.target));
+                        });
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.08 });
 
-            document.querySelectorAll('.fade-section').forEach(section => {
-                revealObserver.observe(section);
-            });
+            document.querySelectorAll('.fade-section').forEach(s => observer.observe(s));
+
+            // Stagger children inside sections
+            const staggerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.stagger-child').forEach((child, i) => {
+                            setTimeout(() => child.classList.add('in'), i * 100);
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-section').forEach(s => staggerObserver.observe(s));
         });
+
+        // ─── Counter Animation ────────────────────────────────
+        function animateCounter(el, target) {
+            let start = 0;
+            const duration = 1400;
+            const step = (timestamp) => {
+                if (!start) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                const eased    = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target) + '+';
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+
+        // ─── Process Steps Stagger on Scroll ─────────────────
+        const processObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.process-step, .process-arrow').forEach((el, i) => {
+                        setTimeout(() => {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, i * 80);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const innovationEl = document.getElementById('innovation-section');
+        if (innovationEl) {
+            // Pre-hide process items for stagger
+            innovationEl.querySelectorAll('.process-step, .process-arrow').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            processObserver.observe(innovationEl);
+        }
     </script>
-    <footer style="background:#000; color:#fff; font-family:'Inconsolata', monospace;">
 
-        <div style="
-        max-width:1300px;
-        margin:0 auto;
-        padding:50px 20px 50px 10px;
-    ">
+    <script src="/js/nav-theme.js"></script>
 
-            <!-- TOP TEXT -->
-            <p style="color:#aaa; margin-bottom:50px; font-size:14px;">
-                Escape the reality!
-            </p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-tagline">Escape the reality.</p>
 
-            <!-- MAIN ROW -->
-            <div style="display:flex; align-items:center;">
-
-                <!-- LEFT -->
-                <div style="display:flex; gap:60px; flex:1;">
-
-                    <!-- Product -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Product</h3>
-                        <ul style="list-style:none; padding:0; line-height:2;">
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Features</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Pricing</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Testimonials</a></li>
-                            <li><a href="#" style="color:#9aa; text-decoration:none;">Integration</a></li>
+            <div class="footer-cols">
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="/products">THANU</a></li>
+                            <li><a href="/products">PHMS</a></li>
+                            <li><a href="/products">VFD</a></li>
+                            <li><a href="/services">Features</a></li>
                         </ul>
                     </div>
 
-                    <!-- Company -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Company</h3>
-                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
-                            <li>FAQs</li>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
                             <li>About Us</li>
+                            <li>Careers</li>
                             <li>Privacy Policy</li>
-                            <li>Terms of Services</li>
+                            <li>Terms of Service</li>
                         </ul>
                     </div>
 
-                    <!-- Resources -->
-                    <div>
-                        <h3 style="margin-bottom:20px;">Resources</h3>
-                        <ul style="list-style:none; padding:0; line-height:2; color:#9aa;">
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
                             <li>Blog</li>
                             <li>Changelog</li>
                             <li>Brand</li>
-                            <li>Help</li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
 
-                <!-- Contact Details -->
-                <div class="col-lg-6">
-                    <div class="contact-details-grid d-flex flex-column align-items-end text-end">
-                        <div class="contact-entry d-flex gap-3 mb-3">
-                            <p class="mb-0">Aananthal Technologies Pvt. Ltd., <br>Horamavu Agara Main Road,
-                                <br>Banglore, Karnataka, 560043.</p>
+                    <div class="footer-col footer-col-social">
+                        <h4>Stalk Us</h4>
+                        <ul>
+                            <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+                            <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+                            <li><i class="fa-brands fa-youtube"></i> Youtube</li>
+                            <li><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-row">
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
                             <span class="material-icons">location_on</span>
                         </div>
-                        <div class="contact-entry d-flex align-items-center gap-3 mb-3">
-                            <p class="mb-0">+91 7386990245</p>
+                        <div class="footer-contact-row">
+                            <p>+91 7386990245</p>
                             <span class="material-icons">phone</span>
                         </div>
-                        <div class="contact-entry d-flex align-items-center gap-3">
-                            <p class="mb-0">aananthaltechnologies@gmail.com</p>
+                        <div class="footer-contact-row">
+                            <p>aananthaltechnologies@gmail.com</p>
                             <span class="material-icons">mail</span>
                         </div>
                     </div>
-
                 </div>
 
-                <!-- RIGHT GLOBE -->
-                <div style="
-                position:relative;
-                width:260px;
-                height:260px;
-                border-radius:50%;
-                flex-shrink:0;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                margin-left:40px;
-            ">
-
-                    <!-- MAIN SPHERE -->
-                    <div style="
-                    width:100%;
-                    height:100%;
-                    border-radius:50%;
-                    background:
-                        radial-gradient(circle at 30% 30%, #ffffff, #bfbfbf 60%, #8a8a8a 100%);
-                    box-shadow:
-                        0 0 60px rgba(255,255,255,0.35),
-                        inset -20px -30px 60px rgba(0,0,0,0.4),
-                        inset 20px 20px 40px rgba(255,255,255,0.2);
-                "></div>
-
-                    <!-- OUTER GLOW -->
-                    <div style="
-                    position:absolute;
-                    width:120%;
-                    height:120%;
-                    border-radius:50%;
-                    background:radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
-                    filter:blur(20px);
-                    z-index:-1;
-                "></div>
-
+                <div class="footer-globe">
+                    <div class="globe-sphere"></div>
+                    <div class="globe-glow"></div>
                 </div>
-
             </div>
 
-            <!-- HUMANS × AI -->
-            <div style="
-            display:flex;
-            align-items:center;
-            margin:60px 0 25px;
-        ">
+            <div class="footer-divider"></div>
 
-                <div style="flex:1; height:1px; background:#222;"></div>
-
-                <h1 style="
-                font-family:'Moon Dance', cursive;
-                font-size:52px;
-                margin:0 30px;
-                white-space:nowrap;
-                color:#fff;
-            ">
-                    Humans × AI
-                </h1>
-
-                <div style="flex:1; height:1px; background:#222;"></div>
-
+            <div class="footer-bottom">
+                <h1 class="footer-brand">Humans × AI</h1>
+                <div class="footer-copy">
+                    © 2026 Aananthal Technologies Pvt. Ltd.<br>All rights reserved.
+                </div>
             </div>
-
-            <!-- COPYRIGHT -->
-            <div style="text-align:center; color:#777; font-size:12px;">
-                © 2026 Aananthal Technologies Pvt. Ltd., all rights reserved
-            </div>
-
         </div>
-
     </footer>
-</body>
 
+</body>
 </html>

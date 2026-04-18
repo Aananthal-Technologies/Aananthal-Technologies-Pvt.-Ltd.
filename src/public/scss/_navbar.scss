@@ -1,7 +1,15 @@
+// ─── Navbar ───────────────────────────────────────────────
 #liquid-nav {
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* Ultra-transparent base state */
-    background: rgba(255, 255, 255, 0.15);
+    transition:
+        background    0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow    0.4s ease,
+        top           0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        width         0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        left          0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-radius 0.4s ease,
+        padding       0.4s ease;
+
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: saturate(180%) blur(25px);
     -webkit-backdrop-filter: saturate(180%) blur(25px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -9,30 +17,33 @@
     width: 100%;
 
     &.scrolled {
-        top: 20px;
-        width: 70%;
-        left: 15%;
-        padding: 0.75rem 2rem !important;
+        top: 16px;
+        width: 68%;
+        left: 16%;
+        padding: 0.65rem 1.75rem !important;
         border-radius: 50px;
-        /* Apple visionOS hyper-transparent volume */
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 100%);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-top: 1px solid rgba(255, 255, 255, 0.8);
-        /* Specular top highlight */
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-top: 1px solid rgba(255, 255, 255, 0.75);
         box-shadow:
-            0 8px 32px rgba(0, 0, 0, 0.03),
-            inset 0 1px 2px rgba(255, 255, 255, 0.6);
+            0 8px 32px rgba(0, 0, 0, 0.04),
+            inset 0 1px 2px rgba(255, 255, 255, 0.55);
     }
 
     img.brand-logo {
         mix-blend-mode: multiply;
+        transition: filter 0.3s ease;
     }
 }
 
+// ─── Nav Links ───────────────────────────────────────────
 .nav-link-custom {
     position: relative;
-    transition: all 0.3s ease;
-    color: #fff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: #fff !important;  // default: white (for dark hero)
 
     &::after {
         content: '';
@@ -40,30 +51,61 @@
         bottom: -4px;
         left: 0;
         width: 0;
-        height: 2px;
-        background: #fff;
-        transition: width 0.3s ease, background 0.3s ease;
+        height: 1.5px;
+        background: currentColor;
+        transition: width 0.3s ease;
     }
 
     &:hover {
-        color: rgba(255, 255, 255, 0.8) !important;
-
-        &::after {
-            width: 100%;
-        }
+        opacity: 0.7;
+        &::after { width: 100%; }
     }
 }
 
-#liquid-nav.nav-dark {
+// ─── Auto-theme: dark bg → white links ───────────────────
+#liquid-nav[data-theme="dark"] {
     .nav-link-custom {
-        color: #000 !important;
-
-        &::after {
-            background: #000;
-        }
-
-        &:hover {
-            color: rgba(0, 0, 0, 0.7) !important;
-        }
+        color: #ffffff !important;
     }
+
+    img.brand-logo {
+        filter: brightness(0) invert(1);  // make logo white
+        mix-blend-mode: normal;
+    }
+
+    // scrolled pill on dark bg
+    &.scrolled {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.25);
+        border-top-color: rgba(255, 255, 255, 0.45);
+    }
+}
+
+// ─── Auto-theme: light bg → black links ──────────────────
+#liquid-nav[data-theme="light"] {
+    .nav-link-custom {
+        color: #000000 !important;
+    }
+
+    img.brand-logo {
+        filter: none;
+        mix-blend-mode: multiply;
+    }
+
+    // scrolled pill on light bg
+    &.scrolled {
+        background: rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.12);
+        border-top-color: rgba(0, 0, 0, 0.08);
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.06),
+            inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+}
+
+// ─── Legacy class (kept for compat) ──────────────────────
+#liquid-nav.nav-dark .nav-link-custom {
+    color: #000 !important;
+    &::after { background: #000; }
+    &:hover  { color: rgba(0, 0, 0, 0.65) !important; }
 }
