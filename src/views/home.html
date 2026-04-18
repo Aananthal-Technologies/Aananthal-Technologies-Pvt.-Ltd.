@@ -312,8 +312,8 @@
     <!-- Mission Section -->
     <section id="mission-section" class="fade-section">
         <div class="mission-inner">
-            <span class="mission-line" data-anim="clip-up">We Build</span>
-            <span class="mission-line mission-line--muted" data-anim="clip-up" data-delay="120">Tomorrow.</span>
+            <span class="mission-line" data-anim="fade-up">We Build</span>
+            <span class="mission-line mission-line--muted" data-anim="fade-up" data-delay="120">Tomorrow.</span>
             <div class="mission-divider"></div>
             <p class="mission-detail">
                 Aananthal Technologies sits at the intersection of AI, robotics, and human potential.
@@ -585,13 +585,13 @@
 
                         <div class="m3-text-field">
                             <label class="m3-label">Full Name *</label>
-                            <input type="text" class="m3-input" placeholder="Your full name" required>
+                            <input type="text" name="name" class="m3-input" placeholder="Your full name" required>
                             <div class="m3-indicator"></div>
                         </div>
 
                         <div class="m3-text-field">
                             <label class="m3-label">Position *</label>
-                            <select class="m3-input m3-select" required>
+                            <select name="position" class="m3-input m3-select" required>
                                 <option value="" disabled selected>Choose your role</option>
                                 <option>ML / AI Engineer</option>
                                 <option>Robotics Engineer</option>
@@ -608,25 +608,25 @@
 
                         <div class="m3-text-field">
                             <label class="m3-label">Email *</label>
-                            <input type="email" class="m3-input" placeholder="you@example.com" required>
+                            <input type="email" name="email" class="m3-input" placeholder="you@example.com" required>
                             <div class="m3-indicator"></div>
                         </div>
 
                         <div class="m3-text-field">
                             <label class="m3-label">Phone</label>
-                            <input type="tel" class="m3-input" placeholder="+91 XXXXX XXXXX">
+                            <input type="tel" name="phone" class="m3-input" placeholder="+91 XXXXX XXXXX">
                             <div class="m3-indicator"></div>
                         </div>
 
                         <div class="m3-text-field">
                             <label class="m3-label">Portfolio / GitHub *</label>
-                            <input type="url" class="m3-input" placeholder="https://github.com/you">
+                            <input type="url" name="portfolio" class="m3-input" placeholder="https://github.com/you">
                             <div class="m3-indicator"></div>
                         </div>
 
                         <div class="m3-text-field">
                             <label class="m3-label">Availability</label>
-                            <select class="m3-input m3-select">
+                            <select name="availability" class="m3-input m3-select">
                                 <option value="" disabled selected>When can you start?</option>
                                 <option>Immediately</option>
                                 <option>Within 2 weeks</option>
@@ -638,20 +638,20 @@
 
                         <div class="m3-text-field textarea-field">
                             <label class="m3-label">Something you've built & are proud of *</label>
-                            <textarea class="m3-input" rows="2" placeholder="A project, script, or hack — tell us about it." required></textarea>
+                            <textarea name="built" class="m3-input" rows="2" placeholder="A project, script, or hack — tell us about it." required></textarea>
                             <div class="m3-indicator"></div>
                         </div>
 
                         <div class="m3-text-field textarea-field">
                             <label class="m3-label">Why Aananthal? *</label>
-                            <textarea class="m3-input" rows="2" placeholder="No corporate answers. Be real with us."></textarea>
+                            <textarea name="why" class="m3-input" rows="2" placeholder="No corporate answers. Be real with us."></textarea>
                             <div class="m3-indicator"></div>
                         </div>
 
                         <div class="m3-text-field full-width">
                             <label class="m3-label">Upload Resume / CV *</label>
                             <div class="file-drop-zone" id="file-drop-zone">
-                                <input type="file" id="resume-upload" accept=".pdf,.doc,.docx" style="display:none;">
+                                <input type="file" id="resume-upload" name="resume" accept=".pdf,.doc,.docx" style="display:none;">
                                 <div class="file-drop-content" id="file-drop-content">
                                     <span class="material-icons file-drop-icon">cloud_upload</span>
                                     <p class="file-drop-text">Drop your resume here or <span class="file-drop-browse">browse</span></p>
@@ -661,8 +661,8 @@
                         </div>
 
                         <div class="submit-container">
-                            <button type="submit" class="submit-btn large-submit">
-                                <span>APPLY NOW</span>
+                            <button type="submit" class="submit-btn large-submit" id="careers-submit-btn">
+                                <span id="careers-submit-label">APPLY NOW</span>
                             </button>
                         </div>
                     </form>
@@ -761,13 +761,45 @@
             currentThemeIndex = index;
             slides[currentThemeIndex].classList.add('active');
             indicators[currentThemeIndex].classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'instant' });
             updateCanvas(0);
         }
 
-        document.getElementById('next-hero').onclick = () => switchTheme((currentThemeIndex + 1) % themes.length);
-        document.getElementById('prev-hero').onclick = () => switchTheme((currentThemeIndex - 1 + themes.length) % themes.length);
-        indicators.forEach((ind, i) => ind.onclick = () => switchTheme(i));
+        document.getElementById('next-hero').onclick = () => { switchTheme((currentThemeIndex + 1) % themes.length); resetAutoplay(); };
+        document.getElementById('prev-hero').onclick = () => { switchTheme((currentThemeIndex - 1 + themes.length) % themes.length); resetAutoplay(); };
+        indicators.forEach((ind, i) => ind.onclick = () => { switchTheme(i); resetAutoplay(); });
+
+        // ─── Autoplay: advance every 2s, fully stop during scroll ───
+        let autoplayTimer = null;
+        let scrollPauseTimer = null;
+
+        function startAutoplay() {
+            clearInterval(autoplayTimer);
+            autoplayTimer = setInterval(() => {
+                switchTheme((currentThemeIndex + 1) % themes.length);
+            }, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+
+        function resetAutoplay() {
+            stopAutoplay();
+            clearTimeout(scrollPauseTimer);
+            scrollPauseTimer = setTimeout(() => startAutoplay(), 2000);
+        }
+
+        startAutoplay();
+
+        // Stop completely while user scrolls within hero, restart after they stop
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < window.innerHeight) {
+                stopAutoplay();
+                clearTimeout(scrollPauseTimer);
+                scrollPauseTimer = setTimeout(() => startAutoplay(), 2000);
+            }
+        }, { passive: true });
 
         function resizeCanvas() {
             canvas.width  = window.innerWidth;
@@ -898,39 +930,64 @@
         });
 
         // ─── File Drop Zone ───────────────────────────────────
-        const dropZone   = document.getElementById('file-drop-zone');
-        const fileInput  = document.getElementById('resume-upload');
+        const dropZone    = document.getElementById('file-drop-zone');
+        const fileInput   = document.getElementById('resume-upload');
         const dropContent = document.getElementById('file-drop-content');
+
+        function showFile(file) {
+            dropContent.innerHTML = `
+                <span class="material-icons file-drop-icon" style="color:#fff">description</span>
+                <p class="file-drop-text" style="color:#fff;font-weight:600">${file.name}</p>
+                <p class="file-drop-hint">${(file.size/1024).toFixed(0)} KB — <span class="file-drop-browse">Change</span></p>
+            `;
+        }
 
         if (dropZone && fileInput) {
             dropZone.addEventListener('click', () => fileInput.click());
-
-            dropZone.addEventListener('dragover', e => {
-                e.preventDefault();
-                dropZone.classList.add('dragover');
-            });
-
+            dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
             dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
-
             dropZone.addEventListener('drop', e => {
                 e.preventDefault();
                 dropZone.classList.remove('dragover');
                 const file = e.dataTransfer.files[0];
-                if (file) showFile(file);
+                if (file) { fileInput.files = e.dataTransfer.files; showFile(file); }
             });
-
             fileInput.addEventListener('change', () => {
                 if (fileInput.files[0]) showFile(fileInput.files[0]);
             });
-
-            function showFile(file) {
-                dropContent.innerHTML = `
-                    <span class="material-icons file-drop-icon" style="color:#000">description</span>
-                    <p class="file-drop-text" style="color:#000;font-weight:600">${file.name}</p>
-                    <p class="file-drop-hint">${(file.size / 1024).toFixed(0)} KB — <span class="file-drop-browse">Change</span></p>
-                `;
-            }
         }
+
+        // ─── Careers Form Submit ──────────────────────────────
+        document.getElementById('collaboration-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn   = document.getElementById('careers-submit-btn');
+            const label = document.getElementById('careers-submit-label');
+            btn.disabled = true;
+            label.textContent = 'SENDING…';
+
+            try {
+                const res  = await fetch('/api/careers', { method: 'POST', body: new FormData(this) });
+                const json = await res.json();
+                if (json.success) {
+                    label.textContent = 'APPLICATION SENT ✓';
+                    btn.style.background = '#1a1a1a';
+                    this.reset();
+                    dropContent.innerHTML = `
+                        <span class="material-icons file-drop-icon">cloud_upload</span>
+                        <p class="file-drop-text">Drop your resume here or <span class="file-drop-browse">browse</span></p>
+                        <p class="file-drop-hint">PDF, DOC or DOCX — max 5 MB</p>
+                    `;
+                } else {
+                    label.textContent = 'APPLY NOW';
+                    btn.disabled = false;
+                    alert(json.message || 'Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                label.textContent = 'APPLY NOW';
+                btn.disabled = false;
+                alert('Network error. Please try again.');
+            }
+        });
     </script>
 
     <script src="/js/nav-theme.js"></script>
