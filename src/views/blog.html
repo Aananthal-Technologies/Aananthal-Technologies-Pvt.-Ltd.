@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Aananthal Technologies</title>
+    <meta name="description" content="Insights, research notes, and announcements from Aananthal Technologies.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="/images/logo_transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <style>
+        #wrapper .text { font-family: "Moon Dance", cursive; font-size: 90px; font-weight: normal; }
+        .footer-copy { color: rgba(255,255,255,0.5); transition: color 0.3s ease; }
+        .footer-copy:hover { color: #ffffff; }
+        .footer-globe { width: 300px; height: 300px; margin: auto; }
+        .footer-globe canvas { width: 100%; height: 100%; border-radius: 50%; cursor: grab; }
+        .footer-bottom { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:10px; margin-top:30px; }
+        #wrapper { position:relative; width:100%; max-width:700px; height:140px; margin:0 auto; cursor:pointer; overflow:hidden; }
+        #wrapper canvas { position:absolute; inset:0; }
+        #wrapper .text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.9); font-size:90px; font-weight:700; color:#fff; opacity:0; transition:all 0.4s ease; white-space:nowrap; pointer-events:none; text-shadow:0 0 26px rgba(255,255,255,0.15); }
+        #wrapper:hover .text { opacity:1; transform:translate(-50%,-50%) scale(1); letter-spacing:2px; }
+        #wrapper .line { position:absolute; top:50%; left:0; width:100%; height:1px; background:#333; z-index:-1; }
+        #wrapper .side-line { position:absolute; top:0; width:1px; height:100%; background:#222; z-index:-1; }
+        #wrapper .side-line.left { left:0; }
+        #wrapper .side-line.right { right:0; }
+
+        .soon-hero {
+            min-height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 6%;
+            position: relative;
+            overflow: hidden;
+        }
+        .soon-bg {
+            position: absolute;
+            inset: 0;
+            font-family: "Libre Caslon Text", serif;
+            font-size: clamp(80px, 18vw, 220px);
+            font-weight: 700;
+            color: rgba(255,255,255,0.025);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            letter-spacing: -0.04em;
+        }
+        .soon-label {
+            font-family: "Inconsolata", monospace;
+            font-size: 11px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+        .soon-label::before { content:""; width:28px; height:1px; background:rgba(255,255,255,0.25); display:block; }
+        .soon-title {
+            font-family: "Libre Caslon Text", serif;
+            font-size: clamp(52px, 8vw, 96px);
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.0;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .soon-sub {
+            font-family: "Kaisei HarunoUmi", serif;
+            font-size: 16px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+        .soon-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: "Inconsolata", monospace;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 100px;
+            position: relative;
+        }
+        .soon-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #888;
+            animation: blink 1.6s ease infinite;
+        }
+        @keyframes blink { 0%,100% { opacity:0.3; } 50% { opacity:1; } }
+        .soon-back {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-family: "Inconsolata", monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        .soon-back:hover { color: #fff; }
+
+        .blog-hero { min-height: 56vh; background: #000; display: flex; align-items: flex-end; padding: 0 6% 80px; position: relative; overflow: hidden; }
+        .blog-hero-bg { position:absolute;inset:0;font-family:"Libre Caslon Text",serif;font-size:clamp(60px,14vw,180px);font-weight:700;color:rgba(255,255,255,0.025);display:flex;align-items:center;justify-content:center;pointer-events:none;letter-spacing:-0.04em; }
+        .blog-hero-label { font-family:"Inconsolata",monospace;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:10px;margin-bottom:20px; }
+        .blog-hero-label::before { content:"";width:28px;height:1px;background:rgba(255,255,255,0.25);display:block; }
+        .blog-hero-title { font-family:"Libre Caslon Text",serif;font-size:clamp(48px,7vw,80px);font-weight:400;color:#fff;line-height:1.0;letter-spacing:-0.02em;margin-bottom:16px; }
+        .blog-hero-sub { font-family:"Kaisei HarunoUmi",serif;font-size:15px;color:rgba(255,255,255,0.4);line-height:1.6;max-width:520px; }
+
+        .blog-body { padding: 80px 6%; background: #fff; }
+        .blog-inner { max-width: 900px; margin: 0 auto; }
+        .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+        .blog-card { border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 40px; }
+        .blog-card-tag { font-family:"Inconsolata",monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888;margin-bottom:12px; }
+        .blog-card-title { font-family:"Libre Caslon Text",serif;font-size:22px;font-weight:400;color:#000;line-height:1.3;margin-bottom:12px; }
+        .blog-card-excerpt { font-family:"Inter",sans-serif;font-size:13px;color:#555;line-height:1.75;margin-bottom:16px; }
+        .blog-card-meta { font-family:"Inconsolata",monospace;font-size:11px;color:#aaa;letter-spacing:0.08em; }
+        .blog-card-featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 48px; margin-bottom: 8px; }
+        .blog-card-featured .blog-card-title { font-size: 32px; line-height: 1.15; }
+        .blog-card-featured .blog-card-excerpt { font-size: 14px; }
+        .blog-featured-label { font-family:"Inconsolata",monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(0,0,0,0.3);margin-bottom:8px; }
+
+        @media(max-width:700px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-card-featured { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-wordmark">
+                <span class="loader-char" style="--i:1">A</span><span class="loader-char" style="--i:2">a</span><span class="loader-char" style="--i:3">n</span><span class="loader-char" style="--i:4">a</span><span class="loader-char" style="--i:5">n</span><span class="loader-char" style="--i:6">t</span><span class="loader-char" style="--i:7">h</span><span class="loader-char" style="--i:8">a</span><span class="loader-char" style="--i:9">l</span>
+            </div>
+            <div class="loader-tagline">Technologies</div>
+            <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        </div>
+    </div>
+    <div id="scroll-progress"></div>
+    <button id="back-to-top" aria-label="Back to top"><span class="material-icons">arrow_upward</span></button>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
+        <a href="/" class="text-decoration-none">
+            <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
+        </a>
+        <div class="d-flex gap-4 desktop-nav">
+            <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
+            <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
+            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/about" class="text-decoration-none fw-medium nav-link-custom">About</a>
+            <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
+        </div>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu"><span class="material-icons">close</span></button>
+            <nav class="mobile-nav">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/products" class="mobile-nav-link">Products</a>
+                <a href="/services" class="mobile-nav-link">Services</a>
+                <a href="/about" class="mobile-nav-link">About</a>
+                <a href="/contact" class="mobile-nav-link">Contact Us</a>
+            </nav>
+            <div class="mobile-menu-footer"><p>Aananthal Technologies</p><p>Bangalore, India</p></div>
+        </div>
+    </div>
+
+    <section class="blog-hero">
+        <div class="blog-hero-bg">Blog</div>
+        <div style="position:relative;z-index:2;">
+            <div class="blog-hero-label">Insights</div>
+            <h1 class="blog-hero-title">Blog</h1>
+            <p class="blog-hero-sub">Research notes, engineering stories, and thinking from the team. We write when we have something real to say.</p>
+        </div>
+    </section>
+
+    <section class="blog-body fade-section">
+        <div class="blog-inner">
+            <div class="blog-grid">
+
+                <div class="blog-card-featured">
+                    <div>
+                        <div class="blog-featured-label">Featured</div>
+                        <div class="blog-card-tag">Robotics · Research</div>
+                        <h2 class="blog-card-title">Teaching THANU to Walk: Notes from Our Gait Research</h2>
+                    </div>
+                    <div>
+                        <p class="blog-card-excerpt">Bipedal locomotion is deceptively hard. Getting a robot to stand is one problem — getting it to recover from an unplanned shift in weight distribution is a completely different one. We document the sensor feedback loops, the failed early prototypes, and the moment coordinated movement finally clicked in our lab.</p>
+                        <div class="blog-card-meta">Feb 2026 &nbsp;·&nbsp; Aananthal Research Team</div>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-tag">Engineering · PHMS</div>
+                    <h2 class="blog-card-title">Why We Built PHMS Around Predictive Failure, Not Reactive Alerts</h2>
+                    <p class="blog-card-excerpt">Most industrial monitoring systems tell you something broke. PHMS is designed to tell you what's about to break — and why. Here's the architecture decision that changed everything: treating sensor drift as signal, not noise.</p>
+                    <div class="blog-card-meta">Mar 2026 &nbsp;·&nbsp; Systems Team</div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-tag">Automation · VFD</div>
+                    <h2 class="blog-card-title">Variable Frequency Drives Aren't Boring — You're Just Using Them Wrong</h2>
+                    <p class="blog-card-excerpt">VFDs are often installed and forgotten. But a well-tuned VFD with the right ramp profiles, harmonic filtering, and closed-loop feedback can cut energy consumption by 30–40% on the same load. We share how we configure them on industrial deployments.</p>
+                    <div class="blog-card-meta">Jan 2026 &nbsp;·&nbsp; Automation Team</div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-tag">Culture · Hiring</div>
+                    <h2 class="blog-card-title">What We Actually Look for When We Hire at Aananthal</h2>
+                    <p class="blog-card-excerpt">We're a small team building hard things. We don't hire for pedigree — we hire for curiosity, first-principles thinking, and the ability to move from whiteboard to working system without needing a playbook. What that looks like in practice.</p>
+                    <div class="blog-card-meta">Apr 2026 &nbsp;·&nbsp; Founding Team</div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-tag">AI · Product</div>
+                    <h2 class="blog-card-title">Integrating Edge AI into Hardware Products: What the Benchmarks Don't Tell You</h2>
+                    <p class="blog-card-excerpt">Running inference on embedded hardware is about more than FLOPS and memory bandwidth. Thermal limits, interrupt latency, and power rail noise all affect model reliability in ways that no benchmark captures. Lessons from a year of shipping real hardware.</p>
+                    <div class="blog-card-meta">Dec 2025 &nbsp;·&nbsp; AI Team</div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-card-tag">Company · India</div>
+                    <h2 class="blog-card-title">Building Deep Tech in Bangalore: The Constraints That Became Our Strengths</h2>
+                    <p class="blog-card-excerpt">Building robotics and industrial AI in India in 2025 means navigating gaps in supply chains, limited local hardware ecosystems, and a talent market that skews toward software. Here's how those constraints pushed us to build leaner and smarter.</p>
+                    <div class="blog-card-meta">Nov 2025 &nbsp;·&nbsp; Founding Team</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-tagline">Escape the reality.</p>
+
+            <div class="footer-cols">
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="/products">THANU</a></li>
+                            <li><a href="/products">PHMS</a></li>
+                            <li><a href="/products">VFD</a></li>
+                            <li><a href="/services">Features</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/#contact-section">Careers</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/changelog">Changelog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col-social">
+                        <h4>Stalk Us</h4>
+                        <ul>
+                            <li data-social="facebook" style="cursor:pointer;"><i class="fa-brands fa-facebook"></i> Facebook</li>
+                            <li data-social="instagram" style="cursor:pointer;"><i class="fa-brands fa-instagram"></i> Instagram</li>
+                            <li data-social="youtube" style="cursor:pointer;"><i class="fa-brands fa-youtube"></i> Youtube</li>
+                            <li data-social="linkedin" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/company/aananthal-technologies','_blank')"><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-row">
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <p>+91 7386990245</p>
+                            <span class="material-icons">phone</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <p>aananthaltechnologies@gmail.com</p>
+                            <span class="material-icons">mail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-globe">
+                    <canvas id="globeCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+            <div class="wrapper" id="wrapper">
+                <div class="line"></div>
+                <div class="side-line left"></div>
+                <div class="side-line right"></div>
+                <canvas id="canvas"></canvas>
+                <div class="text">Humans × AI</div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    © 2026 Aananthal Technologies Pvt. Ltd. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const revealCanvas = document.getElementById("canvas");
+            const revealCtx = revealCanvas.getContext("2d");
+            const revealWrapper = document.getElementById("wrapper");
+            let particles = [], hovered = false;
+            const text = "Humans × AI", fontSize = 90;
+            function resizeReveal() {
+                revealCanvas.width = revealWrapper.offsetWidth;
+                revealCanvas.height = revealWrapper.offsetHeight;
+                createParticles();
+            }
+            function createParticles() {
+                revealCtx.clearRect(0, 0, revealCanvas.width, revealCanvas.height);
+                revealCtx.fillStyle = "#fff";
+                revealCtx.font = fontSize + "px sans-serif";
+                revealCtx.textAlign = "center";
+                revealCtx.textBaseline = "middle";
+                revealCtx.fillText(text, revealCanvas.width / 2, revealCanvas.height / 2);
+                const imageData = revealCtx.getImageData(0, 0, revealCanvas.width, revealCanvas.height).data;
+                particles = [];
+                for (let y = 0; y < revealCanvas.height; y += 3) {
+                    for (let x = 0; x < revealCanvas.width; x += 3) {
+                        const i = (y * revealCanvas.width + x) * 4;
+                        if (imageData[i + 3] > 150) {
+                            particles.push({ x, y: revealCanvas.height / 2 + (Math.random() - 0.5) * 20, baseX: x, baseY: y, vx: (Math.random() - 0.5) * 2, vy: (Math.random() - 0.5) * 2, opacity: 0.6 });
+                        }
+                    }
+                }
+            }
+            function animateReveal() {
+                revealCtx.clearRect(0, 0, revealCanvas.width, revealCanvas.height);
+                particles.forEach(p => {
+                    if (hovered) { p.opacity += (0 - p.opacity) * 0.2; }
+                    else {
+                        p.x += Math.sin(Date.now() * 0.001 + p.baseX) * 0.2;
+                        p.y += Math.cos(Date.now() * 0.001 + p.baseY) * 0.2;
+                        p.opacity += (0.6 - p.opacity) * 0.05;
+                        if (Math.abs(p.y - revealCanvas.height / 2) > 25) p.y = revealCanvas.height / 2 + (Math.random() - 0.5) * 20;
+                    }
+                    if (p.opacity > 0.02) { revealCtx.fillStyle = "rgba(255,255,255," + p.opacity + ")"; revealCtx.fillRect(p.x, p.y, 2, 2); }
+                });
+                requestAnimationFrame(animateReveal);
+            }
+            revealWrapper.addEventListener("mouseenter", () => hovered = true);
+            revealWrapper.addEventListener("mouseleave", () => hovered = false);
+            window.addEventListener("resize", resizeReveal);
+            resizeReveal();
+            animateReveal();
+        })();
+    </script>
+    <script src="/js/page-loader.js"></script>
+    <script src="/js/nav-theme.js"></script>
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/cursor.js"></script>
+    <script src="/js/mobile-menu.js"></script>
+    <script type="module" src="/js/globe-footer.js"></script>
+    <script src="/js/social-toast.js"></script>
+</body>
+</html>

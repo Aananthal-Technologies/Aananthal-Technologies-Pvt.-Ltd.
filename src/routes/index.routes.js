@@ -1,6 +1,6 @@
 const express = require('express');
 const multer  = require('multer');
-const { getHome, getProducts, getServices, getContact } = require('../controllers/homeController');
+const { getHome, getProducts, getServices, getContact, getAbout, getBlog, getChangelog, getPrivacy, getTerms } = require('../controllers/homeController');
 const { submitCareers } = require('../controllers/careersController');
 const { submitContact } = require('../controllers/contactController');
 
@@ -16,11 +16,16 @@ const upload = multer({
     },
 });
 
+router.get('/', getHome);
 router.get('/home', getHome);
 router.get('/products', getProducts);
 router.get('/services', getServices);
 router.get('/contact', getContact);
-router.get('/', getHome);
+router.get('/about', getAbout);
+router.get('/blog', getBlog);
+router.get('/changelog', getChangelog);
+router.get('/privacy', getPrivacy);
+router.get('/terms', getTerms);
 
 router.post('/api/careers', upload.single('resume'), submitCareers);
 router.post('/api/contact', submitContact);

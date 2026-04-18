@@ -1,40 +1,24 @@
 const path = require('path');
 
-const getHome = (req, res, next) => {
+const sendView = (view) => (req, res, next) => {
     try {
-        res.sendFile(path.join(__dirname, '../views/home.html'));
+        res.sendFile(path.join(__dirname, `../views/${view}.html`));
     } catch (error) {
         next(error);
     }
 };
 
-const getProducts = (req, res, next) => {
-    try {
-        res.sendFile(path.join(__dirname, '../views/products.html'));
-    } catch (error) {
-        next(error);
-    }
-};
-
-const getServices = (req, res, next) => {
-    try {
-        res.sendFile(path.join(__dirname, '../views/services.html'));
-    } catch (error) {
-        next(error);
-    }
-};
-
-const getContact = (req, res, next) => {
-    try {
-        res.sendFile(path.join(__dirname, '../views/contact.html'));
-    } catch (error) {
-        next(error);
-    }
-};
+const getHome      = sendView('home');
+const getProducts  = sendView('products');
+const getServices  = sendView('services');
+const getContact   = sendView('contact');
+const getAbout     = sendView('about');
+const getBlog      = sendView('blog');
+const getChangelog = sendView('changelog');
+const getPrivacy   = sendView('privacy');
+const getTerms     = sendView('terms');
 
 module.exports = {
-    getHome,
-    getProducts,
-    getServices,
-    getContact
+    getHome, getProducts, getServices, getContact,
+    getAbout, getBlog, getChangelog, getPrivacy, getTerms
 };

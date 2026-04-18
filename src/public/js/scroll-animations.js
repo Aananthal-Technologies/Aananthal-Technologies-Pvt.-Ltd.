@@ -47,7 +47,7 @@
         setTimeout(() => el.classList.add('is-visible'), delay);
         obs.unobserve(el);
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px' });
 
     document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
   }
@@ -167,6 +167,19 @@
     }, { threshold: 0.5 });
   }
 
+  // ─── fade-section observer ─────────────────────────────
+  function initFadeSections() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-section').forEach(el => obs.observe(el));
+  }
+
   // ─── Init All ────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     initScrollProgress();
@@ -176,6 +189,7 @@
     initCounters();
     initSplitText();
     initParallax();
+    initFadeSections();
     initSectionReveal();
     initTiltCards();
     initLineGrow();

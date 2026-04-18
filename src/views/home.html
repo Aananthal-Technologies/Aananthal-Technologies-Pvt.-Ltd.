@@ -142,6 +142,7 @@
             <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
             <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
             <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/about" class="text-decoration-none fw-medium nav-link-custom">About</a>
             <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
         </div>
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
@@ -159,6 +160,7 @@
                 <a href="/" class="mobile-nav-link">Home</a>
                 <a href="/products" class="mobile-nav-link">Products</a>
                 <a href="/services" class="mobile-nav-link">Services</a>
+                <a href="/about" class="mobile-nav-link">About</a>
                 <a href="/contact" class="mobile-nav-link">Contact Us</a>
             </nav>
             <div class="mobile-menu-footer">
@@ -854,7 +856,7 @@
     <script src="/js/home-page.js"></script>
 
     <!-- Footer -->
-    <footer class="site-footer">
+        <footer class="site-footer">
         <div class="footer-inner">
             <p class="footer-tagline">Escape the reality.</p>
 
@@ -874,7 +876,7 @@
                         <h4>Company</h4>
                         <ul>
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/#contact-section">Careers</a></li>
                             <li><a href="/privacy">Privacy Policy</a></li>
                             <li><a href="/terms">Terms of Service</a></li>
                         </ul>
@@ -885,7 +887,6 @@
                         <ul>
                             <li><a href="/blog">Blog</a></li>
                             <li><a href="/changelog">Changelog</a></li>
-                            <li><a href="/brand">Brand</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
@@ -893,10 +894,10 @@
                     <div class="footer-col footer-col-social">
                         <h4>Stalk Us</h4>
                         <ul>
-                            <li><i class="fa-brands fa-facebook"></i> Facebook</li>
-                            <li><i class="fa-brands fa-instagram"></i> Instagram</li>
-                            <li><i class="fa-brands fa-youtube"></i> Youtube</li>
-                            <li><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+                            <li data-social="facebook" style="cursor:pointer;"><i class="fa-brands fa-facebook"></i> Facebook</li>
+                            <li data-social="instagram" style="cursor:pointer;"><i class="fa-brands fa-instagram"></i> Instagram</li>
+                            <li data-social="youtube" style="cursor:pointer;"><i class="fa-brands fa-youtube"></i> Youtube</li>
+                            <li data-social="linkedin" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/company/aananthal-technologies','_blank')"><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
                         </ul>
                     </div>
                 </div>
@@ -905,8 +906,7 @@
                     <h4>Contact</h4>
                     <div class="footer-contact-items">
                         <div class="footer-contact-row">
-                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka,
-                                560043.</p>
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
                             <span class="material-icons">location_on</span>
                         </div>
                         <div class="footer-contact-row">
@@ -928,11 +928,8 @@
             <div class="footer-divider"></div>
             <div class="wrapper" id="wrapper">
                 <div class="line"></div>
-
-                <!-- 🔥 side lines -->
                 <div class="side-line left"></div>
                 <div class="side-line right"></div>
-
                 <canvas id="canvas"></canvas>
                 <div class="text">Humans × AI</div>
             </div>
@@ -949,19 +946,13 @@
             const revealCanvas = document.getElementById("canvas");
             const revealCtx = revealCanvas.getContext("2d");
             const revealWrapper = document.getElementById("wrapper");
-
-            let particles = [];
-            let hovered = false;
-
-            const text = "Humans × AI";
-            const fontSize = 90;
-
+            let particles = [], hovered = false;
+            const text = "Humans × AI", fontSize = 90;
             function resizeReveal() {
                 revealCanvas.width = revealWrapper.offsetWidth;
                 revealCanvas.height = revealWrapper.offsetHeight;
                 createParticles();
             }
-
             function createParticles() {
                 revealCtx.clearRect(0, 0, revealCanvas.width, revealCanvas.height);
                 revealCtx.fillStyle = "#fff";
@@ -975,43 +966,25 @@
                     for (let x = 0; x < revealCanvas.width; x += 3) {
                         const i = (y * revealCanvas.width + x) * 4;
                         if (imageData[i + 3] > 150) {
-                            particles.push({
-                                x: x,
-                                y: revealCanvas.height / 2 + (Math.random() - 0.5) * 20,
-                                baseX: x,
-                                baseY: y,
-                                vx: (Math.random() - 0.5) * 2,
-                                vy: (Math.random() - 0.5) * 2,
-                                opacity: 0.6
-                            });
+                            particles.push({ x, y: revealCanvas.height / 2 + (Math.random() - 0.5) * 20, baseX: x, baseY: y, vx: (Math.random() - 0.5) * 2, vy: (Math.random() - 0.5) * 2, opacity: 0.6 });
                         }
                     }
                 }
             }
-
             function animateReveal() {
                 revealCtx.clearRect(0, 0, revealCanvas.width, revealCanvas.height);
                 particles.forEach(p => {
-                    if (hovered) {
-                        p.opacity += (0 - p.opacity) * 0.2;
-                    } else {
-                        p.x += p.vx * 0.2;
-                        p.y += p.vy * 0.2;
+                    if (hovered) { p.opacity += (0 - p.opacity) * 0.2; }
+                    else {
                         p.x += Math.sin(Date.now() * 0.001 + p.baseX) * 0.2;
                         p.y += Math.cos(Date.now() * 0.001 + p.baseY) * 0.2;
                         p.opacity += (0.6 - p.opacity) * 0.05;
-                        if (Math.abs(p.y - revealCanvas.height / 2) > 25) {
-                            p.y = revealCanvas.height / 2 + (Math.random() - 0.5) * 20;
-                        }
+                        if (Math.abs(p.y - revealCanvas.height / 2) > 25) p.y = revealCanvas.height / 2 + (Math.random() - 0.5) * 20;
                     }
-                    if (p.opacity > 0.02) {
-                        revealCtx.fillStyle = "rgba(255,255,255," + p.opacity + ")";
-                        revealCtx.fillRect(p.x, p.y, 2, 2);
-                    }
+                    if (p.opacity > 0.02) { revealCtx.fillStyle = "rgba(255,255,255," + p.opacity + ")"; revealCtx.fillRect(p.x, p.y, 2, 2); }
                 });
                 requestAnimationFrame(animateReveal);
             }
-
             revealWrapper.addEventListener("mouseenter", () => hovered = true);
             revealWrapper.addEventListener("mouseleave", () => hovered = false);
             window.addEventListener("resize", resizeReveal);
@@ -1020,29 +993,8 @@
         })();
     </script>
 
-    <!-- News Modal -->
-    <div class="news-modal-overlay" id="news-modal-overlay" onclick="closeNewsModal()">
-        <div class="news-modal" id="news-modal" onclick="event.stopPropagation()">
-            <button class="news-modal-close" onclick="closeNewsModal()" aria-label="Close">
-                <span class="material-icons">close</span>
-            </button>
-            <div class="news-modal-num" id="nm-num"></div>
-            <h2 class="news-modal-title" id="nm-title"></h2>
-            <p class="news-modal-desc" id="nm-desc"></p>
-            <div class="news-modal-divider"></div>
-            <p class="news-modal-full" id="nm-full"></p>
-        </div>
-    </div>
-
-    <!-- Floating CTA -->
-    <div id="floating-cta">
-        <a href="/contact" class="floating-cta-link">
-            <span class="material-icons">chat_bubble_outline</span>
-            Let's Talk
-        </a>
-    </div>
-
     <script src="/js/ui-components.js" defer></script>
+    <script src="/js/social-toast.js"></script>
     <script type="module">
         import createGlobe from "https://cdn.skypack.dev/cobe";
         const canvas = document.getElementById("globeCanvas");
@@ -1053,17 +1005,11 @@
             phi: 0, theta: 0.2,
             dark: 0, diffuse: 1.5,
             mapSamples: 16000, mapBrightness: 10,
-            baseColor: [1, 1, 1],
-            markerColor: [1, 0, 0],
-            glowColor: [0.94, 0.93, 0.91],
+            baseColor: [1, 1, 1], markerColor: [1, 0, 0], glowColor: [0.94, 0.93, 0.91],
             markers: [{ location: [13.0340, 77.6600], size: 0.03 }],
             arcs: [], arcWidth: 0, opacity: 1
         });
-        function animate() {
-            if (!isPaused) phi += 0.003;
-            globe.update({ phi, theta: 0.2 });
-            requestAnimationFrame(animate);
-        }
+        function animate() { if (!isPaused) phi += 0.003; globe.update({ phi, theta: 0.2 }); requestAnimationFrame(animate); }
         animate();
         canvas.addEventListener("pointerdown", () => { isPaused = true; });
         canvas.addEventListener("pointerup", () => { isPaused = false; });
