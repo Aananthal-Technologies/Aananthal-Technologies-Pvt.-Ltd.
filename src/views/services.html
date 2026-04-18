@@ -28,7 +28,7 @@
         </div>
     </nav>
 
-    <header class="page-header">
+    <header class="page-header" id="services-header">
         <div class="container">
             <h1 class="display-3 fw-bold">Our Services</h1>
             <p class="lead">From engineering to deployment, we deliver excellence.</p>
@@ -64,6 +64,36 @@
         </div>
     </main>
 
+    <!-- Hiring Scrolling Bar (Rectangle 4) -->
+    <section id="hiring-bar">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+                <span>We’re Hiring, Apply Now!!</span><span>Join the team!</span>
+            </div>
+        </div>
+    </section>
+
     <footer id="main-footer">
         <div class="container py-5">
             <div class="footer-top-row d-flex justify-content-between align-items-center mb-5">
@@ -76,18 +106,18 @@
                         <h3 class="footer-heading">Stalk us</h3>
                         <ul class="footer-links">
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Service</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="/services">Service</a></li>
+                            <li><a href="/contact">Contact us</a></li>
                         </ul>
                     </div>
                     <div class="footer-nav-col">
                         <h3 class="footer-heading">Products</h3>
                         <ul class="footer-links">
-                            <li><a href="#">Thanu</a></li>
-                            <li><a href="#">Petcura</a></li>
-                            <li><a href="#">RaoPool</a></li>
-                            <li><a href="#">SolarScan</a></li>
-                            <li><a href="#">VFD</a></li>
+                            <li><a href="/products">Thanu</a></li>
+                            <li><a href="/products">Petcura</a></li>
+                            <li><a href="/products">RaoPool</a></li>
+                            <li><a href="/products">SolarScan</a></li>
+                            <li><a href="/products">VFD</a></li>
                         </ul>
                     </div>
                 </div>
@@ -119,5 +149,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const navbar = document.getElementById('liquid-nav');
+        const header = document.getElementById('services-header');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            // Toggle dark text after leaving the dark header
+            navbar.classList.toggle('nav-dark', window.scrollY > (header.offsetHeight - 80));
+        });
+    </script>
 </body>
 </html>

@@ -79,7 +79,7 @@
     </section>
 
     <!-- What's New Section -->
-    <section id="whats-new" class="container" style="padding-top: 50px; padding-bottom: 100px;">
+    <section id="whats-new" class="container fade-section" style="padding-top: 50px; padding-bottom: 100px;">
         <h2 class="section-title">What’s New!</h2>
 
         <div class="news-carousel mt-4">
@@ -182,7 +182,7 @@
     </section>
 
     <!-- Innovation Section -->
-    <section id="innovation-section" class="container d-flex flex-column align-items-center justify-content-center">
+    <section id="innovation-section" class="container d-flex flex-column align-items-center justify-content-center fade-section">
         <div class="row align-items-center justify-content-center">
             <div class="col-12">
                 <h2 class="innovation-headline">Where Innovation Meets Technology.</h2>
@@ -276,7 +276,7 @@
     </section>
 
     <!-- Voices Section -->
-    <section id="voices-section" class="container-fluid py-5">
+    <section id="voices-section" class="container-fluid py-5 fade-section">
         <h1 class="voices-headline text-center mb-5">Voices from the team</h1>
 
         <div class="voices-carousel align-items-center justify-content-center">
@@ -370,7 +370,7 @@
     </section>
 
     <!-- Join the team Section -->
-    <section id="contact-section" class="container py-5">
+    <section id="contact-section" class="container py-5 fade-section">
         <div class="row">
             <!-- Left Side: Branding & Info -->
             <div class="col-lg-6">
@@ -592,6 +592,23 @@
             ctx.drawImage(img, 0, 0, img.width, img.height,
                 centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
         }
+
+        // 6. Scroll Reveal Logic (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.1 };
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-section').forEach(section => {
+                revealObserver.observe(section);
+            });
+        });
     </script>
     <footer id="main-footer">
         <div class="container py-5">
