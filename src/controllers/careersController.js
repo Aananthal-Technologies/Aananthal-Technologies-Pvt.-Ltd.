@@ -99,9 +99,27 @@ const submitCareers = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Name, email and position are required.' });
         }
 
+        const resume = req.file || null;
+        let resume_url = null;
+
+        // Upload resume to Supabase Storage
+        if (resume) {
+            const fileName = `${Date.now()}_${resume.originalname.replace(/\s+/g, '_')}`;
+            const { error: uploadError } = await supabase.storage
+                .from('resumes')
+                .upload(fileName, resume.buffer, { contentType: resume.mimetype });
+
+            if (!uploadError) {
+                const { data: urlData } = supabase.storage.from('resumes').getPublicUrl(fileName);
+                resume_url = urlData.publicUrl;
+            } else {
+                console.error('Resume upload error:', uploadError.message);
+            }
+        }
+
         await Promise.all([
             transporter.sendMail(applicantEmail(data)),
-            transporter.sendMail(ownerEmail(data, req.file || null)),
+            transporter.sendMail(ownerEmail(data, resume)),
             supabase.from('careers_applications').insert({
                 name:         data.name,
                 position:     data.position,
@@ -111,7 +129,8 @@ const submitCareers = async (req, res) => {
                 availability: data.availability || null,
                 built:        data.built        || null,
                 why:          data.why          || null,
-                resume_name:  req.file ? req.file.originalname : null,
+                resume_name:  resume ? resume.originalname : null,
+                resume_url:   resume_url,
             }),
         ]);
 
