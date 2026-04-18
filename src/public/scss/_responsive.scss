@@ -1,0 +1,533 @@
+// ─── Responsive Styles ────────────────────────────────────
+// Breakpoints: mobile ≤767px | tablet 768–1024px
+
+// ─── Hamburger Button ─────────────────────────────────────
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 10001;
+  flex-shrink: 0;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  &.active span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+  &.active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+}
+
+// ─── Mobile Menu Overlay ──────────────────────────────────
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 100px 40px 60px;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .material-icons { font-size: 22px; }
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.mobile-nav-link {
+  font-family: 'Libre Caslon Text', serif;
+  font-size: clamp(36px, 8vw, 56px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &::after {
+    content: '→';
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  &:hover {
+    color: #fff;
+    letter-spacing: -0.01em;
+
+    &::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.mobile-menu-footer {
+  margin-top: auto;
+  padding-top: 40px;
+
+  p {
+    font-family: 'Inconsolata', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    margin: 0;
+    line-height: 2;
+  }
+}
+
+// ─── Tablet (768–1024px) ──────────────────────────────────
+@media (max-width: 1024px) {
+  // Navbar
+  #liquid-nav .desktop-nav { gap: 24px; }
+
+  // Hero
+  .hero-overlay-content {
+    max-width: 500px;
+
+    .hero-title { font-size: 40px; }
+    .hero-title-text { font-size: 28px; }
+  }
+
+  // Products bento
+  #products-preview {
+    padding: 80px 40px;
+
+    .products-bento {
+      grid-template-rows: 400px 180px;
+    }
+  }
+
+  // Innovation section
+  #innovation-section {
+    padding: 80px 40px;
+
+    .process-flow-container { gap: 0; }
+  }
+
+  // Mission
+  #mission-section .mission-line { font-size: clamp(60px, 8vw, 100px); }
+
+  // Footer
+  .site-footer .footer-inner { padding: 60px 40px 40px; }
+
+  .site-footer .footer-cols { gap: 40px; }
+
+  .site-footer .footer-globe { width: 120px; height: 120px; }
+
+  // Services grid
+  .services-cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+  // Products page
+  .products-section-inner { gap: 60px; }
+}
+
+// ─── Mobile (≤767px) ──────────────────────────────────────
+@media (max-width: 767px) {
+  // ── Navbar ──
+  #liquid-nav {
+    padding: 16px 20px !important;
+  }
+
+  #liquid-nav .desktop-nav { display: none !important; }
+
+  .hamburger-btn { display: flex !important; }
+
+  // ── Loader ──
+  .loader-char { font-size: 38px; }
+  .loader-tagline { font-size: 9px; letter-spacing: 0.35em; }
+
+  // ── Hero ──
+  .hero-overlay-content {
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 120px;
+    transform: none !important;
+    padding: 0 24px;
+    max-width: 100%;
+    text-align: left;
+
+    .hero-title { font-size: 32px; }
+    .hero-title-text { font-size: 20px; }
+    .hero-subtitle { font-size: 13px; max-width: 100%; }
+    .hero-btn { width: 160px; height: 40px; font-size: 11px; }
+  }
+
+  .hero-slide.active .hero-overlay-content {
+    transform: none !important;
+  }
+
+  .hero-scroll-hint { display: none; }
+
+  .hero-controls {
+    bottom: 24px;
+    gap: 16px;
+  }
+
+  .hero-ctrl-btn { width: 40px; height: 40px; }
+
+  // ── Dual Marquee ──
+  #dual-marquee { display: none; }
+
+  // ── Stats Strip ──
+  #stats-strip {
+    padding: 40px 0;
+
+    .d-flex { flex-wrap: wrap; justify-content: center !important; gap: 0; }
+
+    .stat-item {
+      width: 50%;
+      padding: 20px 16px;
+      border-left: none !important;
+      border-bottom: 1px solid #222;
+    }
+
+    .stat-number { font-size: 36px; }
+  }
+
+  // ── Products Bento ──
+  #products-preview {
+    padding: 60px 20px;
+
+    .preview-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .preview-title { font-size: 32px; }
+
+    .products-bento {
+      grid-template-columns: 1fr;
+      grid-template-rows: 300px 220px 220px;
+    }
+
+    .product-bento-card--thanu { grid-row: auto; }
+
+    .pbc-name {
+      .product-bento-card--thanu & { font-size: 48px !important; }
+      .product-bento-card--phms & { font-size: 36px !important; }
+      .product-bento-card--vfd & { font-size: 36px !important; }
+    }
+
+    .pbc-bg-text { font-size: 100px; }
+  }
+
+  // ── Mission Section ──
+  #mission-section {
+    padding: 60px 24px;
+
+    .mission-line { font-size: clamp(44px, 12vw, 72px); }
+    .mission-detail { font-size: 14px; max-width: 100%; }
+  }
+
+  // ── What's New ──
+  #whats-new {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+
+    .section-title { font-size: 36px; }
+
+    .news-carousel .news-card-wrapper {
+      flex: 0 0 280px;
+      max-width: 280px;
+    }
+  }
+
+  // ── Innovation Section ──
+  #innovation-section {
+    padding: 60px 24px;
+
+    .innovation-headline { font-size: 32px; }
+    .innovation-subheadline { font-size: 15px; margin-bottom: 48px; }
+
+    .process-flow-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px 16px;
+
+      .process-arrow { display: none; }
+    }
+
+    .process-step {
+      min-width: 80px;
+      flex: 0 0 calc(25% - 12px);
+    }
+
+    .step-label { font-size: 10px; width: 80px; }
+  }
+
+  // ── Voices Section ──
+  #voices-section {
+    padding: 60px 0;
+
+    .voices-headline { font-size: 36px; }
+
+    .voices-carousel { padding: 16px 20px 32px; gap: 16px; }
+
+    .voice-card { width: 280px; padding: 28px 24px; }
+  }
+
+  // ── Hiring Bar ──
+  #hiring-bar { height: 44px; }
+
+  // ── Join the Team / Hiring Form ──
+  #contact-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+
+    .row { flex-direction: column; }
+
+    .col-lg-6:first-child {
+      padding-right: 0 !important;
+      margin-bottom: 48px;
+    }
+
+    .contact-headline { font-size: 48px; }
+
+    .rectangle-14-form {
+      padding: 32px 24px;
+      border-radius: 8px;
+    }
+  }
+
+  // ── Partners Section ──
+  #partners-section {
+    padding: 48px 0;
+  }
+
+  // ── Footer ──
+  .site-footer .footer-inner {
+    padding: 48px 24px 40px;
+  }
+
+  .site-footer .footer-cols {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .site-footer .footer-links-group {
+    flex-wrap: wrap;
+    gap: 40px 60px;
+  }
+
+  .site-footer .footer-contact-col {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .site-footer .footer-contact-col .footer-contact-items {
+    align-items: flex-start;
+  }
+
+  .site-footer .footer-contact-col .footer-contact-row {
+    flex-direction: row-reverse;
+    gap: 12px;
+
+    p { text-align: left; }
+  }
+
+  .site-footer .footer-globe { display: none; }
+
+  .site-footer .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .site-footer .footer-brand { font-size: 32px; }
+  .site-footer .footer-copy { text-align: left; }
+
+  // ─── Products Page ───────────────────────────────────────
+  .products-hero {
+    padding: 120px 24px 80px;
+
+    .products-hero__bg-text { font-size: 100px; }
+    .hero-page-title { font-size: 40px; }
+    .hero-page-sub { font-size: 15px; }
+  }
+
+  .products-section-inner {
+    flex-direction: column !important;
+    gap: 40px;
+
+    &.reverse { flex-direction: column !important; }
+  }
+
+  .product-visual-wrap { min-height: 280px; }
+
+  .product-info { padding: 0 !important; }
+
+  .product-title { font-size: 40px; }
+
+  .tech-pills-grid { gap: 8px; }
+
+  .products-cta-section { padding: 80px 24px; }
+  .products-cta-title { font-size: 36px; }
+
+  // ─── Services Page ───────────────────────────────────────
+  .services-hero {
+    padding: 120px 24px 80px;
+    min-height: auto;
+
+    .services-hero-title { font-size: 40px; }
+    .services-hero-sub { font-size: 15px; max-width: 100%; }
+  }
+
+  .services-grid-section {
+    padding: 60px 24px 80px;
+  }
+
+  .services-section-header {
+    margin-bottom: 40px;
+  }
+
+  .services-section-title { font-size: 36px; }
+
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .service-card-item {
+    padding: 32px 24px;
+  }
+
+  .services-process-section {
+    padding: 60px 24px;
+  }
+
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .why-section { padding: 60px 24px; }
+
+  .why-inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .why-title { font-size: 36px; }
+
+  .services-stats-strip .stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+
+  .services-cta-section { padding: 80px 24px; }
+  .services-cta-headline { font-size: 40px; }
+
+  // Service Modal
+  .service-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 90vh;
+    border-radius: 16px 16px 0 0 !important;
+    padding: 36px 24px 40px !important;
+  }
+
+  .service-modal-overlay { align-items: flex-end !important; }
+
+  .smd-title { font-size: 28px !important; }
+
+  // ─── Contact Page ────────────────────────────────────────
+  .contact-hero-section { padding: 120px 24px 60px; }
+  .contact-hero-title { font-size: 56px; }
+
+  .contact-form-section { padding: 48px 24px 60px; }
+
+  .contact-form-inner { max-width: 100%; }
+
+  .form-row { flex-direction: column; gap: 0; }
+
+  .contact-form-heading { font-size: 28px; margin-bottom: 40px; }
+
+  .contact-info-section .contact-info-inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .contact-map-frame { height: 280px; }
+
+  .contact-trust-section .trust-inner { grid-template-columns: 1fr; gap: 1px; }
+
+  .contact-testimonials-section { padding: 60px 24px; }
+  .test-title { font-size: 36px; }
+  .test-grid { grid-template-columns: 1fr; }
+
+  // Flag custom dropdown
+  .flag-select-dropdown { max-height: 200px; }
+
+  // ─── Section Label ────────────────────────────────────────
+  .section-label { font-size: 10px; }
+}

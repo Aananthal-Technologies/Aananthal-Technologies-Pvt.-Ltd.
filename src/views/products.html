@@ -19,10 +19,21 @@
     <!-- Page Loader -->
     <div id="page-loader">
         <div class="loader-inner">
-            <div class="loader-logo">Aananthal</div>
+            <div class="loader-wordmark">
+                <span class="loader-char" style="--i:1">A</span><span class="loader-char" style="--i:2">a</span><span class="loader-char" style="--i:3">n</span><span class="loader-char" style="--i:4">a</span><span class="loader-char" style="--i:5">n</span><span class="loader-char" style="--i:6">t</span><span class="loader-char" style="--i:7">h</span><span class="loader-char" style="--i:8">a</span><span class="loader-char" style="--i:9">l</span>
+            </div>
+            <div class="loader-tagline">Technologies</div>
             <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
         </div>
     </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
 
     <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursor-dot"></div>
@@ -33,22 +44,44 @@
         <a href="/" class="text-decoration-none">
             <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
         </a>
-        <div class="d-flex gap-4">
+        <div class="d-flex gap-4 desktop-nav">
             <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
             <a href="/products" class="text-decoration-none fw-medium nav-link-custom" style="opacity:1;">Products</a>
             <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
             <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
         </div>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+                <span class="material-icons">close</span>
+            </button>
+            <nav class="mobile-nav">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/products" class="mobile-nav-link">Products</a>
+                <a href="/services" class="mobile-nav-link">Services</a>
+                <a href="/contact" class="mobile-nav-link">Contact Us</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <p>Aananthal Technologies</p>
+                <p>Bangalore, India</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Products Hero -->
     <section class="products-hero fade-up">
         <div class="products-hero__bg-text">PRODUCTS</div>
         <div class="products-hero__grid-overlay"></div>
         <div class="products-hero__content">
-            <div class="section-label">Our Products</div>
-            <h1 class="hero-page-title">Innovation<br><em>Made Real.</em></h1>
-            <p class="hero-page-sub">Three groundbreaking products at the frontier of AI, robotics, and industrial automation — each one designed to redefine what's possible.</p>
+            <div class="section-label" data-anim="fade-down">Our Products</div>
+            <h1 class="hero-page-title" data-anim="fade-up" data-delay="80">Innovation<br><em>Made Real.</em></h1>
+            <p class="hero-page-sub" data-anim="fade-up" data-delay="180">Three groundbreaking products at the frontier of AI, robotics, and industrial automation — each one designed to redefine what's possible.</p>
         </div>
     </section>
 
@@ -56,7 +89,7 @@
     <section class="product-full-section product-full-section--dark fade-up" id="thanu">
         <div class="product-border-top"></div>
         <div class="product-full-inner">
-            <div class="product-full-text">
+            <div class="product-full-text" data-anim="fade-right">
                 <div class="product-full-number">Product 01 / 03</div>
                 <div class="product-full-category">Humanoid Robotics</div>
                 <div class="product-full-name">THANU</div>
@@ -78,7 +111,7 @@
                     Request Demo <span class="material-icons">arrow_forward</span>
                 </a>
             </div>
-            <div class="product-full-visual">
+            <div class="product-full-visual" data-anim="fade-left" data-delay="120">
                 <div class="thanu-visual">
                     <div class="orbit-ring"></div>
                     <div class="orbit-ring"></div>
@@ -104,7 +137,7 @@
     <section class="product-full-section product-full-section--reverse fade-up" id="phms">
         <div class="product-border-top"></div>
         <div class="product-full-inner">
-            <div class="product-full-text">
+            <div class="product-full-text" data-anim="fade-left">
                 <div class="product-full-number">Product 02 / 03</div>
                 <div class="product-full-category">Pet Healthcare Technology</div>
                 <div class="product-full-name">PHMS</div>
@@ -126,7 +159,7 @@
                     Request Demo <span class="material-icons">arrow_forward</span>
                 </a>
             </div>
-            <div class="product-full-visual">
+            <div class="product-full-visual" data-anim="fade-right" data-delay="120">
                 <div class="phms-visual">
                     <div class="phms-graphic">
                         <div class="phms-circle-outer">
@@ -156,7 +189,7 @@
     <section class="product-full-section product-full-section--dark fade-up" id="vfd">
         <div class="product-border-top"></div>
         <div class="product-full-inner">
-            <div class="product-full-text">
+            <div class="product-full-text" data-anim="fade-right">
                 <div class="product-full-number">Product 03 / 03</div>
                 <div class="product-full-category">Industrial Automation</div>
                 <div class="product-full-name">VFD</div>
@@ -178,7 +211,7 @@
                     Request Demo <span class="material-icons">arrow_forward</span>
                 </a>
             </div>
-            <div class="product-full-visual">
+            <div class="product-full-visual" data-anim="fade-left" data-delay="120">
                 <div class="vfd-visual">
                     <div class="vfd-graphic">
                         <div class="vfd-board">
@@ -215,9 +248,9 @@
 
     <!-- Technology Stack -->
     <section class="tech-stack-section fade-up">
-        <div class="section-label" style="justify-content:center;">Powered By</div>
-        <h2 class="tech-section-title" style="margin-top:8px;">Technology at the Core</h2>
-        <p class="tech-section-sub">Built on cutting-edge frameworks, hardware, and AI platforms.</p>
+        <div class="section-label" style="justify-content:center;" data-anim="fade-down">Powered By</div>
+        <h2 class="tech-section-title" style="margin-top:8px;" data-anim="fade-up" data-delay="60">Technology at the Core</h2>
+        <p class="tech-section-sub" data-anim="fade-up" data-delay="140">Built on cutting-edge frameworks, hardware, and AI platforms.</p>
 
         <div class="tech-pills-row">
             <div class="tech-pill"><span class="material-icons">psychology</span>TensorFlow</div>
@@ -237,9 +270,9 @@
 
     <!-- CTA Section -->
     <section class="product-page-cta fade-up">
-        <div class="cta-eyebrow">Get Started</div>
-        <h2 class="cta-headline">Ready to Build<br><em>the Future?</em></h2>
-        <p class="cta-sub">Let's discuss how our products can transform your operations and open new possibilities.</p>
+        <div class="cta-eyebrow" data-anim="fade-down">Get Started</div>
+        <h2 class="cta-headline" data-anim="fade-up" data-delay="80">Ready to Build<br><em>the Future?</em></h2>
+        <p class="cta-sub" data-anim="fade-up" data-delay="160">Let's discuss how our products can transform your operations and open new possibilities.</p>
         <div class="cta-btn-group">
             <a href="/contact" class="cta-btn-primary">Start a Conversation</a>
             <a href="/services" class="cta-btn-secondary">Explore Services</a>
@@ -310,11 +343,20 @@
     </footer>
 
     <script src="/js/nav-theme.js"></script>
+    <script src="/js/scroll-animations.js"></script>
     <script>
-        // Page loader
-        window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('page-loader').classList.add('loaded'), 1200);
-        });
+        // ─── Page Loader (instant on return visits) ───────────
+        (function () {
+            var loader = document.getElementById('page-loader');
+            if (sessionStorage.getItem('aa_visited')) {
+                loader.style.display = 'none';
+            } else {
+                sessionStorage.setItem('aa_visited', '1');
+                window.addEventListener('load', function () {
+                    setTimeout(function () { loader.classList.add('loaded'); }, 1750);
+                });
+            }
+        })();
 
         // Custom cursor
         const dot = document.getElementById('cursor-dot');
@@ -358,6 +400,23 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ─── Mobile Hamburger Menu ────────────────────────────
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu   = document.getElementById('mobile-menu');
+        const menuClose    = document.getElementById('mobile-menu-close');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        menuClose.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
     </script>
 
 </body>

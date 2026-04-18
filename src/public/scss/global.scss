@@ -4,6 +4,8 @@
 @use "products";
 @use "services";
 @use "contact-page";
+@use "responsive";
+@use "animations";
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Kaisei+HarunoUmi:wght@400;500;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400;1,700&family=Moon+Dance&family=Roboto:wght@100..900&display=swap');
 
 // ─── Utility Classes ────────────────────────────────────
@@ -75,7 +77,7 @@ body.cursor-hover .cursor-ring {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 
   &.loaded {
     opacity: 0;
@@ -87,32 +89,58 @@ body.cursor-hover .cursor-ring {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
+  }
 
-    .loader-logo {
-      font-family: 'Moon Dance', cursive;
-      font-size: 48px;
-      color: #fff;
-      opacity: 0;
-      animation: loader-fade-in 0.6s ease 0.2s forwards;
-    }
+  .loader-wordmark {
+    display: flex;
+    overflow: hidden;
+    line-height: 1;
+    padding-bottom: 4px;
+  }
 
-    .loader-bar-wrap {
-      width: 200px;
-      height: 1px;
-      background: rgba(255,255,255,0.1);
-      overflow: hidden;
-      opacity: 0;
-      animation: loader-fade-in 0.4s ease 0.5s forwards;
+  .loader-char {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 54px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: charReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i) * 0.065s) forwards;
+  }
 
-      .loader-bar {
-        height: 100%;
-        background: #fff;
-        width: 0%;
-        animation: loader-progress 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
-      }
+  .loader-tagline {
+    font-family: 'Inconsolata', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.28);
+    opacity: 0;
+    animation: loader-fade-in 0.4s ease 0.85s forwards;
+    margin-left: 0.5em;
+  }
+
+  .loader-bar-wrap {
+    width: 160px;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    overflow: hidden;
+    opacity: 0;
+    animation: loader-fade-in 0.3s ease 0.68s forwards;
+
+    .loader-bar {
+      height: 100%;
+      background: #fff;
+      width: 0%;
+      animation: loader-progress 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.72s forwards;
     }
   }
+}
+
+@keyframes charReveal {
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes loader-fade-in {

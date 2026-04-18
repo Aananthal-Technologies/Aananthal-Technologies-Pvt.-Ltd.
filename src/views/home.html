@@ -19,10 +19,21 @@
     <!-- Page Loader -->
     <div id="page-loader">
         <div class="loader-inner">
-            <div class="loader-logo">Aananthal</div>
+            <div class="loader-wordmark">
+                <span class="loader-char" style="--i:1">A</span><span class="loader-char" style="--i:2">a</span><span class="loader-char" style="--i:3">n</span><span class="loader-char" style="--i:4">a</span><span class="loader-char" style="--i:5">n</span><span class="loader-char" style="--i:6">t</span><span class="loader-char" style="--i:7">h</span><span class="loader-char" style="--i:8">a</span><span class="loader-char" style="--i:9">l</span>
+            </div>
+            <div class="loader-tagline">Technologies</div>
             <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
         </div>
     </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
 
     <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursor-dot"></div>
@@ -33,13 +44,35 @@
         <a href="/" class="text-decoration-none">
             <img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" />
         </a>
-        <div class="d-flex gap-4">
+        <div class="d-flex gap-4 desktop-nav">
             <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
             <a href="/products" class="text-decoration-none fw-medium nav-link-custom">Products</a>
             <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
             <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
         </div>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+                <span class="material-icons">close</span>
+            </button>
+            <nav class="mobile-nav">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/products" class="mobile-nav-link">Products</a>
+                <a href="/services" class="mobile-nav-link">Services</a>
+                <a href="/contact" class="mobile-nav-link">Contact Us</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <p>Aananthal Technologies</p>
+                <p>Bangalore, India</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero-sequence" style="height: 400vh; position: relative;">
@@ -152,19 +185,19 @@
     <section id="stats-strip" class="fade-section">
         <div class="container-fluid">
             <div class="d-flex justify-content-center">
-                <div class="stat-item">
+                <div class="stat-item" data-anim="fade-up" data-delay="0">
                     <div class="stat-number" data-target="3">0</div>
                     <div class="stat-label">Products</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-anim="fade-up" data-delay="80">
                     <div class="stat-number" data-target="20">0</div>
                     <div class="stat-label">Team Members</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-anim="fade-up" data-delay="160">
                     <div class="stat-number">AI</div>
                     <div class="stat-label">Powered</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-anim="fade-up" data-delay="240">
                     <div class="stat-number">∞</div>
                     <div class="stat-label">Ambition</div>
                 </div>
@@ -172,18 +205,73 @@
         </div>
     </section>
 
+    <!-- Trusted By / Partners -->
+    <section id="partners-section">
+        <p class="partners-header">Built With &amp; Trusted By</p>
+        <div class="partners-marquee-wrap">
+            <!-- Row 1: left -->
+            <div class="partners-row partners-row--left">
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/nvidia/000000" alt="NVIDIA">NVIDIA</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/tensorflow/000000" alt="TensorFlow">TensorFlow</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/pytorch/000000" alt="PyTorch">PyTorch</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/googlecloud/000000" alt="Google Cloud">Google Cloud</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/amazonaws/000000" alt="AWS">Amazon AWS</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/python/000000" alt="Python">Python</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/docker/000000" alt="Docker">Docker</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/raspberrypi/000000" alt="Raspberry Pi">Raspberry Pi</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/ros/000000" alt="ROS">ROS</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/opencv/000000" alt="OpenCV">OpenCV</span>
+                <!-- duplicate for seamless loop -->
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/nvidia/000000" alt="NVIDIA">NVIDIA</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/tensorflow/000000" alt="TensorFlow">TensorFlow</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/pytorch/000000" alt="PyTorch">PyTorch</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/googlecloud/000000" alt="Google Cloud">Google Cloud</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/amazonaws/000000" alt="AWS">Amazon AWS</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/python/000000" alt="Python">Python</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/docker/000000" alt="Docker">Docker</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/raspberrypi/000000" alt="Raspberry Pi">Raspberry Pi</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/ros/000000" alt="ROS">ROS</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/opencv/000000" alt="OpenCV">OpenCV</span>
+            </div>
+            <!-- Row 2: right -->
+            <div class="partners-row partners-row--right">
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/kubernetes/000000" alt="Kubernetes">Kubernetes</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/arduino/000000" alt="Arduino">Arduino</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/openai/000000" alt="OpenAI">OpenAI</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/react/000000" alt="React">React</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/nodejs/000000" alt="Node.js">Node.js</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/typescript/000000" alt="TypeScript">TypeScript</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/mongodb/000000" alt="MongoDB">MongoDB</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/linux/000000" alt="Linux">Linux</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/fastapi/000000" alt="FastAPI">FastAPI</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/mysql/000000" alt="MySQL">MySQL</span>
+                <!-- duplicate for seamless loop -->
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/kubernetes/000000" alt="Kubernetes">Kubernetes</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/arduino/000000" alt="Arduino">Arduino</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/openai/000000" alt="OpenAI">OpenAI</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/react/000000" alt="React">React</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/nodejs/000000" alt="Node.js">Node.js</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/typescript/000000" alt="TypeScript">TypeScript</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/mongodb/000000" alt="MongoDB">MongoDB</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/linux/000000" alt="Linux">Linux</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/fastapi/000000" alt="FastAPI">FastAPI</span>
+                <span class="partner-pill"><img src="https://cdn.simpleicons.org/mysql/000000" alt="MySQL">MySQL</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Products Preview (Bento Grid) -->
     <section id="products-preview" class="fade-section">
         <div class="preview-header">
-            <h2 class="preview-title">Products That<br>Define the Future.</h2>
-            <a href="/products" class="preview-link">
+            <h2 class="preview-title" data-anim="fade-right">Products That<br>Define the Future.</h2>
+            <a href="/products" class="preview-link" data-anim="fade-left">
                 View all products <span class="material-icons">arrow_forward</span>
             </a>
         </div>
 
         <div class="products-bento">
             <!-- THANU: Large -->
-            <a href="/products" class="product-bento-card product-bento-card--thanu text-decoration-none">
+            <a href="/products" class="product-bento-card product-bento-card--thanu text-decoration-none" data-anim="scale-up" data-delay="0">
                 <span class="pbc-bg-text">THANU</span>
                 <div class="pbc-inner">
                     <span class="pbc-num">01</span>
@@ -196,7 +284,7 @@
             </a>
 
             <!-- PHMS -->
-            <a href="/products" class="product-bento-card product-bento-card--phms text-decoration-none">
+            <a href="/products" class="product-bento-card product-bento-card--phms text-decoration-none" data-anim="scale-up" data-delay="100">
                 <div class="pbc-inner">
                     <span class="pbc-num">02</span>
                     <div class="pbc-name">PHMS</div>
@@ -208,7 +296,7 @@
             </a>
 
             <!-- VFD -->
-            <a href="/products" class="product-bento-card product-bento-card--vfd text-decoration-none">
+            <a href="/products" class="product-bento-card product-bento-card--vfd text-decoration-none" data-anim="scale-up" data-delay="200">
                 <div class="pbc-inner">
                     <span class="pbc-num">03</span>
                     <div class="pbc-name">VFD</div>
@@ -224,8 +312,8 @@
     <!-- Mission Section -->
     <section id="mission-section" class="fade-section">
         <div class="mission-inner">
-            <span class="mission-line">We Build</span>
-            <span class="mission-line mission-line--muted">Tomorrow.</span>
+            <span class="mission-line" data-anim="clip-up">We Build</span>
+            <span class="mission-line mission-line--muted" data-anim="clip-up" data-delay="120">Tomorrow.</span>
             <div class="mission-divider"></div>
             <p class="mission-detail">
                 Aananthal Technologies sits at the intersection of AI, robotics, and human potential.
@@ -240,8 +328,8 @@
 
     <!-- What's New Section -->
     <section id="whats-new" class="container fade-section">
-        <div class="section-label">Latest Updates</div>
-        <h2 class="section-title">What's New!</h2>
+        <div class="section-label" data-anim="fade-right">Latest Updates</div>
+        <h2 class="section-title" data-anim="fade-up" data-delay="60">What's New!</h2>
         <p style="font-family:'Inconsolata',monospace; font-size:13px; letter-spacing:0.05em; color:#888; margin-bottom:56px;">
             Insights, announcements, and milestones from Aananthal Technologies.
         </p>
@@ -332,11 +420,11 @@
     <!-- Innovation Section (Dark) -->
     <section id="innovation-section" class="d-flex flex-column align-items-center justify-content-center fade-section">
         <div style="max-width:1200px;width:100%;">
-            <div class="section-label" style="color:rgba(255,255,255,0.25); justify-content:center;">
+            <div class="section-label" style="color:rgba(255,255,255,0.25); justify-content:center;" data-anim="fade-down">
                 How We Work
             </div>
-            <h2 class="innovation-headline">Where Innovation<br>Meets Technology.</h2>
-            <p class="innovation-subheadline">Aananthal Technologies — Your trusted partner in leveraging AI,
+            <h2 class="innovation-headline" data-anim="fade-up" data-delay="80">Where Innovation<br>Meets Technology.</h2>
+            <p class="innovation-subheadline" data-anim="fade-up" data-delay="160">Aananthal Technologies — Your trusted partner in leveraging AI,
                 machine learning, and scalable technologies to build intelligent solutions for the next generation
                 of businesses.</p>
 
@@ -388,9 +476,9 @@
     <!-- Voices Section -->
     <section id="voices-section" class="container-fluid py-5 fade-section">
         <div class="container">
-            <div class="section-label">Our People</div>
+            <div class="section-label" data-anim="fade-right">Our People</div>
         </div>
-        <h1 class="voices-headline text-center mb-5">Voices from the team</h1>
+        <h1 class="voices-headline text-center mb-5" data-anim="fade-up" data-delay="80">Voices from the team</h1>
 
         <div class="voices-carousel align-items-center justify-content-center">
             <div class="voice-card">
@@ -471,10 +559,10 @@
     <section id="contact-section" class="container py-5 fade-section">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center" style="padding-right: 60px;">
-                <div class="section-label">Careers</div>
-                <h1 class="contact-headline mb-4">Join the<br>team.</h1>
+                <div class="section-label" data-anim="fade-right">Careers</div>
+                <h1 class="contact-headline mb-4" data-anim="fade-up" data-delay="60">Join the<br>team.</h1>
 
-                <div class="team-avatar-stack mb-4">
+                <div class="team-avatar-stack mb-4" data-anim="fade-up" data-delay="140">
                     <div class="avatar"></div>
                     <div class="avatar"></div>
                     <div class="avatar"></div>
@@ -483,7 +571,7 @@
                     <span class="avatar-count">+20</span>
                 </div>
 
-                <h2 class="contact-brand-text mb-4 mt-4">No degrees.<br>No DSA.<br>Just passion 🔥</h2>
+                <h2 class="contact-brand-text mb-4 mt-4" data-anim="fade-up" data-delay="200">No degrees.<br>No DSA.<br>Just passion 🔥</h2>
 
                 <p style="font-family:'Inconsolata',monospace; font-size:13px; letter-spacing:0.04em; color:#666; line-height:1.8; max-width:360px; margin-top:16px;">
                     We believe the best people are defined by their hunger, not their credentials. If you're obsessed
@@ -491,71 +579,90 @@
                 </p>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-anim="fade-left" data-delay="80">
                 <div class="rectangle-14-form">
-                    <form id="collaboration-form">
+                    <form id="collaboration-form" enctype="multipart/form-data">
+
                         <div class="m3-text-field">
-                            <label class="m3-label">Name</label>
-                            <input type="text" class="m3-input" placeholder="Your name">
+                            <label class="m3-label">Full Name *</label>
+                            <input type="text" class="m3-input" placeholder="Your full name" required>
                             <div class="m3-indicator"></div>
-                            <div class="m3-support">What we should call you? *</div>
                         </div>
 
                         <div class="m3-text-field">
-                            <label class="m3-label">Phone number</label>
+                            <label class="m3-label">Position *</label>
+                            <select class="m3-input m3-select" required>
+                                <option value="" disabled selected>Choose your role</option>
+                                <option>ML / AI Engineer</option>
+                                <option>Robotics Engineer</option>
+                                <option>Full Stack Developer</option>
+                                <option>Hardware / Embedded Engineer</option>
+                                <option>Product Manager</option>
+                                <option>UI / UX Designer</option>
+                                <option>Data Scientist</option>
+                                <option>Intern — Any Role</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="m3-indicator"></div>
+                        </div>
+
+                        <div class="m3-text-field">
+                            <label class="m3-label">Email *</label>
+                            <input type="email" class="m3-input" placeholder="you@example.com" required>
+                            <div class="m3-indicator"></div>
+                        </div>
+
+                        <div class="m3-text-field">
+                            <label class="m3-label">Phone</label>
                             <input type="tel" class="m3-input" placeholder="+91 XXXXX XXXXX">
                             <div class="m3-indicator"></div>
-                            <div class="m3-support">How can we call you? *</div>
                         </div>
 
                         <div class="m3-text-field">
-                            <label class="m3-label">Email</label>
-                            <input type="email" class="m3-input" placeholder="you@example.com">
+                            <label class="m3-label">Portfolio / GitHub *</label>
+                            <input type="url" class="m3-input" placeholder="https://github.com/you">
                             <div class="m3-indicator"></div>
-                            <div class="m3-support">How can we mail you? *</div>
                         </div>
 
                         <div class="m3-text-field">
-                            <label class="m3-label">Highest Qualification</label>
-                            <input type="text" class="m3-input" placeholder="B.Tech / Diploma / Self-taught">
+                            <label class="m3-label">Availability</label>
+                            <select class="m3-input m3-select">
+                                <option value="" disabled selected>When can you start?</option>
+                                <option>Immediately</option>
+                                <option>Within 2 weeks</option>
+                                <option>Within 1 month</option>
+                                <option>Flexible</option>
+                            </select>
                             <div class="m3-indicator"></div>
-                            <div class="m3-support">How many years you wasted? *</div>
-                        </div>
-
-                        <div class="m3-text-field">
-                            <label class="m3-label">Passion Levels</label>
-                            <input type="text" class="m3-input" placeholder="9 / 10">
-                            <div class="m3-indicator"></div>
-                            <div class="m3-support">Rate yourself out of 10! *</div>
-                        </div>
-
-                        <div class="radio-group-container">
-                            <div class="divider"></div>
-                            <div class="d-flex gap-4">
-                                <label class="radio-item">
-                                    <input type="radio" name="ai-replace" value="yes">
-                                    <span class="radio-custom material-icons">radio_button_unchecked</span>
-                                    <span class="radio-label">Yes</span>
-                                </label>
-                                <label class="radio-item">
-                                    <input type="radio" name="ai-replace" value="no">
-                                    <span class="radio-custom material-icons">radio_button_unchecked</span>
-                                    <span class="radio-label">No</span>
-                                </label>
-                            </div>
-                            <div class="m3-support">Do you believe AI will replace humans? *</div>
                         </div>
 
                         <div class="m3-text-field textarea-field">
-                            <label class="m3-label">Why?</label>
-                            <textarea class="m3-input" rows="4" placeholder="Tell us why we should hire you..."></textarea>
+                            <label class="m3-label">Something you've built & are proud of *</label>
+                            <textarea class="m3-input" rows="2" placeholder="A project, script, or hack — tell us about it." required></textarea>
                             <div class="m3-indicator"></div>
-                            <div class="m3-support">Why we should hire you? *</div>
+                        </div>
+
+                        <div class="m3-text-field textarea-field">
+                            <label class="m3-label">Why Aananthal? *</label>
+                            <textarea class="m3-input" rows="2" placeholder="No corporate answers. Be real with us."></textarea>
+                            <div class="m3-indicator"></div>
+                        </div>
+
+                        <div class="m3-text-field full-width">
+                            <label class="m3-label">Upload Resume / CV *</label>
+                            <div class="file-drop-zone" id="file-drop-zone">
+                                <input type="file" id="resume-upload" accept=".pdf,.doc,.docx" style="display:none;">
+                                <div class="file-drop-content" id="file-drop-content">
+                                    <span class="material-icons file-drop-icon">cloud_upload</span>
+                                    <p class="file-drop-text">Drop your resume here or <span class="file-drop-browse">browse</span></p>
+                                    <p class="file-drop-hint">PDF, DOC or DOCX — max 5 MB</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="submit-container">
                             <button type="submit" class="submit-btn large-submit">
-                                <span>SUBMIT</span>
+                                <span>APPLY NOW</span>
                             </button>
                         </div>
                     </form>
@@ -566,12 +673,18 @@
 
     <!-- Canvas renderer & scroll logic -->
     <script>
-        // ─── Page Loader ──────────────────────────────────────
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('page-loader').classList.add('loaded');
-            }, 1400);
-        });
+        // ─── Page Loader (instant on return visits) ───────────
+        (function () {
+            var loader = document.getElementById('page-loader');
+            if (sessionStorage.getItem('aa_visited')) {
+                loader.style.display = 'none';
+            } else {
+                sessionStorage.setItem('aa_visited', '1');
+                window.addEventListener('load', function () {
+                    setTimeout(function () { loader.classList.add('loaded'); }, 1750);
+                });
+            }
+        })();
 
         // ─── Custom Cursor ────────────────────────────────────
         const dot  = document.getElementById('cursor-dot');
@@ -759,7 +872,6 @@
 
         const innovationEl = document.getElementById('innovation-section');
         if (innovationEl) {
-            // Pre-hide process items for stagger
             innovationEl.querySelectorAll('.process-step, .process-arrow').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
@@ -767,9 +879,62 @@
             });
             processObserver.observe(innovationEl);
         }
+
+        // ─── Mobile Hamburger Menu ────────────────────────────
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu   = document.getElementById('mobile-menu');
+        const menuClose    = document.getElementById('mobile-menu-close');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        menuClose.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        // ─── File Drop Zone ───────────────────────────────────
+        const dropZone   = document.getElementById('file-drop-zone');
+        const fileInput  = document.getElementById('resume-upload');
+        const dropContent = document.getElementById('file-drop-content');
+
+        if (dropZone && fileInput) {
+            dropZone.addEventListener('click', () => fileInput.click());
+
+            dropZone.addEventListener('dragover', e => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+            dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+            dropZone.addEventListener('drop', e => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                const file = e.dataTransfer.files[0];
+                if (file) showFile(file);
+            });
+
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files[0]) showFile(fileInput.files[0]);
+            });
+
+            function showFile(file) {
+                dropContent.innerHTML = `
+                    <span class="material-icons file-drop-icon" style="color:#000">description</span>
+                    <p class="file-drop-text" style="color:#000;font-weight:600">${file.name}</p>
+                    <p class="file-drop-hint">${(file.size / 1024).toFixed(0)} KB — <span class="file-drop-browse">Change</span></p>
+                `;
+            }
+        }
     </script>
 
     <script src="/js/nav-theme.js"></script>
+    <script src="/js/scroll-animations.js"></script>
 
     <!-- Footer -->
     <footer class="site-footer">
