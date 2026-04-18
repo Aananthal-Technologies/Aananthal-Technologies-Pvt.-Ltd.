@@ -16,20 +16,7 @@
     <link rel="stylesheet" href="/css/global.css">
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
-    <style>
-        .footer-globe {
-            width: 300px;
-            height: 300px;
-            margin: auto;
-        }
-
-        .footer-globe canvas {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            cursor: grab;
-        }
-    </style>
+    <style>.footer-globe{width:300px;height:300px;margin:auto}.footer-globe canvas{width:100%;height:100%;border-radius:50%;cursor:grab}</style>
 </head>
 
 <body class="contact-page">
@@ -536,126 +523,10 @@
 
     <script src="/js/nav-theme.js"></script>
     <script src="/js/scroll-animations.js"></script>
-    <script>
-        // ─── Page Loader (instant on return visits) ───────────
-        (function () {
-            var loader = document.getElementById('page-loader');
-            if (sessionStorage.getItem('aa_visited')) {
-                loader.style.display = 'none';
-            } else {
-                sessionStorage.setItem('aa_visited', '1');
-                window.addEventListener('load', function () {
-                    setTimeout(function () { loader.classList.add('loaded'); }, 1750);
-                });
-            }
-        })();
-
-        // Custom cursor
-        const dot = document.getElementById('cursor-dot');
-        const ring = document.getElementById('cursor-ring');
-        let mx = 0, my = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
-        function animateRing() { rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateRing); }
-        animateRing();
-        document.querySelectorAll('a,button,input,textarea,select,.test-card').forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-
-        // Phone number: numbers only
-        document.getElementById('contact-phone').addEventListener('input', function () {
-            this.value = this.value.replace(/\D/g, '').slice(0, 10);
-        });
-
-        // Scroll reveal handled by scroll-animations.js
-
-        // Form submit handler
-        document.getElementById('contact-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const btn = this.querySelector('.form-submit-btn');
-            btn.disabled = true;
-            btn.innerHTML = 'Sending… <span class="material-icons">hourglass_top</span>';
-
-            const phone = document.getElementById('phone-country').value + document.getElementById('contact-phone').value;
-
-            const body = JSON.stringify({
-                name: document.getElementById('contact-name').value,
-                email: document.getElementById('contact-email').value,
-                phone: document.getElementById('contact-phone').value ? phone : '',
-                interest: document.getElementById('contact-interest').value,
-                message: document.getElementById('contact-message').value,
-            });
-
-            try {
-                const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body });
-                const json = await res.json();
-                if (json.success) {
-                    btn.innerHTML = 'Sent! <span class="material-icons">check_circle</span>';
-                    btn.style.background = '#1a1a1a';
-                    this.reset();
-                } else {
-                    btn.disabled = false;
-                    btn.innerHTML = 'Send Message <span class="material-icons">send</span>';
-                    alert(json.message || 'Something went wrong. Please try again.');
-                }
-            } catch (err) {
-                btn.disabled = false;
-                btn.innerHTML = 'Send Message <span class="material-icons">send</span>';
-                alert('Network error. Please try again.');
-            }
-        });
-
-        // ─── Mobile Hamburger Menu ────────────────────────────
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuClose = document.getElementById('mobile-menu-close');
-
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-
-        menuClose.addEventListener('click', () => {
-            hamburgerBtn.classList.remove('active');
-            mobileMenu.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-
-        // ─── Custom Flag Dropdown ────────────────────────────
-        const flagSelectBtn = document.getElementById('flag-select-btn');
-        const flagDropdown = document.getElementById('flag-dropdown');
-        const flagImg = document.getElementById('flag-img');
-        const flagCode = document.getElementById('flag-code');
-        const phoneCountry = document.getElementById('phone-country');
-
-        flagSelectBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = flagSelectBtn.getAttribute('aria-expanded') === 'true';
-            flagSelectBtn.setAttribute('aria-expanded', !isOpen);
-            flagDropdown.classList.toggle('open');
-        });
-
-        flagDropdown.querySelectorAll('.flag-option').forEach(opt => {
-            opt.addEventListener('click', () => {
-                const code = opt.dataset.code;
-                const iso = opt.dataset.iso;
-                flagImg.src = `https://flagcdn.com/20x15/${iso}.png`;
-                flagImg.alt = opt.textContent.trim();
-                flagCode.textContent = code;
-                phoneCountry.value = code;
-                flagDropdown.classList.remove('open');
-                flagSelectBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!document.getElementById('flag-select').contains(e.target)) {
-                flagDropdown.classList.remove('open');
-                flagSelectBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    </script>
+    <script src="/js/page-loader.js"></script>
+    <script src="/js/cursor.js"></script>
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/contact-page.js"></script>
 
     <!-- Floating CTA (scroll to form) -->
     <div id="floating-cta">
@@ -666,63 +537,7 @@
     </div>
 
     <script src="/js/ui-components.js" defer></script>
-    <!-- <script src="/js/globe.js" defer></script> -->
-    <script type="module">
-        import createGlobe from "https://cdn.skypack.dev/cobe";
-
-        const canvas = document.getElementById("globeCanvas");
-
-        let phi = 0;
-        let isPaused = false;
-
-        const globe = createGlobe(canvas, {
-            devicePixelRatio: Math.min(window.devicePixelRatio, 2),
-            width: 300,
-            height: 300,
-
-            phi: 0,
-            theta: 0.2,
-
-            dark: 0,
-            diffuse: 1.5,
-            mapSamples: 16000,
-            mapBrightness: 10,
-
-            baseColor: [1, 1, 1],
-            markerColor: [1, 0, 0],
-            glowColor: [0.94, 0.93, 0.91],
-
-            // Bengaluru
-            markers: [
-                { location: [13.0340, 77.6600], size: 0.03 }
-            ],
-
-            arcs: [],
-            arcWidth: 0,
-            opacity: 1
-        });
-
-        function animate() {
-            if (!isPaused) phi += 0.003;
-
-            globe.update({
-                phi,
-                theta: 0.2
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        canvas.addEventListener("pointerdown", () => {
-            isPaused = true;
-        });
-
-        canvas.addEventListener("pointerup", () => {
-            isPaused = false;
-        });
-    </script>
+    <script type="module" src="/js/globe-footer.js"></script>
 </body>
 
 </html>
