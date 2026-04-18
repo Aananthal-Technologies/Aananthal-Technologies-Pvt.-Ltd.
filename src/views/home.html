@@ -15,7 +15,18 @@
     <link rel="stylesheet" href="/css/global.css">
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
-    <style>.footer-globe{width:300px;height:300px;margin:auto}.footer-globe canvas{width:100%;height:100%;border-radius:50%;cursor:grab}</style>
+    <style>
+        .footer-globe{width:300px;height:300px;margin:auto}
+        .footer-globe canvas{width:100%;height:100%;border-radius:50%;cursor:grab}
+        .footer-copy{color:rgba(255,255,255,0.5);transition:color 0.3s ease}
+        .footer-copy:hover{color:#ffffff}
+        .footer-bottom{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;margin-top:30px}
+        #wrapper{position:relative;width:100%;max-width:700px;height:140px;margin:0 auto;cursor:pointer;overflow:hidden}
+        #wrapper canvas{position:absolute;inset:0}
+        #wrapper .text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);font-size:90px;font-weight:700;color:#fff;opacity:0;transition:all 0.4s ease;white-space:nowrap;pointer-events:none;text-shadow:0 0 26px rgba(255,255,255,0.15)}
+        #wrapper:hover .text{opacity:1;transform:translate(-50%,-50%) scale(1);letter-spacing:2px}
+        #wrapper .line{position:absolute;top:50%;left:0;width:100%;height:1px;background:#333;z-index:-1}
+    </style>
 </head>
 
 <body>
@@ -842,11 +853,14 @@
             </div>
 
             <div class="footer-divider"></div>
-
+            <div id="wrapper">
+                <div class="line"></div>
+                <canvas id="particle-canvas"></canvas>
+                <div class="text">Humans × AI</div>
+            </div>
             <div class="footer-bottom">
-                <h1 class="footer-brand">Humans × AI</h1>
                 <div class="footer-copy">
-                    © 2026 Aananthal Technologies Pvt. Ltd.<br>All rights reserved.
+                    © 2026 Aananthal Technologies Pvt. Ltd. All rights reserved.
                 </div>
             </div>
         </div>
