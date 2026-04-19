@@ -2053,3 +2053,222 @@
 .prod-ov-card--thanu .prod-ov-prog-fill {
   background: #fff;
 }
+
+/* ─── PHMS Dashboard Widget ─────────────────────────────── */
+.phms-dashboard-wrap {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.phms-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.phms-dash-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phms-dash-live {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.phms-dash-vitals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.phms-vital-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px 10px;
+}
+
+.phms-vital-icon {
+  font-size: 16px !important;
+  color: rgba(255, 255, 255, 0.3);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.phms-vital-val {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.phms-vital-val span {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+.phms-vital-lbl {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 8px;
+}
+
+.phms-vital-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.phms-vital-fill {
+  height: 100%;
+  background: #e8e8e8;
+  border-radius: 2px;
+}
+
+.phms-dash-chart-wrap {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.phms-dash-chart-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 12px;
+}
+
+.phms-dash-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.phms-dash-bar {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px 3px 0 0;
+  transition: background 0.2s;
+}
+
+.phms-dash-bar--active {
+  background: #ffffff;
+}
+
+.phms-dash-days {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phms-dash-days span {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.25);
+  flex: 1;
+  text-align: center;
+}
+
+.phms-dash-status-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 14px;
+}
+
+.phms-status-ok {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.phms-dash-accuracy {
+  margin-bottom: 16px;
+}
+
+.phms-acc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 6px;
+}
+
+.phms-acc-val {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.phms-acc-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.phms-acc-fill {
+  height: 100%;
+  width: 98%;
+  background: #e8e8e8;
+  border-radius: 2px;
+}
+
+.phms-dash-bottom-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.phms-bstat {
+  text-align: center;
+  flex: 1;
+}
+
+.phms-bstat-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.phms-bstat-lbl {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 2px;
+}
+
+.phms-bstat-div {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+}
