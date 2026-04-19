@@ -542,6 +542,10 @@ body {
                 letter-spacing: -0.01em;
                 color: $black;
                 margin-bottom: 14px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
 
             .news-desc {

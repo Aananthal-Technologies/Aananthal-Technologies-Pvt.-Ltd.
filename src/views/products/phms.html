@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHMS — Pet Health Management System · Aananthal Technologies</title>
+    <meta name="description" content="PHMS is an AI-powered pet health monitoring platform with real-time vitals tracking, anomaly detection, and seamless vet integration.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="/images/logo_transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/product-detail.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-wordmark"><span class="loader-char" style="--i:1">A</span><span class="loader-char" style="--i:2">a</span><span class="loader-char" style="--i:3">n</span><span class="loader-char" style="--i:4">a</span><span class="loader-char" style="--i:5">n</span><span class="loader-char" style="--i:6">t</span><span class="loader-char" style="--i:7">h</span><span class="loader-char" style="--i:8">a</span><span class="loader-char" style="--i:9">l</span></div><div class="loader-tagline">Technologies</div><div class="loader-bar-wrap"><div class="loader-bar"></div></div></div></div>
+<div id="scroll-progress"></div>
+<button id="back-to-top" aria-label="Back to top"><span class="material-icons">arrow_upward</span></button>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
+    <a href="/" class="text-decoration-none"><img src="/images/logo_transparent.png" alt="Aananthal Technologies Logo" height="40" class="brand-logo" /></a>
+    <div class="d-flex gap-4 desktop-nav">
+        <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
+        <a href="/products" class="text-decoration-none fw-medium nav-link-custom" style="opacity:1;">Products</a>
+        <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+        <a href="/about" class="text-decoration-none fw-medium nav-link-custom">About</a>
+        <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
+    </div>
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-overlay" id="mobile-menu"><div class="mobile-menu-inner"><button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu"><span class="material-icons">close</span></button><nav class="mobile-nav"><a href="/" class="mobile-nav-link">Home</a><a href="/products" class="mobile-nav-link">Products</a><a href="/services" class="mobile-nav-link">Services</a><a href="/about" class="mobile-nav-link">About</a><a href="/contact" class="mobile-nav-link">Contact Us</a></nav><div class="mobile-menu-footer"><p>Aananthal Technologies</p><p>Bangalore, India</p></div></div></div>
+
+<!-- 1. HERO -->
+<section class="pd-hero pd-hero--phms">
+    <div class="pd-hero-bg-text">PHMS</div>
+    <div class="pd-hero-inner">
+        <div class="pd-hero-breadcrumb"><a href="/products">← Products</a> / PHMS</div>
+        <div class="pd-hero-badge"><span class="pd-badge-dot"></span>Active R&amp;D · 35% Complete</div>
+        <h1 class="pd-hero-title">Pet Health<br><em>Management</em><br>System</h1>
+        <p class="pd-hero-sub">AI-powered continuous monitoring for every animal. Real-time vitals, instant alerts, seamless vet integration.</p>
+        <div class="pd-hero-actions">
+            <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn">Request Demo <span class="material-icons">arrow_forward</span></a>
+            <a href="/contact" class="pd-cta-outline btn-magnetic">Join Beta Program</a>
+        </div>
+    </div>
+    <div class="pd-hero-visual">
+        <div class="phms-dashboard-wrap">
+            <div class="phms-dash-header"><span class="phms-dash-title">PHMS Dashboard</span><span class="phms-dash-live">Prototype UI</span></div>
+            <div class="phms-dash-vitals">
+                <div class="phms-vital-card"><span class="material-icons phms-vital-icon">favorite</span><div class="phms-vital-val">72 <span>bpm</span></div><div class="phms-vital-lbl">Heart Rate</div><div class="phms-vital-bar"><div class="phms-vital-fill" style="width:72%"></div></div></div>
+                <div class="phms-vital-card"><span class="material-icons phms-vital-icon">thermostat</span><div class="phms-vital-val">38.5 <span>°C</span></div><div class="phms-vital-lbl">Temperature</div><div class="phms-vital-bar"><div class="phms-vital-fill" style="width:58%"></div></div></div>
+                <div class="phms-vital-card"><span class="material-icons phms-vital-icon">directions_run</span><div class="phms-vital-val">High</div><div class="phms-vital-lbl">Activity</div><div class="phms-vital-bar"><div class="phms-vital-fill" style="width:85%"></div></div></div>
+            </div>
+            <div class="phms-dash-chart-wrap"><div class="phms-dash-chart-label">7-day vitals trend</div><div class="phms-dash-bars"><div class="phms-dash-bar" style="height:55%"></div><div class="phms-dash-bar" style="height:70%"></div><div class="phms-dash-bar" style="height:48%"></div><div class="phms-dash-bar" style="height:80%"></div><div class="phms-dash-bar" style="height:62%"></div><div class="phms-dash-bar" style="height:90%"></div><div class="phms-dash-bar phms-dash-bar--active" style="height:72%"></div></div><div class="phms-dash-days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+            <div class="phms-dash-status-row"><span class="material-icons phms-status-ok">info</span>Simulated data · Prototype demonstration</div>
+            <div class="phms-dash-accuracy"><div class="phms-acc-row"><span>Diagnostic Accuracy</span><span class="phms-acc-val">98%</span></div><div class="phms-acc-bar"><div class="phms-acc-fill"></div></div></div>
+            <div class="phms-dash-bottom-stats"><div class="phms-bstat"><div class="phms-bstat-num">24/7</div><div class="phms-bstat-lbl">Target Uptime</div></div><div class="phms-bstat-div"></div><div class="phms-bstat"><div class="phms-bstat-num">50+</div><div class="phms-bstat-lbl">Target Clinics</div></div><div class="phms-bstat-div"></div><div class="phms-bstat"><div class="phms-bstat-num">&lt;5s</div><div class="phms-bstat-lbl">Target Latency</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. KEY METRICS STRIP -->
+<section class="pd-metrics-strip">
+    <div class="pd-metric"><div class="pd-metric-num">98%</div><div class="pd-metric-lbl">Target Accuracy</div></div>
+    <div class="pd-metric-sep"></div>
+    <div class="pd-metric"><div class="pd-metric-num">24/7</div><div class="pd-metric-lbl">Designed for Continuous Monitoring</div></div>
+    <div class="pd-metric-sep"></div>
+    <div class="pd-metric"><div class="pd-metric-num">&lt;5s</div><div class="pd-metric-lbl">Target Alert Latency</div></div>
+    <div class="pd-metric-sep"></div>
+    <div class="pd-metric"><div class="pd-metric-num">50+</div><div class="pd-metric-lbl">Target Beta Clinics</div></div>
+    <div class="pd-metric-sep"></div>
+    <div class="pd-metric"><div class="pd-metric-num">12+</div><div class="pd-metric-lbl">Vital Parameters</div></div>
+</section>
+
+<!-- 3. PRODUCT OVERVIEW -->
+<section class="pd-section fade-section">
+    <div class="pd-section-inner pd-two-col">
+        <div class="pd-text-block">
+            <div class="section-label">What Is PHMS</div>
+            <h2 class="pd-section-title">Your pet's health,<br>always watched.</h2>
+            <p class="pd-body">PHMS is a continuous, AI-driven pet health monitoring platform. A lightweight wearable sensor attached to your pet streams vitals 24/7 to our cloud AI engine, which watches for anomalies that human observation might miss — respiratory irregularities at 3am, subtle temperature spikes, dangerous drops in activity.</p>
+            <p class="pd-body">When something looks off, PHMS doesn't wait. It fires an instant alert to the pet owner and their linked veterinarian, with a pre-built diagnostic context packet so the vet can act immediately — not after a long intake process.</p>
+            <ul class="pd-check-list">
+                <li><span class="material-icons">check_circle</span>Non-invasive wearable sensor — attaches in seconds</li>
+                <li><span class="material-icons">check_circle</span>AI being trained on veterinary health datasets across species</li>
+                <li><span class="material-icons">check_circle</span>Vet dashboard with pre-built diagnostic context</li>
+                <li><span class="material-icons">check_circle</span>Works for dogs, cats, livestock, and exotic pets</li>
+            </ul>
+        </div>
+        <div class="pd-image-block">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80&fit=crop" alt="Pet with health sensor" class="pd-img" />
+            <div class="pd-img-caption">Prototype wearable sensor under development at Aananthal Labs</div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. SYSTEM FLOWCHART -->
+<section class="pd-section pd-section--dark fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label" style="color:rgba(255,255,255,0.3)">System Architecture</div>
+        <h2 class="pd-section-title" style="color:#fff">How PHMS Works</h2>
+        <p class="pd-body" style="color:rgba(255,255,255,0.5);max-width:600px;">Every alert starts with a sensor reading. Here's the complete data journey from pet to vet in under 5 seconds.</p>
+        <div class="pd-flowchart">
+            <div class="pd-flow-step pd-flow-step--1">
+                <div class="pd-flow-icon"><span class="material-icons">pets</span></div>
+                <div class="pd-flow-num">01</div>
+                <div class="pd-flow-title">Pet &amp; Sensor</div>
+                <div class="pd-flow-desc">Wearable collar sensor continuously captures heart rate, temperature, SpO₂, respiratory rate, and movement vectors at 10Hz.</div>
+            </div>
+            <div class="pd-flow-connector"><div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span></div>
+            <div class="pd-flow-step pd-flow-step--2">
+                <div class="pd-flow-icon"><span class="material-icons">wifi</span></div>
+                <div class="pd-flow-num">02</div>
+                <div class="pd-flow-title">Data Transmission</div>
+                <div class="pd-flow-desc">Encrypted BLE → Gateway → Cloud pipeline. Data is timestamped, compressed, and transmitted with &lt;500ms end-to-end latency.</div>
+            </div>
+            <div class="pd-flow-connector"><div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span></div>
+            <div class="pd-flow-step pd-flow-step--3">
+                <div class="pd-flow-icon"><span class="material-icons">storage</span></div>
+                <div class="pd-flow-num">03</div>
+                <div class="pd-flow-title">Data Processing Layer</div>
+                <div class="pd-flow-desc">Raw signals are cleaned, normalised, and stored in a time-series database. Baseline health profiles are maintained per individual animal.</div>
+            </div>
+            <div class="pd-flow-connector"><div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span></div>
+            <div class="pd-flow-step pd-flow-step--4">
+                <div class="pd-flow-icon"><span class="material-icons">psychology</span></div>
+                <div class="pd-flow-num">04</div>
+                <div class="pd-flow-title">AI Diagnostic Engine</div>
+                <div class="pd-flow-desc">Multi-model ensemble (anomaly detection + species-specific classifiers) analyses incoming data against individual baselines. Confidence-scored outputs with diagnostic context.</div>
+            </div>
+            <div class="pd-flow-connector"><div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span></div>
+            <div class="pd-flow-split">
+                <div class="pd-flow-step pd-flow-step--5">
+                    <div class="pd-flow-icon"><span class="material-icons">notifications_active</span></div>
+                    <div class="pd-flow-num">05a</div>
+                    <div class="pd-flow-title">Owner Alert</div>
+                    <div class="pd-flow-desc">Push notification + SMS with plain-language summary. Severity-tiered from advisory to emergency.</div>
+                </div>
+                <div class="pd-flow-step pd-flow-step--5b">
+                    <div class="pd-flow-icon"><span class="material-icons">local_hospital</span></div>
+                    <div class="pd-flow-num">05b</div>
+                    <div class="pd-flow-title">Vet Dashboard</div>
+                    <div class="pd-flow-desc">Clinician receives structured diagnostic report, 24h vital history, and AI-suggested differential diagnoses — ready to act immediately.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. FEATURES GRID -->
+<section class="pd-section fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label">Capabilities</div>
+        <h2 class="pd-section-title">What PHMS Can Do</h2>
+        <div class="pd-feature-grid">
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">favorite</span></div><h3 class="pd-feat-title">Continuous Vitals</h3><p class="pd-feat-body">Heart rate, temperature, SpO₂, respiratory rate, and activity level monitored at 10Hz — 24 hours a day, every day.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">psychology</span></div><h3 class="pd-feat-title">AI Anomaly Detection</h3><p class="pd-feat-body">Multi-model ensemble with personalised baselines per animal. Targeting 98% detection accuracy — validated progressively through clinical beta.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">notifications_active</span></div><h3 class="pd-feat-title">Instant Alerts</h3><p class="pd-feat-body">Sub-5-second alert delivery via app, SMS, and email. Severity scoring from advisory to emergency — no noise, no missed signals.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">local_hospital</span></div><h3 class="pd-feat-title">Vet Integration</h3><p class="pd-feat-body">Seamless clinic dashboard with structured diagnostic packets, 24h history, and pre-built differential suggestions for faster triage.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">timeline</span></div><h3 class="pd-feat-title">Health Timeline</h3><p class="pd-feat-body">Every vital reading stored and visualised. Detect long-term trends before they become emergencies. Exportable for clinical records.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">cloud_sync</span></div><h3 class="pd-feat-title">Cloud Sync</h3><p class="pd-feat-body">All data encrypted in transit and at rest. Accessible from any device. Automatic backup. Multi-pet household support.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">watch</span></div><h3 class="pd-feat-title">Non-Invasive Sensor</h3><p class="pd-feat-body">Lightweight collar attachment. No sedation, no implants. Designed for all-day wear comfort across breeds and sizes.</p></div>
+            <div class="pd-feature-card"><div class="pd-feat-icon"><span class="material-icons">analytics</span></div><h3 class="pd-feat-title">Predictive Analysis</h3><p class="pd-feat-body">Pattern learning surfaces early warning signals — chronic conditions, seasonal patterns, medication responses — weeks before symptoms appear.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. VITALS CHART -->
+<section class="pd-section pd-section--grey fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label">Real-time Data</div>
+        <h2 class="pd-section-title">Live Vital Monitoring</h2>
+        <p class="pd-body" style="max-width:560px;">Every parameter is designed to be displayed in real time on the owner app and vet dashboard. Data points captured every 100ms — built for the granularity that makes early detection possible.</p>
+        <div class="pd-chart-container">
+            <div class="pd-chart-legend">
+                <span class="pd-legend-item pd-legend--hr"><span class="pd-legend-dot"></span>Heart Rate (bpm)</span>
+                <span class="pd-legend-item pd-legend--temp"><span class="pd-legend-dot"></span>Temperature (°C)</span>
+                <span class="pd-legend-item pd-legend--spo2"><span class="pd-legend-dot"></span>SpO₂ (%)</span>
+            </div>
+            <div class="pd-line-chart">
+                <div class="pd-chart-y-axis">
+                    <span>100</span><span>80</span><span>60</span><span>40</span><span>20</span>
+                </div>
+                <div class="pd-chart-plot">
+                    <svg class="pd-chart-svg" viewBox="0 0 600 200" preserveAspectRatio="none">
+                        <polyline class="pd-line pd-line--hr" points="0,120 50,110 100,115 150,90 200,100 250,80 300,95 350,85 400,90 450,75 500,88 550,80 600,85"/>
+                        <polyline class="pd-line pd-line--temp" points="0,160 50,158 100,155 150,152 200,148 250,150 300,145 350,148 400,143 450,140 500,142 550,138 600,140"/>
+                        <polyline class="pd-line pd-line--spo2" points="0,40 50,42 100,38 150,45 200,40 250,36 300,42 350,38 400,40 450,35 500,38 550,36 600,40"/>
+                    </svg>
+                    <div class="pd-chart-grid">
+                        <div class="pd-chart-gridline"></div><div class="pd-chart-gridline"></div><div class="pd-chart-gridline"></div><div class="pd-chart-gridline"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pd-chart-x-labels"><span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>24:00</span></div>
+        </div>
+        <div class="pd-vitals-grid">
+            <div class="pd-vital-stat"><div class="pd-vital-stat-val">72</div><div class="pd-vital-stat-unit">bpm</div><div class="pd-vital-stat-lbl">Heart Rate</div><div class="pd-vital-stat-range">Normal: 60–140</div></div>
+            <div class="pd-vital-stat"><div class="pd-vital-stat-val">38.5</div><div class="pd-vital-stat-unit">°C</div><div class="pd-vital-stat-lbl">Temperature</div><div class="pd-vital-stat-range">Normal: 38–39.2</div></div>
+            <div class="pd-vital-stat"><div class="pd-vital-stat-val">98</div><div class="pd-vital-stat-unit">%</div><div class="pd-vital-stat-lbl">SpO₂</div><div class="pd-vital-stat-range">Normal: 95–100</div></div>
+            <div class="pd-vital-stat"><div class="pd-vital-stat-val">24</div><div class="pd-vital-stat-unit">brpm</div><div class="pd-vital-stat-lbl">Respiratory Rate</div><div class="pd-vital-stat-range">Normal: 15–30</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. TECH SPECS TABLE -->
+<section class="pd-section fade-section">
+    <div class="pd-section-inner pd-two-col">
+        <div class="pd-text-block">
+            <div class="section-label">Under the Hood</div>
+            <h2 class="pd-section-title">Technical Specifications</h2>
+            <p class="pd-body">Built for accuracy. Engineered for reliability. Every specification is validated in controlled clinical settings before advancing to the next development phase.</p>
+            <div class="pd-spec-table">
+                <div class="pd-spec-row"><div class="pd-spec-key">Sensor Sampling Rate</div><div class="pd-spec-val">10 Hz (100ms intervals)</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Data Transmission</div><div class="pd-spec-val">BLE 5.0 + 4G/WiFi Gateway</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Alert Latency</div><div class="pd-spec-val">&lt; 5 seconds end-to-end</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">AI Model</div><div class="pd-spec-val">Ensemble (LSTM + Isolation Forest)</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Diagnostic Accuracy</div><div class="pd-spec-val">98% (target)</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Battery Life</div><div class="pd-spec-val">72 hours continuous</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Sensor Weight</div><div class="pd-spec-val">&lt; 18g (collar attachment)</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Data Encryption</div><div class="pd-spec-val">AES-256 in transit + at rest</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Supported Species</div><div class="pd-spec-val">Dogs, Cats, Livestock, Exotic</div></div>
+                <div class="pd-spec-row"><div class="pd-spec-key">Cloud Storage</div><div class="pd-spec-val">Unlimited history per pet</div></div>
+            </div>
+        </div>
+        <div class="pd-image-block">
+            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=700&q=80&fit=crop" alt="Veterinarian with digital device" class="pd-img" />
+            <div class="pd-img-caption">Vet dashboard mockup — veterinarians receive pre-built diagnostic context instantly</div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. USE CASES -->
+<section class="pd-section pd-section--dark fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label" style="color:rgba(255,255,255,0.3)">Applications</div>
+        <h2 class="pd-section-title" style="color:#fff">Built for Every Animal</h2>
+        <div class="pd-usecase-grid">
+            <div class="pd-usecase-card">
+                <div class="pd-usecase-icon"><span class="material-icons">pets</span></div>
+                <h3 class="pd-usecase-title">Family Pets</h3>
+                <p class="pd-usecase-body">24/7 peace of mind for dog and cat owners. Catch the illness that starts at midnight — before the emergency vet visit.</p>
+                <ul class="pd-usecase-list"><li>Dogs (all breeds &amp; sizes)</li><li>Domestic cats</li><li>Rabbits &amp; small animals</li></ul>
+            </div>
+            <div class="pd-usecase-card">
+                <div class="pd-usecase-icon"><span class="material-icons">agriculture</span></div>
+                <h3 class="pd-usecase-title">Livestock &amp; Farming</h3>
+                <p class="pd-usecase-body">Fleet-monitor hundreds of animals. Early disease detection protects herds and improves breeding outcomes.</p>
+                <ul class="pd-usecase-list"><li>Cattle &amp; dairy herds</li><li>Poultry farms</li><li>Sheep &amp; goats</li></ul>
+            </div>
+            <div class="pd-usecase-card">
+                <div class="pd-usecase-icon"><span class="material-icons">local_hospital</span></div>
+                <h3 class="pd-usecase-title">Veterinary Clinics</h3>
+                <p class="pd-usecase-body">Post-operative monitoring, chronic disease management, and remote patient tracking — without constant in-person visits.</p>
+                <ul class="pd-usecase-list"><li>Post-surgery monitoring</li><li>Chronic disease tracking</li><li>Remote consultations</li></ul>
+            </div>
+            <div class="pd-usecase-card">
+                <div class="pd-usecase-icon"><span class="material-icons">science</span></div>
+                <h3 class="pd-usecase-title">Research &amp; Breeding</h3>
+                <p class="pd-usecase-body">Longitudinal health data for breeding programmes, pharmaceutical trials, and veterinary research institutions.</p>
+                <ul class="pd-usecase-list"><li>Breeding health optimisation</li><li>Clinical trial support</li><li>Longitudinal studies</li></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. COMPARISON TABLE -->
+<section class="pd-section fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label">Why PHMS</div>
+        <h2 class="pd-section-title">PHMS vs Traditional Monitoring</h2>
+        <div class="pd-compare-table">
+            <div class="pd-compare-header">
+                <div class="pd-compare-feature">Feature</div>
+                <div class="pd-compare-col pd-compare-col--phms">PHMS</div>
+                <div class="pd-compare-col">Traditional Clinic</div>
+                <div class="pd-compare-col">Manual Owner Check</div>
+            </div>
+            <div class="pd-compare-row"><div class="pd-compare-feature">Monitoring Frequency</div><div class="pd-compare-col pd-compare-col--phms pd-col-good">Continuous (10Hz)</div><div class="pd-compare-col">During visits only</div><div class="pd-compare-col">Occasional</div></div>
+            <div class="pd-compare-row"><div class="pd-compare-feature">Alert Speed</div><div class="pd-compare-col pd-compare-col--phms pd-col-good">&lt;5 seconds</div><div class="pd-compare-col">Next appointment</div><div class="pd-compare-col">Hours / never</div></div>
+            <div class="pd-compare-row"><div class="pd-compare-feature">Anomaly Detection</div><div class="pd-compare-col pd-compare-col--phms pd-col-good">AI-driven (98% target)</div><div class="pd-compare-col">Manual assessment</div><div class="pd-compare-col">Visual only</div></div>
+            <div class="pd-compare-row"><div class="pd-compare-feature">Historical Data</div><div class="pd-compare-col pd-compare-col--phms pd-col-good">Unlimited cloud history</div><div class="pd-compare-col">Paper records</div><div class="pd-compare-col">None</div></div>
+            <div class="pd-compare-row"><div class="pd-compare-feature">Night-time Coverage</div><div class="pd-compare-col pd-compare-col--phms pd-col-good">Full coverage</div><div class="pd-compare-col">None</div><div class="pd-compare-col">None</div></div>
+            <div class="pd-compare-row"><div class="pd-compare-feature">Cost per month</div><div class="pd-compare-col pd-compare-col--phms pd-col-good">Affordable subscription (TBD)</div><div class="pd-compare-col">₹2,000–5,000/visit</div><div class="pd-compare-col">₹0 (but reactive)</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 10. ACCURACY CHART -->
+<section class="pd-section pd-section--grey fade-section">
+    <div class="pd-section-inner pd-two-col">
+        <div class="pd-text-block">
+            <div class="section-label">Performance</div>
+            <h2 class="pd-section-title">Target Detection Accuracy by Condition</h2>
+            <p class="pd-body">Our AI engine is being designed for industry-leading accuracy across all monitored health conditions. These are our targets — to be validated progressively through our clinical beta programme.</p>
+            <div class="pd-accuracy-bars">
+                <div class="pd-acc-item"><div class="pd-acc-label"><span>Cardiac Anomalies</span><span class="pd-acc-pct">98%</span></div><div class="pd-acc-bar-bg"><div class="pd-acc-bar-fill" style="--w:98%"></div></div></div>
+                <div class="pd-acc-item"><div class="pd-acc-label"><span>Fever Detection</span><span class="pd-acc-pct">99%</span></div><div class="pd-acc-bar-bg"><div class="pd-acc-bar-fill" style="--w:99%"></div></div></div>
+                <div class="pd-acc-item"><div class="pd-acc-label"><span>Respiratory Distress</span><span class="pd-acc-pct">96%</span></div><div class="pd-acc-bar-bg"><div class="pd-acc-bar-fill" style="--w:96%"></div></div></div>
+                <div class="pd-acc-item"><div class="pd-acc-label"><span>Activity Anomalies</span><span class="pd-acc-pct">94%</span></div><div class="pd-acc-bar-bg"><div class="pd-acc-bar-fill" style="--w:94%"></div></div></div>
+                <div class="pd-acc-item"><div class="pd-acc-label"><span>Early Illness Signals</span><span class="pd-acc-pct">91%</span></div><div class="pd-acc-bar-bg"><div class="pd-acc-bar-fill" style="--w:91%"></div></div></div>
+            </div>
+        </div>
+        <div class="pd-image-block">
+            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=700&q=80&fit=crop" alt="Dog health monitoring" class="pd-img" />
+            <div class="pd-img-caption">Target accuracy figures to be validated through clinical beta programme with licensed veterinarians</div>
+        </div>
+    </div>
+</section>
+
+<!-- 11. PROTOTYPE GALLERY -->
+<section class="pd-section fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label">In Development</div>
+        <h2 class="pd-section-title">Prototype Showcase</h2>
+        <p class="pd-body" style="max-width:560px;">Our hardware and software teams are building in parallel. Here's where we are — no polish, no pretense. Just real progress from the lab.</p>
+        <div class="pd-gallery">
+            <div class="pd-gallery-item pd-gallery-item--large">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80&fit=crop" alt="Prototype sensor" />
+                <div class="pd-gallery-caption"><div class="pd-gallery-tag">Hardware Prototype</div><div class="pd-gallery-desc">Wearable sensor module — Gen 1.2 · April 2026</div></div>
+            </div>
+            <div class="pd-gallery-item">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80&fit=crop" alt="AI system" />
+                <div class="pd-gallery-caption"><div class="pd-gallery-tag">AI Engine</div><div class="pd-gallery-desc">Model training infrastructure</div></div>
+            </div>
+            <div class="pd-gallery-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop" alt="Dashboard" />
+                <div class="pd-gallery-caption"><div class="pd-gallery-tag">Dashboard UI</div><div class="pd-gallery-desc">Vet-facing dashboard wireframes</div></div>
+            </div>
+            <div class="pd-gallery-item">
+                <img src="https://images.unsplash.com/photo-1624927637280-f033784c1279?w=600&q=80&fit=crop" alt="Lab testing" />
+                <div class="pd-gallery-caption"><div class="pd-gallery-tag">Beta Testing</div><div class="pd-gallery-desc">Clinical validation sessions</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 12. BETA PROGRAM -->
+<section class="pd-section pd-section--dark fade-section">
+    <div class="pd-section-inner pd-two-col">
+        <div class="pd-text-block">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">Beta Program</div>
+            <h2 class="pd-section-title" style="color:#fff">Join the Beta</h2>
+            <p class="pd-body" style="color:rgba(255,255,255,0.5);">We're recruiting veterinary clinics and pet owners to validate PHMS in real-world conditions. Beta partners get early access, direct influence on the product roadmap, and preferred pricing at commercial launch.</p>
+            <div class="pd-beta-stats">
+                <div class="pd-beta-stat"><div class="pd-beta-num">50+</div><div class="pd-beta-lbl">Target Clinic Partners</div></div>
+                <div class="pd-beta-stat"><div class="pd-beta-num">Q3 2026</div><div class="pd-beta-lbl">Beta Start Target</div></div>
+                <div class="pd-beta-stat"><div class="pd-beta-num">Open</div><div class="pd-beta-lbl">Applications Now</div></div>
+            </div>
+            <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn" style="margin-top:24px;display:inline-flex;">Apply for Beta <span class="material-icons">arrow_forward</span></a>
+        </div>
+        <div class="pd-beta-badges">
+            <div class="pd-beta-badge"><span class="material-icons">verified</span><div><div class="pd-bb-title">Veterinary Validated</div><div class="pd-bb-sub">All detections reviewed by licensed vets</div></div></div>
+            <div class="pd-beta-badge"><span class="material-icons">security</span><div><div class="pd-bb-title">Data Privacy First</div><div class="pd-bb-sub">AES-256 encryption, DPDP compliant</div></div></div>
+            <div class="pd-beta-badge"><span class="material-icons">support_agent</span><div><div class="pd-bb-title">Dedicated Support</div><div class="pd-bb-sub">Direct line to the engineering team</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 13. TEAM VOICES -->
+<section class="pd-section pd-section--dark fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label" style="color:rgba(255,255,255,0.3)">From the Team</div>
+        <h2 class="pd-section-title" style="color:#fff">Why We're Building This</h2>
+        <div class="pd-testimonials">
+            <div class="pd-testimonial pd-testimonial--dark">
+                <div class="pd-test-quote">"Pets can't tell you when something is wrong. Their owners notice too late, and by the time they're at a clinic, the window for easy intervention has often passed. PHMS is about closing that gap — giving the 3am symptom the same visibility as the 9am vet visit."</div>
+                <div class="pd-test-footer">
+                    <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                    <div class="pd-test-info">
+                        <div class="pd-test-name">PHMS Product Lead</div>
+                        <div class="pd-test-role">Aananthal Technologies</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pd-testimonial pd-testimonial--dark">
+                <div class="pd-test-quote">"The hardest part of building PHMS isn't the sensor — it's training the AI to know the difference between a dog that ran around excitedly and a dog with a cardiac event. We're doing that work now, species by species, condition by condition."</div>
+                <div class="pd-test-footer">
+                    <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                    <div class="pd-test-info">
+                        <div class="pd-test-name">AI Research Lead</div>
+                        <div class="pd-test-role">Aananthal Technologies</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pd-testimonial pd-testimonial--dark">
+                <div class="pd-test-quote">"Every vet advisor we've spoken to says the same thing — the information gap between the clinic and the home is where animals are lost. We're not building a gadget. We're building the infrastructure that closes that gap permanently."</div>
+                <div class="pd-test-footer">
+                    <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                    <div class="pd-test-info">
+                        <div class="pd-test-name">Aananthal</div>
+                        <div class="pd-test-role">Founder &amp; CEO, Aananthal Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 14. FAQ -->
+<section class="pd-section pd-section--grey fade-section">
+    <div class="pd-section-inner pd-faq-layout">
+        <div>
+            <div class="section-label">Questions</div>
+            <h2 class="pd-section-title">Frequently Asked</h2>
+            <p class="pd-body">Can't find what you need? <a href="/contact" style="color:#000;text-decoration:underline;">Talk to us directly.</a></p>
+        </div>
+        <div class="pd-faq-list">
+            <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Is PHMS available to buy right now? <span class="material-icons">expand_more</span></button><div class="pd-faq-a">Not yet. PHMS is in active R&amp;D and beta testing. We're validating with partner clinics and expect to open wider access later in 2026. Sign up for beta to get early access.</div></div>
+            <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Which animals does PHMS support? <span class="material-icons">expand_more</span></button><div class="pd-faq-a">Currently validated for dogs (all sizes) and cats. We're actively developing profiles for cattle, poultry, and exotic pets. Species-specific AI models are required for each.</div></div>
+            <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">How does the sensor attach to the animal? <span class="material-icons">expand_more</span></button><div class="pd-faq-a">The PHMS sensor clips to a standard collar. It weighs under 18g and is designed for all-day wear. No implants, no sedation required. Water-resistant for daily activities.</div></div>
+            <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Is my pet's health data secure and private? <span class="material-icons">expand_more</span></button><div class="pd-faq-a">Yes. All data is encrypted with AES-256 in transit and at rest. We do not sell data to third parties. You own your pet's data, always. We're building toward full DPDP compliance.</div></div>
+            <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">How accurate is the AI detection? <span class="material-icons">expand_more</span></button><div class="pd-faq-a">Our target is 98% overall accuracy for cardiac anomalies and 99% for fever detection. These figures are projections based on our AI model design — they will be validated progressively during the clinical beta programme starting Q3 2026.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 15. DEVELOPMENT ROADMAP -->
+<section class="pd-section fade-section">
+    <div class="pd-section-inner">
+        <div class="section-label">Roadmap</div>
+        <h2 class="pd-section-title">Development Milestones</h2>
+        <div class="pd-roadmap">
+            <div class="pd-roadmap-item pd-roadmap-item--done"><div class="pd-rm-dot pd-rm-dot--done"></div><div class="pd-rm-date">Q3 2025</div><div class="pd-rm-title">Concept &amp; Research</div><div class="pd-rm-desc">Market validation, veterinary advisory board formation, initial sensor research</div><div class="pd-rm-badge pd-rm-badge--done">Complete</div></div>
+            <div class="pd-roadmap-item pd-roadmap-item--done"><div class="pd-rm-dot pd-rm-dot--done"></div><div class="pd-rm-date">Q4 2025</div><div class="pd-rm-title">System Architecture</div><div class="pd-rm-desc">Data pipeline design, AI model architecture, cloud infrastructure setup</div><div class="pd-rm-badge pd-rm-badge--done">Complete</div></div>
+            <div class="pd-roadmap-item pd-roadmap-item--active"><div class="pd-rm-dot pd-rm-dot--active"></div><div class="pd-rm-date">Q1–Q2 2026</div><div class="pd-rm-title">AI Modules &amp; Sensor Prototype</div><div class="pd-rm-desc">Training anomaly detection models, building Gen 1.2 sensor hardware, early beta clinic onboarding</div><div class="pd-rm-badge pd-rm-badge--active">In Progress</div></div>
+            <div class="pd-roadmap-item"><div class="pd-rm-dot"></div><div class="pd-rm-date">Q3 2026</div><div class="pd-rm-title">Clinical Beta</div><div class="pd-rm-desc">100+ clinic partnerships, formal validation studies, regulatory groundwork</div><div class="pd-rm-badge">Upcoming</div></div>
+            <div class="pd-roadmap-item"><div class="pd-rm-dot"></div><div class="pd-rm-date">Q1 2027</div><div class="pd-rm-title">Commercial Launch</div><div class="pd-rm-desc">General availability for clinics and pet owners. Subscription model. Full vet dashboard v1.0</div><div class="pd-rm-badge">Planned</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 16. CTA -->
+<section class="pd-cta-section fade-section">
+    <div class="pd-cta-inner">
+        <div class="section-label" style="justify-content:center;color:rgba(255,255,255,0.3)">Get Involved</div>
+        <h2 class="pd-cta-title">Be part of<br>what's next.</h2>
+        <p class="pd-cta-sub">Whether you're a vet clinic, pet owner, or investor — we want to build PHMS with people who care about animals as much as we do.</p>
+        <div class="pd-cta-actions">
+            <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn">Request Demo <span class="material-icons">arrow_forward</span></a>
+            <a href="/contact" class="pd-cta-outline btn-magnetic">Partner With Us</a>
+        </div>
+        <div class="pd-cta-nav">
+            <a href="/products/thanu" class="pd-product-nav-link">Next: THANU — The Humanoid Robot <span class="material-icons">arrow_forward</span></a>
+        </div>
+    </div>
+</section>
+
+<div id="floating-cta"><a href="/contact" class="floating-cta-link"><span class="material-icons">chat_bubble_outline</span>Let's Talk</a></div>
+
+<script>
+function togglePdFaq(btn) {
+    const item = btn.closest('.pd-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.pd-faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+}
+</script>
+<script src="/js/ui-components.js" defer></script>
+<%- include('../partials/footer.html') %>
+</body>
+</html>

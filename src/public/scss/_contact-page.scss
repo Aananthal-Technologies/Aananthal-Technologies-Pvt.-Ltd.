@@ -828,6 +828,8 @@ $mid: #888888;
             border: 1px solid rgba(0, 0, 0, 0.07);
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
 
             &:hover {
                 transform: translateY(-6px);
@@ -856,6 +858,7 @@ $mid: #888888;
                 margin-bottom: 32px;
                 position: relative;
                 z-index: 1;
+                flex: 1;
             }
 
             .test-author {
@@ -864,6 +867,7 @@ $mid: #888888;
                 gap: 12px;
                 padding-top: 20px;
                 border-top: 1px solid rgba(0, 0, 0, 0.06);
+                margin-top: auto;
 
                 .test-avatar {
                     width: 48px;

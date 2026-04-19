@@ -1,4 +1,4 @@
-// ─── VFD Readout Animation ────────────────────────────────
+// ─── Industrial Drives Readout Animation ──────────────────
 const readout = document.getElementById('vfd-readout');
 if (readout) {
     let freq = 50.0, dir = 1;

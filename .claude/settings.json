@@ -13,7 +13,10 @@
       "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/products.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ console.log\\(err ? 'ERR:'+err.message : 'OK'\\); }\\)\")",
       "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/services.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ console.log\\(err ? 'ERR:'+err.message : 'OK'\\); }\\)\")",
       "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/about.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ console.log\\(err ? 'ERR:'+err.message : 'OK'\\); }\\)\")",
-      "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/blog.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ console.log\\(err ? 'ERR:'+err.message : 'OK'\\); }\\)\")"
+      "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/blog.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ console.log\\(err ? 'ERR:'+err.message : 'OK'\\); }\\)\")",
+      "Bash(node --check src/public/js/services-page.js)",
+      "Bash(node --check src/public/js/products-page.js)",
+      "Bash(node -e \"require\\('./src/routes/index.routes.js'\\); console.log\\('routes OK'\\)\")"
     ]
   }
 }
