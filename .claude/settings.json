@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(python3 -)",
-      "Bash(grep -v \"^[0-9]*:$\\\\|#\\\\|/\\\\*\")"
+      "Bash(grep -v \"^[0-9]*:$\\\\|#\\\\|/\\\\*\")",
+      "Bash(npm install *)",
+      "Bash(node -e ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/services.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ if\\(err\\) console.error\\('EJS ERROR:', err.message\\); else console.log\\('OK'\\); }\\)\")",
+      "Bash(node -e \"require\\('ejs'\\).renderFile\\('/Users/vedxcode/AA/src/views/home.html', {}, {views: '/Users/vedxcode/AA/src/views'}, function\\(err\\){ if\\(err\\) console.error\\('EJS ERROR:', err.message\\); else console.log\\('OK'\\); }\\)\")",
+      "Bash(node --check /Users/vedxcode/AA/src/public/js/services-page.js)",
+      "Bash(node --check /Users/vedxcode/AA/src/public/js/home-page.js)"
     ]
   }
 }

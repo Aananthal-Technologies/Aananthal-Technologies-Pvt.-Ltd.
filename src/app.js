@@ -17,6 +17,11 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Templating
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'));
+
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 

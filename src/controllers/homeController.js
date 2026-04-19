@@ -1,22 +1,20 @@
-const path = require('path');
-
-const sendView = (view) => (req, res, next) => {
+const renderView = (view) => (_req, res, next) => {
     try {
-        res.sendFile(path.join(__dirname, `../views/${view}.html`));
+        res.render(view);
     } catch (error) {
         next(error);
     }
 };
 
-const getHome      = sendView('home');
-const getProducts  = sendView('products');
-const getServices  = sendView('services');
-const getContact   = sendView('contact');
-const getAbout     = sendView('about');
-const getBlog      = sendView('blog');
-const getChangelog = sendView('changelog');
-const getPrivacy   = sendView('privacy');
-const getTerms     = sendView('terms');
+const getHome      = renderView('home');
+const getProducts  = renderView('products');
+const getServices  = renderView('services');
+const getContact   = renderView('contact');
+const getAbout     = renderView('about');
+const getBlog      = renderView('blog');
+const getChangelog = renderView('changelog');
+const getPrivacy   = renderView('privacy');
+const getTerms     = renderView('terms');
 
 module.exports = {
     getHome, getProducts, getServices, getContact,
