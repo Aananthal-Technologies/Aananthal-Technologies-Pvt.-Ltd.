@@ -17,22 +17,84 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
     <style>
+        .social-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #ffffff;
+            /* or your brand color */
+        }
+
+        .email-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .email-link:hover {
+            color: #ff4d4d;
+            /* subtle highlight */
+        }
+
+        .whatsapp-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            color: #25D366;
+            /* WhatsApp green */
+        }
+
+        .test-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .test-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            filter: grayscale(100%);
+            transition: filter 0.5s ease, transform 0.4s ease;
+        }
+
+        /* Hover on avatar */
+        .test-avatar:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+
+        /* Hover on full card (better UX) */
+        .test-card:hover .test-avatar img {
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+
         #wrapper .text {
             font-family: "Moon Dance", cursive;
-            /* 🔥 script font */
             font-size: 90px;
             font-weight: normal;
         }
 
         .footer-copy {
             color: rgba(255, 255, 255, 0.5);
-            /* default dim */
             transition: color 0.3s ease;
         }
 
         .footer-copy:hover {
             color: #ffffff;
-            /* 🔥 full white on hover */
         }
 
         .footer-globe {
@@ -51,14 +113,10 @@
         .footer-bottom {
             display: flex;
             flex-direction: column;
-            /* ✅ stack vertically */
             align-items: center;
-            /* ✅ center horizontally */
             justify-content: center;
             text-align: center;
-            /* ✅ center text */
             gap: 10px;
-            /* spacing between title & copyright */
             margin-top: 30px;
         }
 
@@ -92,10 +150,24 @@
             text-shadow: 0 0 26px rgba(255, 255, 255, 0.15);
         }
 
-        #wrapper:hover .text {
+        #wrapper:hover .text,
+        #wrapper.hover-active .text {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
             letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            #wrapper {
+                height: 180px;
+            }
+
+            #wrapper .text {
+                font-size: clamp(36px, 10vw, 58px);
+                letter-spacing: 0.5px;
+                line-height: 1.05;
+                text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+            }
         }
 
         #wrapper .line {
@@ -319,10 +391,17 @@
                         <div class="location-card-icon">
                             <span class="material-icons">mail</span>
                         </div>
+
                         <div class="location-card-content">
                             <div class="location-card-label">Email</div>
-                            <p class="location-card-value">aananthaltechnologies@gmail.com</p>
+                            <p class="location-card-value">
+                                <a href="mailto:aananthaltechnologies@gmail.com?subject=Inquiry&body=Hi%20Team%2C%20I%20want%20to%20know%20more"
+                                    class="email-link">
+                                    aananthaltechnologies@gmail.com
+                                </a>
+                            </p>
                         </div>
+
                         <span class="material-icons location-card-arrow">north_east</span>
                     </div>
                     <div class="location-card" data-stagger-child>
@@ -331,7 +410,12 @@
                         </div>
                         <div class="location-card-content">
                             <div class="location-card-label">Phone</div>
-                            <p class="location-card-value">+91 7386990245</p>
+                            <p class="location-card-value">
+                                <a href="https://wa.me/917386990245?text=Hi%20Aananthal%20Team%2C%20I%20want%20to%20know%20more"
+                                    target="_blank" class="whatsapp-link">
+                                    +91 7386990245
+                                </a>
+                            </p>
                         </div>
                         <span class="material-icons location-card-arrow">north_east</span>
                     </div>
@@ -430,22 +514,23 @@
     <section class="contact-testimonials-section">
         <div class="test-header">
             <h2 class="test-title" data-anim="fade-right">Loved by<br>Clients.</h2>
-            <p class="test-sub" data-anim="fade-left">Trusted by award-winning agencies and forward-thinking firms.</p>
+            <p class="test-sub" data-anim="fade-left">
+                Trusted by award-winning agencies and forward-thinking firms.
+            </p>
         </div>
 
         <div class="test-grid" data-stagger data-stagger-step="80">
+
+            <!-- CARD 1 -->
             <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
-                <p class="test-text">"Aananthal's approach to building THANU was unlike anything I'd seen — they treated
-                    every iteration as a step toward a vision, not just a deliverable. The result speaks for itself."
+                <p class="test-text">
+                    "Aananthal's approach to building THANU was unlike anything I'd seen — they treated
+                    every iteration as a step toward a vision, not just a deliverable."
                 </p>
                 <div class="test-author">
                     <div class="test-avatar">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-                            <circle cx="50" cy="50" r="50" fill="#e8e4df" />
-                            <circle cx="50" cy="38" r="18" fill="#b0a89e" />
-                            <ellipse cx="50" cy="85" rx="28" ry="20" fill="#b0a89e" />
-                        </svg>
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Arjun Mehta">
                     </div>
                     <div>
                         <div class="test-name">Arjun Mehta</div>
@@ -454,55 +539,50 @@
                 </div>
             </div>
 
+            <!-- CARD 2 -->
             <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
-                <p class="test-text">"PHMS transformed how our clinic operates. Early diagnostics, real-time monitoring,
-                    and the AI accuracy has genuinely improved outcomes for our patients."</p>
+                <p class="test-text">
+                    "PHMS transformed how our clinic operates. AI accuracy has genuinely improved outcomes."
+                </p>
                 <div class="test-author">
                     <div class="test-avatar">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-                            <circle cx="50" cy="50" r="50" fill="#e8e4df" />
-                            <circle cx="50" cy="38" r="18" fill="#b0a89e" />
-                            <ellipse cx="50" cy="85" rx="28" ry="20" fill="#b0a89e" />
-                        </svg>
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Dr. Priya Nair">
                     </div>
                     <div>
                         <div class="test-name">Dr. Priya Nair</div>
-                        <div class="test-handle">Senior Veterinarian, Bangalore</div>
+                        <div class="test-handle">Senior Veterinarian</div>
                     </div>
                 </div>
             </div>
 
+            <!-- CARD 3 -->
             <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
-                <p class="test-text">"The VFD Gen-2 cut our factory's energy costs by 32% in the first quarter. Their
-                    engineering team was thorough, communicative, and delivered exactly what they promised."</p>
+                <p class="test-text">
+                    "The VFD Gen-2 cut our energy costs by 32%. Their engineering team delivered exactly what they
+                    promised."
+                </p>
                 <div class="test-author">
                     <div class="test-avatar">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-                            <circle cx="50" cy="50" r="50" fill="#e8e4df" />
-                            <circle cx="50" cy="38" r="18" fill="#b0a89e" />
-                            <ellipse cx="50" cy="85" rx="28" ry="20" fill="#b0a89e" />
-                        </svg>
+                        <img src="https://i.pravatar.cc/150?img=8" alt="Rajeev Sharma">
                     </div>
                     <div>
                         <div class="test-name">Rajeev Sharma</div>
-                        <div class="test-handle">Operations Director, Manufacturing</div>
+                        <div class="test-handle">Operations Director</div>
                     </div>
                 </div>
             </div>
 
+            <!-- CARD 4 -->
             <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
-                <p class="test-text">"The team's depth in AI and robotics is rare. They don't just code solutions — they
-                    understand the problem domain deeply and that shows in everything they build."</p>
+                <p class="test-text">
+                    "Their depth in AI and robotics is rare. They truly understand the problem domain."
+                </p>
                 <div class="test-author">
                     <div class="test-avatar">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-                            <circle cx="50" cy="50" r="50" fill="#e8e4df" />
-                            <circle cx="50" cy="38" r="18" fill="#b0a89e" />
-                            <ellipse cx="50" cy="85" rx="28" ry="20" fill="#b0a89e" />
-                        </svg>
+                        <img src="https://i.pravatar.cc/150?img=9" alt="Sanjana Krishnan">
                     </div>
                     <div>
                         <div class="test-name">Sanjana Krishnan</div>
@@ -511,48 +591,45 @@
                 </div>
             </div>
 
+            <!-- CARD 5 -->
             <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
-                <p class="test-text">"Working with Aananthal felt like having a co-founder who happened to be an AI
-                    engineer. They took ownership of outcomes, not just tasks — and that made all the difference."</p>
+                <p class="test-text">
+                    "Working with Aananthal felt like having a co-founder. They took ownership of outcomes."
+                </p>
                 <div class="test-author">
                     <div class="test-avatar">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-                            <circle cx="50" cy="50" r="50" fill="#e8e4df" />
-                            <circle cx="50" cy="38" r="18" fill="#b0a89e" />
-                            <ellipse cx="50" cy="85" rx="28" ry="20" fill="#b0a89e" />
-                        </svg>
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Vikram Patel">
                     </div>
                     <div>
                         <div class="test-name">Vikram Patel</div>
-                        <div class="test-handle">Founder, HealthAI Startup</div>
+                        <div class="test-handle">Founder, HealthAI</div>
                     </div>
                 </div>
             </div>
 
+            <!-- CARD 6 -->
             <div class="test-card tilt-card" data-stagger-child>
                 <div class="test-quote-mark">"</div>
-                <p class="test-text">"They shipped our integration in 3 weeks — something two previous agencies couldn't
-                    do in 3 months. And the code quality was exceptional. Highly recommended."</p>
+                <p class="test-text">
+                    "They shipped in 3 weeks what others couldn't in months. Code quality was exceptional."
+                </p>
                 <div class="test-author">
                     <div class="test-avatar">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-                            <circle cx="50" cy="50" r="50" fill="#e8e4df" />
-                            <circle cx="50" cy="38" r="18" fill="#b0a89e" />
-                            <ellipse cx="50" cy="85" rx="28" ry="20" fill="#b0a89e" />
-                        </svg>
+                        <img src="https://i.pravatar.cc/150?img=15" alt="Meera Iyer">
                     </div>
                     <div>
                         <div class="test-name">Meera Iyer</div>
-                        <div class="test-handle">Head of Product, Enterprise SaaS</div>
+                        <div class="test-handle">Head of Product</div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner">
             <p class="footer-tagline">Escape the reality.</p>
 
@@ -590,10 +667,16 @@
                     <div class="footer-col footer-col-social">
                         <h4>Stalk Us</h4>
                         <ul>
-                            <li data-social="facebook" style="cursor:pointer;"><i class="fa-brands fa-facebook"></i> Facebook</li>
-                            <li data-social="instagram" style="cursor:pointer;"><i class="fa-brands fa-instagram"></i> Instagram</li>
-                            <li data-social="youtube" style="cursor:pointer;"><i class="fa-brands fa-youtube"></i> Youtube</li>
-                            <li data-social="linkedin" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/company/aananthal-technologies','_blank')"><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+                            <li data-social="facebook" style="cursor:pointer;"><i class="fa-brands fa-facebook"></i>
+                                Facebook</li>
+                            <li data-social="instagram" style="cursor:pointer;"><i class="fa-brands fa-instagram"></i>
+                                Instagram</li>
+                            <li data-social="youtube" style="cursor:pointer;"><i class="fa-brands fa-youtube"></i>
+                                Youtube</li>
+                            <li data-social="linkedin" style="cursor:pointer;"
+                                onclick="window.open('https://www.linkedin.com/company/aananthal-technologies','_blank')">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -602,7 +685,8 @@
                     <h4>Contact</h4>
                     <div class="footer-contact-items">
                         <div class="footer-contact-row">
-                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka,
+                                560043.</p>
                             <span class="material-icons">location_on</span>
                         </div>
                         <div class="footer-contact-row">
@@ -643,8 +727,13 @@
             const revealCtx = revealCanvas.getContext("2d");
             const revealWrapper = document.getElementById("wrapper");
             let particles = [], hovered = false;
-            const text = "Humans × AI", fontSize = 90;
+            const text = "Humans × AI";
+            let fontSize = window.innerWidth <= 768 ? 60 : 90;
+            function updateFontSize() {
+                fontSize = window.innerWidth <= 768 ? 60 : 90;
+            }
             function resizeReveal() {
+                updateFontSize();
                 revealCanvas.width = revealWrapper.offsetWidth;
                 revealCanvas.height = revealWrapper.offsetHeight;
                 createParticles();
@@ -681,8 +770,18 @@
                 });
                 requestAnimationFrame(animateReveal);
             }
-            revealWrapper.addEventListener("mouseenter", () => hovered = true);
-            revealWrapper.addEventListener("mouseleave", () => hovered = false);
+            const showText = () => { revealWrapper.classList.add("hover-active"); hovered = true; };
+            const hideText = () => { revealWrapper.classList.remove("hover-active"); hovered = false; };
+
+            revealWrapper.addEventListener("mouseenter", showText);
+            revealWrapper.addEventListener("mouseleave", hideText);
+            revealWrapper.addEventListener("pointerdown", (event) => {
+                if (event.pointerType !== "mouse") showText();
+            });
+            revealWrapper.addEventListener("pointerup", (event) => {
+                if (event.pointerType !== "mouse") hideText();
+            });
+            revealWrapper.addEventListener("pointercancel", hideText);
             window.addEventListener("resize", resizeReveal);
             resizeReveal();
             animateReveal();

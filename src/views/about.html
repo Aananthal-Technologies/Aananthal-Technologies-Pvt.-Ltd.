@@ -84,10 +84,24 @@
             text-shadow: 0 0 26px rgba(255, 255, 255, 0.15);
         }
 
-        #wrapper:hover .text {
+        #wrapper:hover .text,
+        #wrapper.hover-active .text {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
             letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            #wrapper {
+                height: 180px;
+            }
+
+            #wrapper .text {
+                font-size: clamp(36px, 10vw, 58px);
+                letter-spacing: 0.5px;
+                line-height: 1.05;
+                text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+            }
         }
 
         #wrapper .line {
@@ -1374,9 +1388,14 @@
             let hovered = false;
 
             const text = "Humans × AI";
-            const fontSize = 90;
+            let fontSize = window.innerWidth <= 768 ? 60 : 90;
+
+            function updateFontSize() {
+                fontSize = window.innerWidth <= 768 ? 60 : 90;
+            }
 
             function resizeReveal() {
+                updateFontSize();
                 revealCanvas.width = revealWrapper.offsetWidth;
                 revealCanvas.height = revealWrapper.offsetHeight;
                 createParticles();
@@ -1432,8 +1451,18 @@
                 requestAnimationFrame(animateReveal);
             }
 
-            revealWrapper.addEventListener("mouseenter", () => hovered = true);
-            revealWrapper.addEventListener("mouseleave", () => hovered = false);
+            const showText = () => { revealWrapper.classList.add("hover-active"); hovered = true; };
+            const hideText = () => { revealWrapper.classList.remove("hover-active"); hovered = false; };
+
+            revealWrapper.addEventListener("mouseenter", showText);
+            revealWrapper.addEventListener("mouseleave", hideText);
+            revealWrapper.addEventListener("pointerdown", (event) => {
+                if (event.pointerType !== "mouse") showText();
+            });
+            revealWrapper.addEventListener("pointerup", (event) => {
+                if (event.pointerType !== "mouse") hideText();
+            });
+            revealWrapper.addEventListener("pointercancel", hideText);
             window.addEventListener("resize", resizeReveal);
             resizeReveal();
             animateReveal();
