@@ -4298,6 +4298,8 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.07);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-page .contact-testimonials-section .test-card:hover {
@@ -4327,6 +4329,7 @@ body {
   margin-bottom: 32px;
   position: relative;
   z-index: 1;
+  flex: 1;
 }
 
 .contact-page .contact-testimonials-section .test-card .test-author {
@@ -4335,6 +4338,7 @@ body {
   gap: 12px;
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: auto;
 }
 
 .contact-page .contact-testimonials-section .test-card .test-author .test-avatar {
@@ -5934,7 +5938,7 @@ body {
   }
 
   .site-footer .footer-contact-col .footer-contact-row {
-    flex-direction: row-reverse;
+    flex-direction: row;
     gap: 12px;
   }
 
@@ -7103,12 +7107,12 @@ body.cursor-hover .cursor-ring {
 }
 
 .site-footer .footer-col h4 {
+  margin-bottom: 24px;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
   font-weight: 400;
-  font-weight: bold;
 }
 
 .site-footer .footer-col ul {
@@ -7165,7 +7169,6 @@ body.cursor-hover .cursor-ring {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-end;
 }
 
 .site-footer .footer-contact-col .footer-contact-row {
@@ -7179,7 +7182,7 @@ body.cursor-hover .cursor-ring {
   color: rgba(255, 255, 255, 0.35);
   font-size: 13px;
   line-height: 1.6;
-  text-align: right;
+  text-align: left;
 }
 
 .site-footer .footer-contact-col .footer-contact-row .material-icons {
@@ -7221,7 +7224,7 @@ body.cursor-hover .cursor-ring {
 .site-footer .footer-divider {
   height: 1px;
   background: #141414;
-  margin: 60px 0 32px;
+  margin: 30px 0 30px;
 }
 
 .site-footer .footer-bottom {
@@ -7239,7 +7242,7 @@ body.cursor-hover .cursor-ring {
 }
 
 .site-footer .footer-bottom .footer-copy {
-  text-align: right;
+  text-align: center;
   color: rgba(255, 255, 255, 0.2);
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -7292,8 +7295,6 @@ html {
   background: #000;
   color: #fff;
 }
-
-/*# sourceMappingURL=global.css.map */
 
 /* ─── Dev Status Section (Products) ─── */
 .dev-status-section {
