@@ -16,6 +16,29 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
     <style>
+        .footer-col ul li {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            display: block;
+            padding: 6px 0;
+        }
+
+        .social-link {
+            color: inherit;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #ffffff;
+            /* or your brand color */
+        }
+
         #wrapper .text {
             font-family: "Moon Dance", cursive;
             font-size: 90px;
@@ -84,10 +107,24 @@
             text-shadow: 0 0 26px rgba(255, 255, 255, 0.15);
         }
 
-        #wrapper:hover .text {
+        #wrapper:hover .text,
+        #wrapper.hover-active .text {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
             letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            #wrapper {
+                height: 180px;
+            }
+
+            #wrapper .text {
+                font-size: clamp(36px, 10vw, 58px);
+                letter-spacing: 0.5px;
+                line-height: 1.05;
+                text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+            }
         }
 
         #wrapper .line {
@@ -856,7 +893,7 @@
     <script src="/js/home-page.js"></script>
 
     <!-- Footer -->
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner">
             <p class="footer-tagline">Escape the reality.</p>
 
@@ -894,10 +931,32 @@
                     <div class="footer-col footer-col-social">
                         <h4>Stalk Us</h4>
                         <ul>
-                            <li data-social="facebook" style="cursor:pointer;"><i class="fa-brands fa-facebook"></i> Facebook</li>
-                            <li data-social="instagram" style="cursor:pointer;"><i class="fa-brands fa-instagram"></i> Instagram</li>
-                            <li data-social="youtube" style="cursor:pointer;"><i class="fa-brands fa-youtube"></i> Youtube</li>
-                            <li data-social="linkedin" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/company/aananthal-technologies','_blank')"><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.youtube.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-youtube"></i> Youtube
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.linkedin.com/company/aananthal-technologies" target="_blank"
+                                    class="social-link">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -906,7 +965,8 @@
                     <h4>Contact</h4>
                     <div class="footer-contact-items">
                         <div class="footer-contact-row">
-                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka, 560043.</p>
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka,
+                                560043.</p>
                             <span class="material-icons">location_on</span>
                         </div>
                         <div class="footer-contact-row">
@@ -947,8 +1007,13 @@
             const revealCtx = revealCanvas.getContext("2d");
             const revealWrapper = document.getElementById("wrapper");
             let particles = [], hovered = false;
-            const text = "Humans × AI", fontSize = 90;
+            const text = "Humans × AI";
+            let fontSize = window.innerWidth <= 768 ? 60 : 90;
+            function updateFontSize() {
+                fontSize = window.innerWidth <= 768 ? 60 : 90;
+            }
             function resizeReveal() {
+                updateFontSize();
                 revealCanvas.width = revealWrapper.offsetWidth;
                 revealCanvas.height = revealWrapper.offsetHeight;
                 createParticles();
@@ -985,8 +1050,18 @@
                 });
                 requestAnimationFrame(animateReveal);
             }
-            revealWrapper.addEventListener("mouseenter", () => hovered = true);
-            revealWrapper.addEventListener("mouseleave", () => hovered = false);
+            const showText = () => { revealWrapper.classList.add("hover-active"); hovered = true; };
+            const hideText = () => { revealWrapper.classList.remove("hover-active"); hovered = false; };
+
+            revealWrapper.addEventListener("mouseenter", showText);
+            revealWrapper.addEventListener("mouseleave", hideText);
+            revealWrapper.addEventListener("pointerdown", (event) => {
+                if (event.pointerType !== "mouse") showText();
+            });
+            revealWrapper.addEventListener("pointerup", (event) => {
+                if (event.pointerType !== "mouse") hideText();
+            });
+            revealWrapper.addEventListener("pointercancel", hideText);
             window.addEventListener("resize", resizeReveal);
             resizeReveal();
             animateReveal();
