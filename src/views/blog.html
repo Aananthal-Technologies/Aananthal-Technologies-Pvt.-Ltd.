@@ -243,4 +243,31 @@
     </section>
 
         
+    <!-- Newsletter Section -->
+    <section class="blog-notify fade-section">
+        <div class="blog-notify-inner">
+            <div class="blog-notify-label">Stay in the Loop</div>
+            <h2 class="blog-notify-title">Get notified when<br>we publish.</h2>
+            <p class="blog-notify-sub">We write when we have something real to say. No spam — just research notes, engineering stories, and honest updates from the lab.</p>
+            <form class="blog-notify-form" onsubmit="handleNotifySubmit(event)">
+                <input type="email" class="blog-notify-input" placeholder="your@email.com" required>
+                <button type="submit" class="blog-notify-btn">Notify Me <span class="material-icons">arrow_forward</span></button>
+            </form>
+            <p class="blog-notify-note">No account needed. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <script>
+    function handleNotifySubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.blog-notify-btn');
+        const input = e.target.querySelector('.blog-notify-input');
+        btn.textContent = 'Subscribed!';
+        btn.style.background = '#000';
+        btn.style.color = '#fff';
+        input.disabled = true;
+        btn.disabled = true;
+    }
+    </script>
+
     <%- include('partials/footer.html') %>
