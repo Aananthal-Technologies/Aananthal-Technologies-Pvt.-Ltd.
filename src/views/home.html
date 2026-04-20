@@ -136,6 +136,38 @@
             background: #333;
             z-index: -1;
         }
+
+        .footer-contact-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #ffffff;
+        }
+
+        .whatsapp-link:hover {
+            color: #25D366;
+            /* WhatsApp green */
+        }
+
+        .email-link:hover {
+            color: #ff4d4d;
+        }
     </style>
 </head>
 
@@ -970,12 +1002,19 @@
                             <span class="material-icons">location_on</span>
                         </div>
                         <div class="footer-contact-row">
-                            <p>+91 7386990245</p>
-                            <span class="material-icons">phone</span>
+                            <span class="material-icons contact-icon">phone</span>
+                            <a href="https://wa.me/917386990245?text=Hi%20Aananthal%20Team%2C%20I%20want%20to%20know%20more"
+                                target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link">
+                                +91 7386990245
+                            </a>
                         </div>
+
                         <div class="footer-contact-row">
-                            <p>aananthaltechnologies@gmail.com</p>
-                            <span class="material-icons">mail</span>
+                            <span class="material-icons contact-icon">mail</span>
+                            <a href="mailto:aananthaltechnologies@gmail.com?subject=Inquiry&body=Hi%20Team%2C%20I%20want%20to%20know%20more"
+                                class="contact-link email-link">
+                                aananthaltechnologies@gmail.com
+                            </a>
                         </div>
                     </div>
                 </div>
