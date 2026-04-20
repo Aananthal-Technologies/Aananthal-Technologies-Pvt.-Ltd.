@@ -1,8 +1,8 @@
 // ─── Hero Canvas ──────────────────────────────────────────
 const themes = [
+    { id: 'phms', folder: 'hero-frames-phms', start: 1, end: 208 },
     { id: 'robotics', folder: 'hero-frames-robotics', start: 1, end: 207 },
-    { id: 'phms',     folder: 'hero-frames-phms',     start: 1, end: 208 },
-    { id: 'vfd',      folder: 'hero-frames-vfd',      start: 1, end: 222 }
+    { id: 'vfd', folder: 'hero-frames-vfd', start: 1, end: 222 }
 ];
 let currentThemeIndex = 0;
 const imagesCache = { robotics: [], phms: [], vfd: [] };
@@ -53,9 +53,11 @@ function switchTheme(index) {
     updateCanvas(0);
 }
 
-document.getElementById('next-hero').onclick = () => { switchTheme((currentThemeIndex + 1) % themes.length); resetAutoplay(); };
-document.getElementById('prev-hero').onclick = () => { switchTheme((currentThemeIndex - 1 + themes.length) % themes.length); resetAutoplay(); };
-indicators.forEach((ind, i) => ind.onclick = () => { switchTheme(i); resetAutoplay(); });
+function switchSlide(index) { window.scrollTo({ top: 0, behavior: 'smooth' }); switchTheme(index); resetAutoplay(); }
+
+document.getElementById('next-hero').onclick = () => switchSlide((currentThemeIndex + 1) % themes.length);
+document.getElementById('prev-hero').onclick = () => switchSlide((currentThemeIndex - 1 + themes.length) % themes.length);
+indicators.forEach((ind, i) => ind.onclick = () => switchSlide(i));
 
 let autoplayTimer = null, scrollPauseTimer = null;
 
@@ -221,7 +223,7 @@ function launchConfetti() {
     document.body.appendChild(c);
     const ctx = c.getContext('2d');
     c.width = window.innerWidth; c.height = window.innerHeight;
-    const colors = ['#ff6b6b','#ffd93d','#6bcb77','#4d96ff','#c77dff','#ff9f1c','#fff'];
+    const colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#c77dff', '#ff9f1c', '#fff'];
     const particles = Array.from({ length: 160 }, () => ({
         x: Math.random() * c.width, y: -20 - Math.random() * 80,
         w: Math.random() * 12 + 5, h: Math.random() * 7 + 3,

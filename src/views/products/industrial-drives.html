@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Drives — Drive Systems · Aananthal Technologies</title>
+    <meta name="description"
+        content="Aananthal Industrial Drive Systems — AI-powered precision motor control, 35% energy savings, and predictive maintenance for demanding industrial environments.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="/images/logo_transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/product-detail.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+
+<body>
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-wordmark"><span class="loader-char" style="--i:1">A</span><span class="loader-char"
+                    style="--i:2">a</span><span class="loader-char" style="--i:3">n</span><span class="loader-char"
+                    style="--i:4">a</span><span class="loader-char" style="--i:5">n</span><span class="loader-char"
+                    style="--i:6">t</span><span class="loader-char" style="--i:7">h</span><span class="loader-char"
+                    style="--i:8">a</span><span class="loader-char" style="--i:9">l</span></div>
+            <div class="loader-tagline">Technologies</div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="scroll-progress"></div>
+    <button id="back-to-top" aria-label="Back to top"><span class="material-icons">arrow_upward</span></button>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
+        <a href="/" class="text-decoration-none"><img src="/images/logo_transparent.png"
+                alt="Aananthal Technologies Logo" height="40" class="brand-logo" /></a>
+        <div class="d-flex gap-4 desktop-nav">
+            <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
+            <a href="/products" class="text-decoration-none fw-medium nav-link-custom" style="opacity:1;">Products</a>
+            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/about" class="text-decoration-none fw-medium nav-link-custom">About</a>
+            <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
+        </div>
+        <button class="hamburger-btn" id="hamburger-btn"
+            aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-inner"><button class="mobile-menu-close" id="mobile-menu-close"
+                aria-label="Close menu"><span class="material-icons">close</span></button>
+            <nav class="mobile-nav"><a href="/" class="mobile-nav-link">Home</a><a href="/products"
+                    class="mobile-nav-link">Products</a><a href="/services" class="mobile-nav-link">Services</a><a
+                    href="/about" class="mobile-nav-link">About</a><a href="/contact" class="mobile-nav-link">Contact
+                    Us</a></nav>
+            <div class="mobile-menu-footer">
+                <p>Aananthal Technologies</p>
+                <p>Bangalore, India</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. HERO -->
+    <section class="pd-hero pd-hero--id">
+        <div class="pd-hero-bg-text">DRIVES</div>
+        <div class="pd-hero-inner">
+            <div class="pd-hero-breadcrumb"><a href="/products">← Products</a> / Industrial Drives</div>
+            <div class="pd-hero-badge"><span class="pd-badge-dot" style="background:#f59e0b"></span>Active R&amp;D · 60%
+                Complete</div>
+            <h1 class="pd-hero-title">Industrial<br><em>Drive Systems.</em></h1>
+            <p class="pd-hero-sub">AI-powered precision motor control for demanding industrial environments — 35% energy
+                savings, predictive maintenance, zero unplanned downtime.</p>
+            <div class="pd-hero-actions">
+                <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn">Request Demo <span
+                        class="material-icons">arrow_forward</span></a>
+                <a href="/contact" class="pd-cta-outline btn-magnetic">Get Specifications</a>
+            </div>
+        </div>
+        <div class="pd-hero-visual">
+            <div class="vfd-visual">
+                <div class="vfd-graphic">
+                    <div class="vfd-board">
+                        <div class="vfd-display">
+                            <div class="vfd-readout" id="vfd-readout">50.0 Hz</div>
+                            <div class="vfd-unit">Output Frequency</div>
+                        </div>
+                        <div class="vfd-bars">
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                            <div class="vfd-bar"></div>
+                        </div>
+                        <div class="vfd-controls">
+                            <div class="vfd-btn"></div>
+                            <div class="vfd-btn"></div>
+                            <div class="vfd-btn"></div>
+                            <div class="vfd-btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. METRICS STRIP -->
+    <section class="pd-metrics-strip">
+        <div class="pd-metric">
+            <div class="pd-metric-num">35%</div>
+            <div class="pd-metric-lbl">Projected Energy Savings</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">99.9%</div>
+            <div class="pd-metric-lbl">Uptime Target</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">60%</div>
+            <div class="pd-metric-lbl">Dev Complete</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">0.1Hz</div>
+            <div class="pd-metric-lbl">Frequency Resolution</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">IP66</div>
+            <div class="pd-metric-lbl">Protection Rating</div>
+        </div>
+    </section>
+
+    <!-- 3. OVERVIEW -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner pd-two-col">
+            <div class="pd-text-block">
+                <div class="section-label">What Are Industrial Drives</div>
+                <h2 class="pd-section-title">Smarter motors.<br>Lower bills.<br>Zero surprises.</h2>
+                <p class="pd-body">Industrial Drive Systems are the intelligent layer between your power supply and your
+                    motors. They don't just control speed — they optimise every aspect of motor operation, eliminate
+                    energy waste, and monitor the health of your entire drive train continuously.</p>
+                <p class="pd-body">Aananthal's Industrial Drives add AI-driven predictive maintenance on top of
+                    precision control — detecting bearing wear, winding degradation, and load imbalances weeks before
+                    they cause a shutdown. The result: 35% energy savings, near-zero unplanned downtime, and a complete
+                    audit trail for every motor on your plant floor.</p>
+                <ul class="pd-check-list">
+                    <li><span class="material-icons">check_circle</span>0.1 Hz frequency resolution — unmatched
+                        precision</li>
+                    <li><span class="material-icons">check_circle</span>AI predictive maintenance — catch failures weeks
+                        early</li>
+                    <li><span class="material-icons">check_circle</span>Real-time remote monitoring via IoT dashboard
+                    </li>
+                    <li><span class="material-icons">check_circle</span>Works with any 3-phase AC induction motor</li>
+                </ul>
+            </div>
+            <div class="pd-image-block">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=700&q=80&fit=crop"
+                    alt="Industrial automation" class="pd-img" />
+                <div class="pd-img-caption">Industrial Drive Systems under development at Aananthal Labs — Gen 2.0
+                    firmware phase</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTROL SYSTEM FLOWCHART -->
+    <section class="pd-section pd-section--dark fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">System Architecture</div>
+            <h2 class="pd-section-title" style="color:#fff">Control System Architecture</h2>
+            <p class="pd-body" style="color:rgba(255,255,255,0.5);max-width:600px;">From grid power to optimised motor
+                output — every step managed by precision control and continuous AI monitoring.</p>
+            <div class="pd-flowchart pd-flowchart--horizontal">
+                <div class="pd-flow-step pd-flow-step--1">
+                    <div class="pd-flow-icon"><span class="material-icons">electric_bolt</span></div>
+                    <div class="pd-flow-num">01</div>
+                    <div class="pd-flow-title">Power Input</div>
+                    <div class="pd-flow-desc">3-phase AC mains (415V / 50Hz). Input rectification and EMI filtering.
+                        Active front-end for unity power factor.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--2">
+                    <div class="pd-flow-icon"><span class="material-icons">memory</span></div>
+                    <div class="pd-flow-num">02</div>
+                    <div class="pd-flow-title">DSP Control Core</div>
+                    <div class="pd-flow-desc">TMS320 DSP running vector control algorithms at 20kHz switching frequency.
+                        Sub-millisecond response to load changes.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--3">
+                    <div class="pd-flow-icon"><span class="material-icons">psychology</span></div>
+                    <div class="pd-flow-num">03</div>
+                    <div class="pd-flow-title">AI Monitoring Layer</div>
+                    <div class="pd-flow-desc">Edge AI continuously analyses current signatures, vibration data, and
+                        thermal patterns to predict failures and optimise energy use.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--4">
+                    <div class="pd-flow-icon"><span class="material-icons">speed</span></div>
+                    <div class="pd-flow-num">04</div>
+                    <div class="pd-flow-title">Motor Output</div>
+                    <div class="pd-flow-desc">Variable frequency, variable voltage PWM output to motor terminals. Smooth
+                        ramp profiles eliminate mechanical stress.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--5b">
+                    <div class="pd-flow-icon"><span class="material-icons">dashboard</span></div>
+                    <div class="pd-flow-num">05</div>
+                    <div class="pd-flow-title">Cloud Dashboard</div>
+                    <div class="pd-flow-desc">All data streamed to IoT cloud dashboard. Remote monitoring, alerts,
+                        energy reports, and predictive maintenance tickets.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ENERGY SAVINGS CHART -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner pd-two-col">
+            <div class="pd-text-block">
+                <div class="section-label">Projected Energy Performance</div>
+                <h2 class="pd-section-title">35% Less Energy.<br>Same Output.</h2>
+                <p class="pd-body">By matching motor speed precisely to load demand, our drives are designed to deliver
+                    significant efficiency gains. These are projected targets based on simulation and controlled bench
+                    testing — to be confirmed in pilot programme installations.</p>
+                <div class="pd-accuracy-bars">
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Pump Applications</span><span class="pd-acc-pct">40%</span>
+                        </div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:40%;background:#4ade80"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Fan &amp; HVAC Systems</span><span class="pd-acc-pct">38%</span>
+                        </div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:38%;background:#60a5fa"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Conveyor Systems</span><span class="pd-acc-pct">32%</span></div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:32%;background:#f59e0b"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Compressor Drives</span><span class="pd-acc-pct">28%</span>
+                        </div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:28%;background:#a78bfa"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Machine Tool Spindles</span><span class="pd-acc-pct">22%</span>
+                        </div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:22%;background:#f87171"></div>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-family:'Inconsolata',monospace;font-size:11px;color:#888;margin-top:12px;">Projected
+                    energy savings vs. fixed-speed direct-on-line starting. To be validated in pilot programme
+                    installations.</p>
+            </div>
+            <div class="pd-image-block">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&fit=crop"
+                    alt="Industrial motors" class="pd-img" />
+                <div class="pd-img-caption">Tested across pump, fan, compressor, and conveyor applications in
+                    manufacturing environments</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FEATURES GRID -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Capabilities</div>
+            <h2 class="pd-section-title">What Industrial Drives Do</h2>
+            <div class="pd-feature-grid">
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">speed</span></div>
+                    <h3 class="pd-feat-title">Precision Speed Control</h3>
+                    <p class="pd-feat-body">0.1 Hz resolution from 0.5 Hz to 400 Hz output range. Field-oriented vector
+                        control delivers tight speed regulation under variable load.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">bolt</span></div>
+                    <h3 class="pd-feat-title">35% Energy Savings</h3>
+                    <p class="pd-feat-body">Speed-matched operation eliminates constant-speed waste. Regenerative
+                        braking captures energy during deceleration phases.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">build</span></div>
+                    <h3 class="pd-feat-title">Predictive Maintenance</h3>
+                    <p class="pd-feat-body">Current signature analysis, vibration monitoring, and thermal tracking
+                        detect bearing wear, winding faults, and load imbalances weeks in advance.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">hub</span></div>
+                    <h3 class="pd-feat-title">IoT Integration</h3>
+                    <p class="pd-feat-body">MQTT/Modbus/Profibus connectivity. Integrates with SCADA, PLC, and cloud
+                        dashboards. REST API for custom integrations.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">analytics</span></div>
+                    <h3 class="pd-feat-title">Real-time Analytics</h3>
+                    <p class="pd-feat-body">Per-second data logging for all motor parameters. Energy reports, efficiency
+                        trends, and fault history accessible from any device.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">shield</span></div>
+                    <h3 class="pd-feat-title">Industrial Grade</h3>
+                    <p class="pd-feat-body">IP66 enclosure, -10°C to +55°C operating range, conformal-coated PCBs, and
+                        100,000-hour MTBF target for harsh environments.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">tune</span></div>
+                    <h3 class="pd-feat-title">Auto-Tuning</h3>
+                    <p class="pd-feat-body">One-button auto-tune identifies motor parameters and optimises control gains
+                        automatically. No manual commissioning for standard applications.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">notifications_active</span></div>
+                    <h3 class="pd-feat-title">Smart Alerts</h3>
+                    <p class="pd-feat-body">Configurable alarm thresholds with SMS, email, and app notifications.
+                        Severity-tiered from advisory to critical — actionable, not noisy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MONITORING DASHBOARD MOCKUP -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Remote Monitoring</div>
+            <h2 class="pd-section-title">Your Plant Floor, Anywhere</h2>
+            <p class="pd-body" style="max-width:580px;">Every drive on your floor is visible in one place — live
+                parameters, energy consumption, maintenance predictions, and fault history. Accessible on any device,
+                24/7.</p>
+            <div class="id-dashboard-mockup">
+                <div class="id-dash-header"><span class="id-dash-logo">Industrial Drives · SCADA View</span><span
+                        class="id-dash-status">Prototype UI Demo</span></div>
+                <div class="id-drives-list">
+                    <div class="id-drive-row id-drive-row--ok">
+                        <div class="id-drive-num">DRIVE-01</div>
+                        <div class="id-drive-info">
+                            <div class="id-drive-name">Pump Station A</div>
+                            <div class="id-drive-loc">Building 1 · Basement</div>
+                        </div>
+                        <div class="id-drive-params"><span class="id-param">47.3 Hz</span><span class="id-param">23.4
+                                A</span><span class="id-param">38°C</span></div>
+                        <div class="id-drive-status id-status-ok"><span class="material-icons">check_circle</span>Normal
+                        </div>
+                    </div>
+                    <div class="id-drive-row id-drive-row--warn">
+                        <div class="id-drive-num">DRIVE-02</div>
+                        <div class="id-drive-info">
+                            <div class="id-drive-name">Conveyor Line B</div>
+                            <div class="id-drive-loc">Building 2 · Floor 1</div>
+                        </div>
+                        <div class="id-drive-params"><span class="id-param">35.0 Hz</span><span class="id-param">41.2
+                                A</span><span class="id-param">52°C</span></div>
+                        <div class="id-drive-status id-status-warn"><span class="material-icons">warning</span>Advisory
+                        </div>
+                    </div>
+                    <div class="id-drive-row id-drive-row--ok">
+                        <div class="id-drive-num">DRIVE-03</div>
+                        <div class="id-drive-info">
+                            <div class="id-drive-name">HVAC Fan Unit</div>
+                            <div class="id-drive-loc">Roof Level</div>
+                        </div>
+                        <div class="id-drive-params"><span class="id-param">50.0 Hz</span><span class="id-param">12.1
+                                A</span><span class="id-param">31°C</span></div>
+                        <div class="id-drive-status id-status-ok"><span class="material-icons">check_circle</span>Normal
+                        </div>
+                    </div>
+                </div>
+                <div class="id-dash-energy-row">
+                    <div class="id-energy-stat">
+                        <div class="id-energy-val">38.4 kWh</div>
+                        <div class="id-energy-lbl">Today's Consumption</div>
+                    </div>
+                    <div class="id-energy-stat id-energy-stat--green">
+                        <div class="id-energy-val">14.2 kWh</div>
+                        <div class="id-energy-lbl">Energy Saved Today</div>
+                    </div>
+                    <div class="id-energy-stat">
+                        <div class="id-energy-val">₹2,840</div>
+                        <div class="id-energy-lbl">Cost Saving (MTD)</div>
+                    </div>
+                    <div class="id-energy-stat">
+                        <div class="id-energy-val">23 days</div>
+                        <div class="id-energy-lbl">Next Maintenance (DRIVE-02)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PREDICTIVE MAINTENANCE FLOW -->
+    <section class="pd-section pd-section--dark fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">AI Maintenance</div>
+            <h2 class="pd-section-title" style="color:#fff">Predictive Maintenance Pipeline</h2>
+            <div class="pd-flowchart">
+                <div class="pd-flow-step pd-flow-step--1">
+                    <div class="pd-flow-icon"><span class="material-icons">sensors</span></div>
+                    <div class="pd-flow-num">01</div>
+                    <div class="pd-flow-title">Continuous Sensing</div>
+                    <div class="pd-flow-desc">Current, voltage, temperature, vibration, and speed sampled at 10kHz.
+                        Every anomaly in the electrical signature is captured.</div>
+                </div>
+                <div class="pd-flow-connector">
+                    <div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--2">
+                    <div class="pd-flow-icon"><span class="material-icons">analytics</span></div>
+                    <div class="pd-flow-num">02</div>
+                    <div class="pd-flow-title">Signature Analysis</div>
+                    <div class="pd-flow-desc">FFT-based current signature analysis detects bearing defect frequencies,
+                        rotor bar faults, and winding asymmetries in real time.</div>
+                </div>
+                <div class="pd-flow-connector">
+                    <div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--3">
+                    <div class="pd-flow-icon"><span class="material-icons">psychology</span></div>
+                    <div class="pd-flow-num">03</div>
+                    <div class="pd-flow-title">AI Fault Prediction</div>
+                    <div class="pd-flow-desc">LSTM-based fault model calculates days-to-failure for each fault mode.
+                        Confidence-scored predictions with recommended actions.</div>
+                </div>
+                <div class="pd-flow-connector">
+                    <div class="pd-flow-line"></div><span class="material-icons">arrow_downward</span>
+                </div>
+                <div class="pd-flow-split">
+                    <div class="pd-flow-step pd-flow-step--5">
+                        <div class="pd-flow-icon"><span class="material-icons">engineering</span></div>
+                        <div class="pd-flow-num">04a</div>
+                        <div class="pd-flow-title">Maintenance Ticket</div>
+                        <div class="pd-flow-desc">Automated work order generated with fault details, priority level, and
+                            suggested repair window to minimise disruption.</div>
+                    </div>
+                    <div class="pd-flow-step pd-flow-step--5b">
+                        <div class="pd-flow-icon"><span class="material-icons">notifications_active</span></div>
+                        <div class="pd-flow-num">04b</div>
+                        <div class="pd-flow-title">Operator Alert</div>
+                        <div class="pd-flow-desc">Plant manager notified via dashboard, SMS, and email. Estimated
+                            remaining life displayed with severity indicator.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. TECH SPECS TABLE -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner pd-two-col">
+            <div class="pd-text-block">
+                <div class="section-label">Specifications</div>
+                <h2 class="pd-section-title">Technical Specifications</h2>
+                <div class="pd-spec-table">
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Power Range</div>
+                        <div class="pd-spec-val">0.75 kW – 500 kW</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Input Voltage</div>
+                        <div class="pd-spec-val">380–480V AC, 3-phase</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Frequency Range</div>
+                        <div class="pd-spec-val">0.5 Hz – 400 Hz</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Frequency Resolution</div>
+                        <div class="pd-spec-val">0.1 Hz</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Switching Frequency</div>
+                        <div class="pd-spec-val">4–20 kHz (adjustable)</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Control Method</div>
+                        <div class="pd-spec-val">Field-Oriented Vector Control</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Protection Rating</div>
+                        <div class="pd-spec-val">IP66</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Operating Temperature</div>
+                        <div class="pd-spec-val">-10°C to +55°C</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">Communication</div>
+                        <div class="pd-spec-val">Modbus RTU / Profibus / MQTT</div>
+                    </div>
+                    <div class="pd-spec-row">
+                        <div class="pd-spec-key">MTBF Target</div>
+                        <div class="pd-spec-val">100,000 hours</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pd-image-block">
+                <div class="pd-img-caption">Gen 2.0 firmware phase underway — industrial-grade hardware validated in
+                    controlled environments</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. INDUSTRY APPLICATIONS -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Industries</div>
+            <h2 class="pd-section-title">Built for Every Industry</h2>
+            <div class="pd-usecase-grid">
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">water</span></div>
+                    <h3 class="pd-usecase-title">Water &amp; Utilities</h3>
+                    <p class="pd-usecase-body">Pump station management with demand-matched speed control. Up to 40%
+                        energy savings on water distribution networks.</p>
+                    <ul class="pd-usecase-list">
+                        <li>Municipal water plants</li>
+                        <li>Sewage treatment</li>
+                        <li>Irrigation systems</li>
+                    </ul>
+                </div>
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">factory</span></div>
+                    <h3 class="pd-usecase-title">Manufacturing</h3>
+                    <p class="pd-usecase-body">Precision conveyor, spindle, and press control with soft-start protection
+                        for expensive machinery and process consistency.</p>
+                    <ul class="pd-usecase-list">
+                        <li>CNC machine tools</li>
+                        <li>Conveyor lines</li>
+                        <li>Press and stamping</li>
+                    </ul>
+                </div>
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">ac_unit</span></div>
+                    <h3 class="pd-usecase-title">HVAC &amp; Buildings</h3>
+                    <p class="pd-usecase-body">Variable-speed fans and compressors matched to real-time load. Eliminates
+                        energy waste during partial-load operation.</p>
+                    <ul class="pd-usecase-list">
+                        <li>Commercial HVAC</li>
+                        <li>Cooling towers</li>
+                        <li>Data centre cooling</li>
+                    </ul>
+                </div>
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">oil_barrel</span></div>
+                    <h3 class="pd-usecase-title">Oil &amp; Gas</h3>
+                    <p class="pd-usecase-body">Explosion-proof configurations for hazardous zones. Pipeline pump control
+                        with pressure-matched operation and leak detection support.</p>
+                    <ul class="pd-usecase-list">
+                        <li>Refinery pumps</li>
+                        <li>Pipeline stations</li>
+                        <li>Offshore platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. COMPARISON TABLE -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Why Aananthal Drives</div>
+            <h2 class="pd-section-title">How We Compare</h2>
+            <div class="pd-compare-table">
+                <div class="pd-compare-header">
+                    <div class="pd-compare-feature">Feature</div>
+                    <div class="pd-compare-col pd-compare-col--phms">Aananthal Drives</div>
+                    <div class="pd-compare-col">Standard Drives</div>
+                    <div class="pd-compare-col">Direct-on-Line</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Energy Efficiency</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Target: up to 40% savings</div>
+                    <div class="pd-compare-col">15–25% savings</div>
+                    <div class="pd-compare-col">Baseline (worst)</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Predictive Maintenance</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">AI-powered, built-in</div>
+                    <div class="pd-compare-col">Manual or add-on</div>
+                    <div class="pd-compare-col">None</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Remote Monitoring</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Cloud IoT dashboard</div>
+                    <div class="pd-compare-col">Basic SCADA only</div>
+                    <div class="pd-compare-col">None</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Motor Soft Start</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Full programmable ramp</div>
+                    <div class="pd-compare-col">Basic</div>
+                    <div class="pd-compare-col">None (full shock)</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Integration</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Modbus + IoT + REST API</div>
+                    <div class="pd-compare-col">Modbus only</div>
+                    <div class="pd-compare-col">None</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. PROTOTYPE GALLERY -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">In Development</div>
+            <h2 class="pd-section-title">From Lab to Plant Floor</h2>
+            <div class="pd-gallery">
+                <div class="pd-gallery-item pd-gallery-item--large">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80&fit=crop"
+                        alt="Drive hardware" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Gen 2.0 Hardware</div>
+                        <div class="pd-gallery-desc">PCB layout and power stage · Q2 2026</div>
+                    </div>
+                </div>
+                <div class="pd-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&fit=crop"
+                        alt="Control board" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Control Board</div>
+                        <div class="pd-gallery-desc">DSP + AI module integration</div>
+                    </div>
+                </div>
+                <div class="pd-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80&fit=crop"
+                        alt="Testing" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Load Testing</div>
+                        <div class="pd-gallery-desc">Motor test bench validation</div>
+                    </div>
+                </div>
+                <div class="pd-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop"
+                        alt="Installation" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Pilot Programme</div>
+                        <div class="pd-gallery-desc">Planned first industrial pilot site</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. TEAM VOICES -->
+    <section class="pd-section pd-section--dark fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">From the Team</div>
+            <h2 class="pd-section-title" style="color:#fff">Why We're Building This</h2>
+            <div class="pd-testimonials">
+                <div class="pd-testimonial pd-testimonial--dark">
+                    <div class="pd-test-quote">"Indian industry runs on motors — pumps, fans, conveyors, compressors.
+                        Almost none of them are speed-controlled. They run full speed, all the time, even when the load
+                        is 20%. We're building the drive that changes that, and pairing it with AI that tells you when a
+                        motor is going to fail before it does."</div>
+                    <div class="pd-test-footer">
+                        <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                        <div class="pd-test-info">
+                            <div class="pd-test-name">Industrial Drives Lead</div>
+                            <div class="pd-test-role">Aananthal Technologies</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pd-testimonial pd-testimonial--dark">
+                    <div class="pd-test-quote">"The hardest part of predictive maintenance isn't the machine learning —
+                        it's getting clean current signature data from real motors in real industrial environments, with
+                        all the electrical noise that entails. That's the firmware problem we're solving right now."
+                    </div>
+                    <div class="pd-test-footer">
+                        <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                        <div class="pd-test-info">
+                            <div class="pd-test-name">Embedded Systems Engineer</div>
+                            <div class="pd-test-role">Aananthal Technologies</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pd-testimonial pd-testimonial--dark">
+                    <div class="pd-test-quote">"Every industrial facility we've spoken to wants the same thing — lower
+                        energy bills and fewer surprise breakdowns. We're not building a nice-to-have. We're building
+                        something that pays for itself in months and keeps paying."</div>
+                    <div class="pd-test-footer">
+                        <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                        <div class="pd-test-info">
+                            <div class="pd-test-name">Aananthal</div>
+                            <div class="pd-test-role">Founder &amp; CEO, Aananthal Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. FAQ -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner pd-faq-layout">
+            <div>
+                <div class="section-label">Questions</div>
+                <h2 class="pd-section-title">Frequently Asked</h2>
+                <p class="pd-body"><a href="/contact" style="color:#000;text-decoration:underline;">Talk to our
+                        engineers.</a></p>
+            </div>
+            <div class="pd-faq-list">
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Are Industrial Drives
+                        available now? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">The Gen 2.0 hardware is in firmware development. We're running pilot
+                        programmes with select industrial partners. Commercial availability is targeted for Q4 2026.
+                        Enquire to join the pilot programme.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Which motors are
+                        compatible? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">Aananthal Industrial Drives are compatible with any 3-phase AC induction motor
+                        from 0.75 kW to 500 kW. Permanent magnet synchronous motor (PMSM) support is in development for
+                        the next firmware release.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">How does the AI predictive
+                        maintenance work? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">An LSTM model analyses motor current signatures, vibration, and thermal
+                        patterns continuously. It's trained to recognise the characteristic frequency signatures of
+                        bearing defects, rotor bar faults, and winding imbalances — and calculates how many days remain
+                        before failure.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Can it integrate with our
+                        existing SCADA system? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">Yes. Aananthal Drives support Modbus RTU, Profibus DP, and MQTT out of the
+                        box. A REST API is available for custom cloud integrations. Contact us for integration support
+                        with your specific SCADA platform.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">What's the warranty and
+                        support arrangement? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">Pilot programme units come with 12 months of direct engineering support.
+                        Commercial units will carry a standard 2-year warranty with optional extended maintenance
+                        contracts. Details will be finalised at commercial launch.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. ROADMAP -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Roadmap</div>
+            <h2 class="pd-section-title">Development Milestones</h2>
+            <div class="pd-roadmap">
+                <div class="pd-roadmap-item pd-roadmap-item--done">
+                    <div class="pd-rm-dot pd-rm-dot--done"></div>
+                    <div class="pd-rm-date">Q3 2025</div>
+                    <div class="pd-rm-title">Concept &amp; Design</div>
+                    <div class="pd-rm-desc">Market research, motor control algorithm selection, power stage design, BOM
+                        finalisation</div>
+                    <div class="pd-rm-badge pd-rm-badge--done">Complete</div>
+                </div>
+                <div class="pd-roadmap-item pd-roadmap-item--done">
+                    <div class="pd-rm-dot pd-rm-dot--done"></div>
+                    <div class="pd-rm-date">Q4 2025</div>
+                    <div class="pd-rm-title">Hardware Prototype</div>
+                    <div class="pd-rm-desc">Gen 1.0 PCB fabricated and assembled. Basic V/f control validated. Load
+                        testing initiated.</div>
+                    <div class="pd-rm-badge pd-rm-badge--done">Complete</div>
+                </div>
+                <div class="pd-roadmap-item pd-roadmap-item--done">
+                    <div class="pd-rm-dot pd-rm-dot--done"></div>
+                    <div class="pd-rm-date">Q1 2026</div>
+                    <div class="pd-rm-title">Vector Control</div>
+                    <div class="pd-rm-desc">Field-oriented vector control implemented and tuned. Auto-tuning algorithm
+                        validated. Thermal management design complete.</div>
+                    <div class="pd-rm-badge pd-rm-badge--done">Complete</div>
+                </div>
+                <div class="pd-roadmap-item pd-roadmap-item--active">
+                    <div class="pd-rm-dot pd-rm-dot--active"></div>
+                    <div class="pd-rm-date">Q2 2026</div>
+                    <div class="pd-rm-title">AI Firmware Integration</div>
+                    <div class="pd-rm-desc">Predictive maintenance LSTM model integrated into firmware. IoT dashboard
+                        development. Pilot programme installations.</div>
+                    <div class="pd-rm-badge pd-rm-badge--active">In Progress</div>
+                </div>
+                <div class="pd-roadmap-item">
+                    <div class="pd-rm-dot"></div>
+                    <div class="pd-rm-date">Q3 2026</div>
+                    <div class="pd-rm-title">Industrial Certification</div>
+                    <div class="pd-rm-desc">CE marking, BIS certification, EMC testing, IP66 validation, safety function
+                        validation</div>
+                    <div class="pd-rm-badge">Upcoming</div>
+                </div>
+                <div class="pd-roadmap-item">
+                    <div class="pd-rm-dot"></div>
+                    <div class="pd-rm-date">Q4 2026</div>
+                    <div class="pd-rm-title">Commercial Launch</div>
+                    <div class="pd-rm-desc">General availability. Full product range 0.75–500 kW. Distribution partner
+                        programme launch.</div>
+                    <div class="pd-rm-badge">Planned</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16. CTA -->
+    <section class="pd-cta-section fade-section">
+        <div class="pd-cta-inner">
+            <div class="section-label" style="justify-content:center;color:rgba(255,255,255,0.3)">Get Started</div>
+            <h2 class="pd-cta-title">Cut your energy bill.<br>Before it cuts you.</h2>
+            <p class="pd-cta-sub">Join our pilot programme and get Aananthal Industrial Drives installed at your
+                facility before general availability. Pilot partners get lifetime preferred pricing and direct
+                engineering access.</p>
+            <div class="pd-cta-actions">
+                <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn">Join Pilot Programme <span
+                        class="material-icons">arrow_forward</span></a>
+                <a href="/contact" class="pd-cta-outline btn-magnetic">Get Specifications</a>
+            </div>
+            <div class="pd-cta-nav">
+                <a href="/products/phms" class="pd-product-nav-link">Back to PHMS <span
+                        class="material-icons">arrow_back</span></a>
+            </div>
+        </div>
+    </section>
+
+    <div id="floating-cta"><a href="/contact" class="floating-cta-link"><span
+                class="material-icons">chat_bubble_outline</span>Let's Talk</a></div>
+    <script>
+        const readout = document.getElementById('vfd-readout');
+        if (readout) { let f = 50.0, d = 1; setInterval(() => { f += d * (Math.random() * 0.3); if (f > 60) d = -1; if (f < 30) d = 1; readout.textContent = f.toFixed(1) + ' Hz'; }, 800); }
+        function togglePdFaq(btn) {
+            const item = btn.closest('.pd-faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.pd-faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+    </script>
+    <script src="/js/ui-components.js" defer></script>
+    <%- include('../partials/footer.html') %>
+</body>
+
+</html>

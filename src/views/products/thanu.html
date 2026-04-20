@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THANU — The Humanoid Robot · Aananthal Technologies</title>
+    <meta name="description"
+        content="THANU is India's first AI-powered humanoid robot — built for natural human interaction, multi-sensor perception, and continuous learning.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="/images/logo_transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/product-detail.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+
+<body>
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-wordmark"><span class="loader-char" style="--i:1">A</span><span class="loader-char"
+                    style="--i:2">a</span><span class="loader-char" style="--i:3">n</span><span class="loader-char"
+                    style="--i:4">a</span><span class="loader-char" style="--i:5">n</span><span class="loader-char"
+                    style="--i:6">t</span><span class="loader-char" style="--i:7">h</span><span class="loader-char"
+                    style="--i:8">a</span><span class="loader-char" style="--i:9">l</span></div>
+            <div class="loader-tagline">Technologies</div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div id="scroll-progress"></div>
+    <button id="back-to-top" aria-label="Back to top"><span class="material-icons">arrow_upward</span></button>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <nav id="liquid-nav" class="fixed-top d-flex justify-content-between align-items-center px-4 py-3">
+        <a href="/" class="text-decoration-none"><img src="/images/logo_transparent.png"
+                alt="Aananthal Technologies Logo" height="40" class="brand-logo" /></a>
+        <div class="d-flex gap-4 desktop-nav">
+            <a href="/" class="text-decoration-none fw-medium nav-link-custom">Home</a>
+            <a href="/products" class="text-decoration-none fw-medium nav-link-custom" style="opacity:1;">Products</a>
+            <a href="/services" class="text-decoration-none fw-medium nav-link-custom">Services</a>
+            <a href="/about" class="text-decoration-none fw-medium nav-link-custom">About</a>
+            <a href="/contact" class="text-decoration-none fw-medium nav-link-custom">Contact Us</a>
+        </div>
+        <button class="hamburger-btn" id="hamburger-btn"
+            aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-inner"><button class="mobile-menu-close" id="mobile-menu-close"
+                aria-label="Close menu"><span class="material-icons">close</span></button>
+            <nav class="mobile-nav"><a href="/" class="mobile-nav-link">Home</a><a href="/products"
+                    class="mobile-nav-link">Products</a><a href="/services" class="mobile-nav-link">Services</a><a
+                    href="/about" class="mobile-nav-link">About</a><a href="/contact" class="mobile-nav-link">Contact
+                    Us</a></nav>
+            <div class="mobile-menu-footer">
+                <p>Aananthal Technologies</p>
+                <p>Bangalore, India</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. HERO -->
+    <section class="pd-hero pd-hero--thanu">
+        <div class="pd-hero-bg-text">THANU</div>
+        <div class="pd-hero-inner">
+            <div class="pd-hero-breadcrumb"><a href="/products">← Products</a> / THANU</div>
+            <div class="pd-hero-badge"><span class="pd-badge-dot"></span>Active R&amp;D · 42% Complete</div>
+            <h1 class="pd-hero-title">The Humanoid<br><em>Robot.</em></h1>
+            <p class="pd-hero-sub">India's first AI-powered humanoid — built for natural human interaction, intelligent
+                perception, and real-world adaptability.</p>
+            <div class="pd-hero-actions">
+                <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn">Request Demo <span
+                        class="material-icons">arrow_forward</span></a>
+                <a href="/contact" class="pd-cta-outline btn-magnetic">Follow Research</a>
+            </div>
+        </div>
+        <div class="pd-hero-visual pd-hero-visual--thanu">
+            <div class="thanu-visual">
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring"></div>
+                <div class="robot-glyph">
+                    <div class="r-head"></div>
+                    <div class="r-neck"></div>
+                    <div class="r-torso">
+                        <div class="r-core"></div>
+                    </div>
+                    <div class="r-hips"></div>
+                    <div class="r-legs">
+                        <div class="r-leg"></div>
+                        <div class="r-leg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. METRICS STRIP -->
+    <section class="pd-metrics-strip">
+        <div class="pd-metric">
+            <div class="pd-metric-num">42%</div>
+            <div class="pd-metric-lbl">Development Progress</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">180cm</div>
+            <div class="pd-metric-lbl">Target Height</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">8h</div>
+            <div class="pd-metric-lbl">Target Battery Life</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">32</div>
+            <div class="pd-metric-lbl">Designed Degrees of Freedom</div>
+        </div>
+        <div class="pd-metric-sep"></div>
+        <div class="pd-metric">
+            <div class="pd-metric-num">200ms</div>
+            <div class="pd-metric-lbl">Target Response Latency</div>
+        </div>
+    </section>
+
+    <!-- 3. OVERVIEW -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner pd-two-col">
+            <div class="pd-text-block">
+                <div class="section-label">What Is THANU</div>
+                <h2 class="pd-section-title">Not a toy.<br>Not a tool.<br>A collaborator.</h2>
+                <p class="pd-body">THANU is Aananthal's flagship humanoid robot — designed from first principles to
+                    interact naturally with humans in real-world environments. Unlike industrial robots that repeat
+                    fixed motions, THANU perceives, reasons, adapts, and responds.</p>
+                <p class="pd-body">Built on a foundation of multi-sensor fusion, computer vision, and real-time AI
+                    inference, THANU processes its environment at every moment — adjusting its gait on uneven ground,
+                    understanding spoken language in context, and learning from each interaction to become more
+                    effective over time.</p>
+                <ul class="pd-check-list">
+                    <li><span class="material-icons">check_circle</span>32 degrees of freedom — natural human-like
+                        movement</li>
+                    <li><span class="material-icons">check_circle</span>Multi-modal AI: vision, language,
+                        proprioception, touch</li>
+                    <li><span class="material-icons">check_circle</span>Edge AI inference on NVIDIA Jetson platform</li>
+                    <li><span class="material-icons">check_circle</span>Continuous learning — improves with every
+                        deployment</li>
+                </ul>
+            </div>
+            <div class="pd-image-block">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80&fit=crop"
+                    alt="Humanoid robot research" class="pd-img" />
+                <div class="pd-img-caption">Humanoid robotics research — THANU is built from the ground up in Bangalore
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SYSTEM ARCHITECTURE FLOWCHART -->
+    <section class="pd-section pd-section--dark fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">Intelligence Stack</div>
+            <h2 class="pd-section-title" style="color:#fff">How THANU Thinks &amp; Moves</h2>
+            <p class="pd-body" style="color:rgba(255,255,255,0.5);max-width:600px;">THANU's intelligence pipeline runs
+                across five layers — from raw sensor input to physical action — in under 200ms.</p>
+            <div class="pd-flowchart pd-flowchart--horizontal">
+                <div class="pd-flow-step pd-flow-step--1">
+                    <div class="pd-flow-icon"><span class="material-icons">sensors</span></div>
+                    <div class="pd-flow-num">01</div>
+                    <div class="pd-flow-title">Perception Layer</div>
+                    <div class="pd-flow-desc">RGB-D cameras, LiDAR, IMU, microphone arrays, and tactile sensors deliver
+                        a continuous multi-modal stream of environmental data.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--2">
+                    <div class="pd-flow-icon"><span class="material-icons">memory</span></div>
+                    <div class="pd-flow-num">02</div>
+                    <div class="pd-flow-title">Sensor Fusion</div>
+                    <div class="pd-flow-desc">All sensor streams are synchronised, calibrated, and fused into a unified
+                        world model — updated at 100Hz using an Extended Kalman Filter.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--3">
+                    <div class="pd-flow-icon"><span class="material-icons">psychology</span></div>
+                    <div class="pd-flow-num">03</div>
+                    <div class="pd-flow-title">AI Reasoning</div>
+                    <div class="pd-flow-desc">Scene understanding, natural language parsing, and intention recognition
+                        run simultaneously on the NVIDIA Jetson Orin platform.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--4">
+                    <div class="pd-flow-icon"><span class="material-icons">directions_walk</span></div>
+                    <div class="pd-flow-num">04</div>
+                    <div class="pd-flow-title">Motion Planning</div>
+                    <div class="pd-flow-desc">Model Predictive Control generates stable, adaptive trajectories in real
+                        time. Gait is adjusted dynamically for terrain, load, and speed.</div>
+                </div>
+                <div class="pd-flow-connector pd-flow-connector--h">
+                    <div class="pd-flow-line-h"></div><span class="material-icons">chevron_right</span>
+                </div>
+                <div class="pd-flow-step pd-flow-step--5b">
+                    <div class="pd-flow-icon"><span class="material-icons">smart_toy</span></div>
+                    <div class="pd-flow-num">05</div>
+                    <div class="pd-flow-title">Physical Action</div>
+                    <div class="pd-flow-desc">Torque-controlled servo actuators execute the motion plan — with real-time
+                        force feedback closing the loop back to perception.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CAPABILITIES GRID -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Capabilities</div>
+            <h2 class="pd-section-title">What THANU Can Do</h2>
+            <div class="pd-feature-grid">
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">smart_toy</span></div>
+                    <h3 class="pd-feat-title">Bipedal Locomotion</h3>
+                    <p class="pd-feat-body">Dynamic walking on flat, uneven, and inclined surfaces. Adaptive gait
+                        generation using model predictive control and real-time stability estimation.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">record_voice_over</span></div>
+                    <h3 class="pd-feat-title">Natural Language</h3>
+                    <p class="pd-feat-body">Conversational AI for task comprehension and response. Understands context,
+                        follows multi-step instructions, and responds with synthesised speech.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">visibility</span></div>
+                    <h3 class="pd-feat-title">Computer Vision</h3>
+                    <p class="pd-feat-body">Real-time object detection, depth estimation, facial recognition, and scene
+                        understanding. Operates in variable lighting and complex environments.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">pan_tool</span></div>
+                    <h3 class="pd-feat-title">Dexterous Manipulation</h3>
+                    <p class="pd-feat-body">5-fingered hands with tactile feedback. Capable of grasping, assembling, and
+                        manipulating objects with human-like precision and gentleness.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">self_improvement</span></div>
+                    <h3 class="pd-feat-title">Continuous Learning</h3>
+                    <p class="pd-feat-body">Reinforcement learning from physical interaction. THANU improves its
+                        movement efficiency and task performance with every deployment cycle.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">sensors</span></div>
+                    <h3 class="pd-feat-title">Multi-Sensor Fusion</h3>
+                    <p class="pd-feat-body">RGB-D cameras, LiDAR, IMU, microphone arrays, and joint encoders fused at
+                        100Hz into a unified world model for robust real-world navigation.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">battery_charging_full</span></div>
+                    <h3 class="pd-feat-title">8h Battery Life</h3>
+                    <p class="pd-feat-body">High-density lithium battery pack with intelligent power management.
+                        Hot-swappable design for continuous operation in commercial deployments.</p>
+                </div>
+                <div class="pd-feature-card">
+                    <div class="pd-feat-icon"><span class="material-icons">shield</span></div>
+                    <h3 class="pd-feat-title">Safety Systems</h3>
+                    <p class="pd-feat-body">Multi-layer collision avoidance, force limiting on all joints, emergency
+                        stop, and human proximity detection for safe human-robot collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SENSOR SUITE -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Hardware</div>
+            <h2 class="pd-section-title">Sensor Suite</h2>
+            <div class="pd-sensor-grid">
+                <div class="pd-sensor-card">
+                    <div class="pd-sensor-icon"><span class="material-icons">camera</span></div>
+                    <div class="pd-sensor-name">RGB-D Cameras</div>
+                    <div class="pd-sensor-spec">2× Intel RealSense D435 · 30fps depth</div>
+                    <div class="pd-sensor-use">Object detection, depth mapping, face recognition</div>
+                </div>
+                <div class="pd-sensor-card">
+                    <div class="pd-sensor-icon"><span class="material-icons">radar</span></div>
+                    <div class="pd-sensor-name">LiDAR</div>
+                    <div class="pd-sensor-spec">16-channel · 360° · 100m range</div>
+                    <div class="pd-sensor-use">Spatial mapping, obstacle avoidance, navigation</div>
+                </div>
+                <div class="pd-sensor-card">
+                    <div class="pd-sensor-icon"><span class="material-icons">rotate_90_degrees_ccw</span></div>
+                    <div class="pd-sensor-name">IMU Array</div>
+                    <div class="pd-sensor-spec">6-axis · 1000Hz · redundant pair</div>
+                    <div class="pd-sensor-use">Balance, posture estimation, fall detection</div>
+                </div>
+                <div class="pd-sensor-card">
+                    <div class="pd-sensor-icon"><span class="material-icons">mic</span></div>
+                    <div class="pd-sensor-name">Microphone Array</div>
+                    <div class="pd-sensor-spec">8-channel beamforming · 360° pickup</div>
+                    <div class="pd-sensor-use">Speech recognition, sound localisation</div>
+                </div>
+                <div class="pd-sensor-card">
+                    <div class="pd-sensor-icon"><span class="material-icons">touch_app</span></div>
+                    <div class="pd-sensor-name">Tactile Sensors</div>
+                    <div class="pd-sensor-spec">192 pressure points per hand</div>
+                    <div class="pd-sensor-use">Grip force control, texture sensing, safety</div>
+                </div>
+                <div class="pd-sensor-card">
+                    <div class="pd-sensor-icon"><span class="material-icons">settings</span></div>
+                    <div class="pd-sensor-name">Joint Encoders</div>
+                    <div class="pd-sensor-spec">32× absolute encoders · 18-bit resolution</div>
+                    <div class="pd-sensor-use">Proprioception, torque feedback, gait control</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. GAIT RESEARCH CHART -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner pd-two-col">
+            <div class="pd-text-block">
+                <div class="section-label">R&amp;D Progress</div>
+                <h2 class="pd-section-title">Gait Research Milestones</h2>
+                <p class="pd-body">Bipedal locomotion is the hardest problem in humanoid robotics. We started from first
+                    principles — modelling the physics before writing a line of control code. Here's where we are.</p>
+                <div class="pd-accuracy-bars">
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Static Balance</span><span class="pd-acc-pct">100%</span></div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:100%;background:#4ade80"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Controlled Walking (flat)</span><span
+                                class="pd-acc-pct">78%</span></div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:78%;background:#60a5fa"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Incline Navigation</span><span class="pd-acc-pct">45%</span>
+                        </div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:45%;background:#f59e0b"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Uneven Terrain</span><span class="pd-acc-pct">30%</span></div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:30%;background:#f87171"></div>
+                        </div>
+                    </div>
+                    <div class="pd-acc-item">
+                        <div class="pd-acc-label"><span>Stair Climbing</span><span class="pd-acc-pct">15%</span></div>
+                        <div class="pd-acc-bar-bg">
+                            <div class="pd-acc-bar-fill" style="--w:15%;background:#a78bfa"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pd-image-block">
+                <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=700&q=80&fit=crop"
+                    alt="Robotics lab research" class="pd-img" />
+                <div class="pd-img-caption">Gait research in progress at Aananthal Labs, Bangalore — 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TECHNICAL SPECS -->
+    <section class="pd-section pd-section--dark fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">Specifications</div>
+            <h2 class="pd-section-title" style="color:#fff">Technical Specifications</h2>
+            <div class="pd-specs-two-col">
+                <div class="pd-spec-table">
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Height</div>
+                        <div class="pd-spec-val">180 cm (target)</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Weight</div>
+                        <div class="pd-spec-val">65 kg (target)</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Degrees of Freedom</div>
+                        <div class="pd-spec-val">32 (full body)</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Compute Platform</div>
+                        <div class="pd-spec-val">NVIDIA Jetson Orin NX</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Operating System</div>
+                        <div class="pd-spec-val">ROS 2 Humble on Ubuntu</div>
+                    </div>
+                </div>
+                <div class="pd-spec-table">
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Battery Life</div>
+                        <div class="pd-spec-val">8 hours continuous</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Response Latency</div>
+                        <div class="pd-spec-val">&lt; 200ms perception-to-action</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Walking Speed</div>
+                        <div class="pd-spec-val">1.2 m/s (target)</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">Payload Capacity</div>
+                        <div class="pd-spec-val">5 kg (arm)</div>
+                    </div>
+                    <div class="pd-spec-row pd-spec-row--dark">
+                        <div class="pd-spec-key">IP Rating</div>
+                        <div class="pd-spec-val">IP44 (target)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. AI MODULES -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">AI Stack</div>
+            <h2 class="pd-section-title">AI Modules Inside THANU</h2>
+            <div class="pd-ai-modules">
+                <div class="pd-ai-module">
+                    <div class="pd-aim-num">01</div>
+                    <div class="pd-aim-content">
+                        <h3 class="pd-aim-title">Visual Perception Model</h3>
+                        <p class="pd-aim-desc">YOLOv8-based real-time object detection + depth estimation. Identifies
+                            people, objects, obstacles, and semantic spaces at 30fps.</p>
+                        <div class="pd-aim-tech">PyTorch · YOLOv8 · CUDA</div>
+                    </div>
+                </div>
+                <div class="pd-ai-module">
+                    <div class="pd-aim-num">02</div>
+                    <div class="pd-aim-content">
+                        <h3 class="pd-aim-title">Natural Language Understanding</h3>
+                        <p class="pd-aim-desc">Fine-tuned language model for task comprehension, question answering, and
+                            context-aware conversation. Runs entirely on-device.</p>
+                        <div class="pd-aim-tech">Transformer · On-device LLM · Speech-to-Text</div>
+                    </div>
+                </div>
+                <div class="pd-ai-module">
+                    <div class="pd-aim-num">03</div>
+                    <div class="pd-aim-content">
+                        <h3 class="pd-aim-title">Gait Control Policy</h3>
+                        <p class="pd-aim-desc">Reinforcement learning policy trained in simulation (Isaac Gym) and
+                            transferred to hardware. Handles dynamic perturbations and terrain changes.</p>
+                        <div class="pd-aim-tech">PPO · Isaac Gym · Sim-to-Real</div>
+                    </div>
+                </div>
+                <div class="pd-ai-module">
+                    <div class="pd-aim-num">04</div>
+                    <div class="pd-aim-content">
+                        <h3 class="pd-aim-title">Manipulation Planner</h3>
+                        <p class="pd-aim-desc">Model-based trajectory planning for arm and hand motion. Grasp synthesis
+                            using point cloud inputs. Force-compliant execution.</p>
+                        <div class="pd-aim-tech">MoveIt2 · IKFast · Force Control</div>
+                    </div>
+                </div>
+                <div class="pd-ai-module">
+                    <div class="pd-aim-num">05</div>
+                    <div class="pd-aim-content">
+                        <h3 class="pd-aim-title">Continuous Learning Engine</h3>
+                        <p class="pd-aim-desc">Online adaptation layer that fine-tunes models from deployment feedback.
+                            Improves task success rates without full retraining.</p>
+                        <div class="pd-aim-tech">Online RL · Federated Learning · Experience Replay</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. PROTOTYPE GALLERY -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Lab Progress</div>
+            <h2 class="pd-section-title">From Whiteboard to Metal</h2>
+            <div class="pd-gallery">
+                <div class="pd-gallery-item pd-gallery-item--large">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80&fit=crop"
+                        alt="Robot prototype" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Prototype Gen 1.1</div>
+                        <div class="pd-gallery-desc">Full body structure assembled · Q1 2026</div>
+                    </div>
+                </div>
+                <div class="pd-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&q=80&fit=crop"
+                        alt="Robot arm" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Arm Assembly</div>
+                        <div class="pd-gallery-desc">5-DOF arm with tactile hand</div>
+                    </div>
+                </div>
+                <div class="pd-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?w=600&q=80&fit=crop"
+                        alt="Control system" />
+                    <div class="pd-gallery-caption">
+                        <div class="pd-gallery-tag">Control System</div>
+                        <div class="pd-gallery-desc">Jetson Orin + servo drivers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. USE CASES -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Applications</div>
+            <h2 class="pd-section-title">Where THANU Will Work</h2>
+            <div class="pd-usecase-grid">
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">home</span></div>
+                    <h3 class="pd-usecase-title">Home Assistance</h3>
+                    <p class="pd-usecase-body">Daily task assistance for elderly and differently-abled individuals —
+                        fetching, navigating, and communicating with natural ease.</p>
+                    <ul class="pd-usecase-list">
+                        <li>Elderly care assistance</li>
+                        <li>Mobility support</li>
+                        <li>Home management</li>
+                    </ul>
+                </div>
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">factory</span></div>
+                    <h3 class="pd-usecase-title">Industrial Operations</h3>
+                    <p class="pd-usecase-body">Safe collaboration with human workers in manufacturing — handling tasks
+                        too repetitive, hazardous, or precise for human operators.</p>
+                    <ul class="pd-usecase-list">
+                        <li>Assembly line support</li>
+                        <li>Quality inspection</li>
+                        <li>Hazardous operations</li>
+                    </ul>
+                </div>
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">school</span></div>
+                    <h3 class="pd-usecase-title">Research &amp; Education</h3>
+                    <p class="pd-usecase-body">Open platform for AI and robotics research. Universities and labs can
+                        build on THANU's architecture to advance humanoid science.</p>
+                    <ul class="pd-usecase-list">
+                        <li>University research</li>
+                        <li>AI curriculum labs</li>
+                        <li>Open platform development</li>
+                    </ul>
+                </div>
+                <div class="pd-usecase-card">
+                    <div class="pd-usecase-icon"><span class="material-icons">storefront</span></div>
+                    <h3 class="pd-usecase-title">Retail &amp; Hospitality</h3>
+                    <p class="pd-usecase-body">Customer-facing service robot — guiding, answering questions, and
+                        handling routine interactions in commercial spaces.</p>
+                    <ul class="pd-usecase-list">
+                        <li>Information kiosk</li>
+                        <li>Hotel concierge</li>
+                        <li>Retail navigation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. TESTIMONIALS / TEAM QUOTES -->
+    <section class="pd-section pd-section--dark fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label" style="color:rgba(255,255,255,0.3)">From the Lab</div>
+            <h2 class="pd-section-title" style="color:#fff">The Team on THANU</h2>
+            <div class="pd-testimonials">
+                <div class="pd-testimonial pd-testimonial--dark">
+                    <div class="pd-test-quote">"The moment THANU first maintained balance through a lateral push — that
+                        was the moment I knew we were on the right path. Bipedal balance isn't one problem. It's a
+                        hundred nested problems, each solved in milliseconds. We're solving them one by one."</div>
+                    <div class="pd-test-footer">
+                        <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                        <div class="pd-test-info">
+                            <div class="pd-test-name">Robotics Technical Head</div>
+                            <div class="pd-test-role">Aananthal Technologies</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pd-testimonial pd-testimonial--dark">
+                    <div class="pd-test-quote">"Running inference on embedded hardware for real-time gait control with
+                        no cloud dependency — that was the design constraint that forced us to be better engineers.
+                        Every millisecond of latency we cut makes THANU more alive."</div>
+                    <div class="pd-test-footer">
+                        <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                        <div class="pd-test-info">
+                            <div class="pd-test-name">Lead AI Engineer</div>
+                            <div class="pd-test-role">Aananthal Technologies</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pd-testimonial pd-testimonial--dark">
+                    <div class="pd-test-quote">"India building a humanoid robot from scratch isn't a crazy idea. It's an
+                        inevitable one. The question was never if — only when, and who would do it first. We chose to be
+                        that team."</div>
+                    <div class="pd-test-footer">
+                        <div class="pd-test-avatar"><span class="material-icons">person</span></div>
+                        <div class="pd-test-info">
+                            <div class="pd-test-name">Aananthal</div>
+                            <div class="pd-test-role">Founder &amp; CEO, Aananthal Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. RESEARCH MILESTONE TIMELINE -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">History</div>
+            <h2 class="pd-section-title">Research Timeline</h2>
+            <div class="pd-roadmap">
+                <div class="pd-roadmap-item pd-roadmap-item--done">
+                    <div class="pd-rm-dot pd-rm-dot--done"></div>
+                    <div class="pd-rm-date">Q3 2025</div>
+                    <div class="pd-rm-title">Project Inception</div>
+                    <div class="pd-rm-desc">Team formation, first principles research, biomechanics literature review,
+                        simulation environment setup</div>
+                    <div class="pd-rm-badge pd-rm-badge--done">Complete</div>
+                </div>
+                <div class="pd-roadmap-item pd-roadmap-item--done">
+                    <div class="pd-rm-dot pd-rm-dot--done"></div>
+                    <div class="pd-rm-date">Q4 2025</div>
+                    <div class="pd-rm-title">Simulation &amp; Design</div>
+                    <div class="pd-rm-desc">Full body CAD, simulation in Isaac Gym, initial gait policy training, sensor
+                        integration design</div>
+                    <div class="pd-rm-badge pd-rm-badge--done">Complete</div>
+                </div>
+                <div class="pd-roadmap-item pd-roadmap-item--done">
+                    <div class="pd-rm-dot pd-rm-dot--done"></div>
+                    <div class="pd-rm-date">Q1 2026</div>
+                    <div class="pd-rm-title">Hardware Prototype</div>
+                    <div class="pd-rm-desc">Gen 1.0 body structure assembled, actuator calibration, static balance
+                        demonstrated in lab conditions</div>
+                    <div class="pd-rm-badge pd-rm-badge--done">Complete</div>
+                </div>
+                <div class="pd-roadmap-item pd-roadmap-item--active">
+                    <div class="pd-rm-dot pd-rm-dot--active"></div>
+                    <div class="pd-rm-date">Q2 2026</div>
+                    <div class="pd-rm-title">Gait R&amp;D</div>
+                    <div class="pd-rm-desc">Active bipedal locomotion research, sim-to-real transfer, early walking
+                        trials on flat terrain</div>
+                    <div class="pd-rm-badge pd-rm-badge--active">In Progress</div>
+                </div>
+                <div class="pd-roadmap-item">
+                    <div class="pd-rm-dot"></div>
+                    <div class="pd-rm-date">Q4 2026</div>
+                    <div class="pd-rm-title">Multi-terrain Testing</div>
+                    <div class="pd-rm-desc">Stairs, inclines, uneven surfaces, human interaction safety protocols</div>
+                    <div class="pd-rm-badge">Upcoming</div>
+                </div>
+                <div class="pd-roadmap-item">
+                    <div class="pd-rm-dot"></div>
+                    <div class="pd-rm-date">2027</div>
+                    <div class="pd-rm-title">Commercial Prototype</div>
+                    <div class="pd-rm-desc">Gen 2.0 refined body, full sensor suite, production-ready AI stack, partner
+                        deployment programme</div>
+                    <div class="pd-rm-badge">Planned</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. FAQ -->
+    <section class="pd-section pd-section--grey fade-section">
+        <div class="pd-section-inner pd-faq-layout">
+            <div>
+                <div class="section-label">Questions</div>
+                <h2 class="pd-section-title">Frequently Asked</h2>
+                <p class="pd-body"><a href="/contact" style="color:#000;text-decoration:underline;">Talk to us
+                        directly.</a></p>
+            </div>
+            <div class="pd-faq-list">
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Can I buy THANU? <span
+                            class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">Not yet. THANU is in active R&amp;D. We're targeting a partner deployment
+                        programme in 2027. Research institutions and strategic partners can express interest now through
+                        our contact page.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">Is THANU fully autonomous?
+                        <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">That's a future goal. We're currently focused on reliable bipedal locomotion and natural interaction in controlled environments. Full end-to-end autonomy in unstructured environments remains an active research area that will be tackled progressively.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">What makes THANU different
+                        from other humanoid robots? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">THANU is designed from first principles by an Indian team, built for
+                        environments and use cases specific to India and South Asia. We're not adapting a foreign
+                        platform — we're building natively for our context, at a fraction of the cost of Western
+                        competitors.</div>
+                </div>
+                <div class="pd-faq-item"><button class="pd-faq-q" onclick="togglePdFaq(this)">How can I collaborate on
+                        THANU research? <span class="material-icons">expand_more</span></button>
+                    <div class="pd-faq-a">We're open to university partnerships, joint research programmes, and industry
+                        collaborations. Reach out through our contact page with your institution and area of interest.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. COMPARISON -->
+    <section class="pd-section fade-section">
+        <div class="pd-section-inner">
+            <div class="section-label">Positioning</div>
+            <h2 class="pd-section-title">THANU vs The Field</h2>
+            <div class="pd-compare-table">
+                <div class="pd-compare-header">
+                    <div class="pd-compare-feature">Dimension</div>
+                    <div class="pd-compare-col pd-compare-col--phms">THANU</div>
+                    <div class="pd-compare-col">Global Competitors</div>
+                    <div class="pd-compare-col">Research Robots</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Origin &amp; Context</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">India-first design</div>
+                    <div class="pd-compare-col">Western contexts</div>
+                    <div class="pd-compare-col">Lab-only</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Cost Target</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Accessible price point</div>
+                    <div class="pd-compare-col">$100,000+</div>
+                    <div class="pd-compare-col">N/A</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Edge AI</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Fully on-device</div>
+                    <div class="pd-compare-col">Mixed</div>
+                    <div class="pd-compare-col">Cloud-dependent</div>
+                </div>
+                <div class="pd-compare-row">
+                    <div class="pd-compare-feature">Open for Research</div>
+                    <div class="pd-compare-col pd-compare-col--phms pd-col-good">Yes (planned)</div>
+                    <div class="pd-compare-col">Closed</div>
+                    <div class="pd-compare-col">Limited</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16. CTA -->
+    <section class="pd-cta-section fade-section">
+        <div class="pd-cta-inner">
+            <div class="section-label" style="justify-content:center;color:rgba(255,255,255,0.3)">Get Involved</div>
+            <h2 class="pd-cta-title">India's humanoid<br>needs its people.</h2>
+            <p class="pd-cta-sub">If you're a researcher, builder, investor, or institution that believes in what we're
+                doing — let's talk. THANU is as much about the community that builds it as the robot itself.</p>
+            <div class="pd-cta-actions">
+                <a href="/contact" class="pd-cta-primary btn-magnetic ripple-btn">Get in Touch <span
+                        class="material-icons">arrow_forward</span></a>
+                <a href="/about" class="pd-cta-outline btn-magnetic">Meet the Team</a>
+            </div>
+            <div class="pd-cta-nav">
+                <a href="/products/industrial-drives" class="pd-product-nav-link">Next: Industrial Drives <span
+                        class="material-icons">arrow_forward</span></a>
+            </div>
+        </div>
+    </section>
+
+    <div id="floating-cta"><a href="/contact" class="floating-cta-link"><span
+                class="material-icons">chat_bubble_outline</span>Let's Talk</a></div>
+    <script>
+        function togglePdFaq(btn) {
+            const item = btn.closest('.pd-faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.pd-faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+    </script>
+    <script src="/js/ui-components.js" defer></script>
+    <%- include('../partials/footer.html') %>
+</body>
+
+</html>
