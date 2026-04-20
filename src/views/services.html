@@ -16,6 +16,19 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
     <style>
+        .footer-contact-col a {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+        .footer-contact-col a:visited {
+            color: #ffffff !important;
+        }
+
+        .footer-contact-col a:hover {
+            color: #ffffff !important;
+        }
+
         .social-link {
             color: inherit;
             text-decoration: none;
@@ -424,11 +437,118 @@
         </a>
     </section>
 
-    <!-- Service Modal -->
-    <div id="service-modal-overlay" class="service-modal-overlay" onclick="closeServiceModal(event)">
-        <div class="service-modal">
-            <button class="service-modal-close" onclick="closeServiceModal({target:document.getElementById('service-modal-overlay')})"><span class="material-icons">close</span></button>
-            <div id="service-modal-content"></div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-tagline">Escape the reality.</p>
+
+            <div class="footer-cols">
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="/products">THANU</a></li>
+                            <li><a href="/products">PHMS</a></li>
+                            <li><a href="/products">VFD</a></li>
+                            <li><a href="/services">Features</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/#contact-section">Careers</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/changelog">Changelog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col-social">
+                        <h4>Stalk Us</h4>
+                        <ul>
+
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.youtube.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-youtube"></i> Youtube
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.linkedin.com/company/aananthal-technologies" target="_blank"
+                                    class="social-link">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-row">
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka,
+                                560043.</p>
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <a href="https://wa.me/917386990245?text=Hi%20Aananthal%20Team%2C%20I%20want%20to%20know%20more"
+                                target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link">
+                                +91 7386990245
+                            </a>
+                            <span class="material-icons">phone</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <a href="mailto:aananthaltechnologies@gmail.com?subject=Inquiry&body=Hi%20Team%2C%20I%20want%20to%20know%20more"
+                                class="contact-link email-link">
+                                aananthaltechnologies@gmail.com
+                            </a>
+                            <span class="material-icons">mail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-globe">
+                    <canvas id="globeCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+            <div class="wrapper" id="wrapper">
+                <div class="line"></div>
+                <div class="side-line left"></div>
+                <div class="side-line right"></div>
+                <canvas id="canvas"></canvas>
+                <div class="text">Humans × AI</div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    © 2026 Aananthal Technologies Pvt. Ltd. All rights reserved.
+                </div>
+            </div>
         </div>
     </div>
 

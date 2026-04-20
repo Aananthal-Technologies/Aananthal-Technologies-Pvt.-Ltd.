@@ -44,6 +44,61 @@
             transform: translate(-50%, -50%) scale(1);
             letter-spacing: 2px;
         }
+
+        @media (max-width: 768px) {
+            #wrapper {
+                height: 180px;
+            }
+
+            #wrapper .text {
+                font-size: clamp(36px, 10vw, 58px);
+                letter-spacing: 0.5px;
+                line-height: 1.05;
+                text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+            }
+        }
+
+        #wrapper .line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #333;
+            z-index: -1;
+        }
+
+        .footer-contact-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-icon {
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #ffffff;
+        }
+
+        .whatsapp-link:hover {
+            color: #25D366;
+            /* WhatsApp green */
+        }
+
+        .email-link:hover {
+            color: #ff4d4d;
+        }
     </style>
 </head>
 
@@ -790,16 +845,126 @@
         </div>
     </section>
 
-    <!-- News Modal -->
-    <div id="news-modal-overlay" class="news-modal-overlay" onclick="if(event.target===this)closeNewsModal()">
-        <div class="news-modal">
-            <button class="news-modal-close" onclick="closeNewsModal()"><span
-                    class="material-icons">close</span></button>
-            <div class="news-modal-num" id="nm-num"></div>
-            <h2 class="news-modal-title" id="nm-title"></h2>
-            <p class="news-modal-desc" id="nm-desc"></p>
-            <div class="news-modal-divider"></div>
-            <p class="news-modal-full" id="nm-full"></p>
+    <script src="/js/page-loader.js"></script>
+    <script src="/js/nav-theme.js"></script>
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/cursor.js"></script>
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/home-page.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-tagline">Escape the reality.</p>
+
+            <div class="footer-cols">
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="/products">THANU</a></li>
+                            <li><a href="/products">PHMS</a></li>
+                            <li><a href="/products">VFD</a></li>
+                            <li><a href="/services">Features</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/#contact-section">Careers</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/changelog">Changelog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-col-social">
+                        <h4>Stalk Us</h4>
+                        <ul>
+
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.youtube.com/" target="_blank" class="social-link">
+                                    <i class="fa-brands fa-youtube"></i> Youtube
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.linkedin.com/company/aananthal-technologies" target="_blank"
+                                    class="social-link">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-row">
+                            <p>Aananthal Technologies Pvt. Ltd.,<br>Horamavu Agara Main Road,<br>Bangalore, Karnataka,
+                                560043.</p>
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="footer-contact-row">
+                            <span class="material-icons contact-icon">phone</span>
+                            <a href="https://wa.me/917386990245?text=Hi%20Aananthal%20Team%2C%20I%20want%20to%20know%20more"
+                                target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link">
+                                +91 7386990245
+                            </a>
+                        </div>
+
+                        <div class="footer-contact-row">
+                            <span class="material-icons contact-icon">mail</span>
+                            <a href="mailto:aananthaltechnologies@gmail.com?subject=Inquiry&body=Hi%20Team%2C%20I%20want%20to%20know%20more"
+                                class="contact-link email-link">
+                                aananthaltechnologies@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-globe">
+                    <canvas id="globeCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+            <div class="wrapper" id="wrapper">
+                <div class="line"></div>
+                <div class="side-line left"></div>
+                <div class="side-line right"></div>
+                <canvas id="canvas"></canvas>
+                <div class="text">Humans × AI</div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    © 2026 Aananthal Technologies Pvt. Ltd. All rights reserved.
+                </div>
+            </div>
         </div>
     </div>
 
