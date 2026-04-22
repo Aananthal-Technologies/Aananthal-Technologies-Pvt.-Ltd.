@@ -104,29 +104,6 @@
             letter-spacing: 2px;
         }
 
-        @media (max-width: 768px) {
-            #wrapper {
-                height: 180px;
-            }
-
-            #wrapper .text {
-                font-size: clamp(36px, 10vw, 58px);
-                letter-spacing: 0.5px;
-                line-height: 1.05;
-                text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
-            }
-        }
-
-        #wrapper .line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: #333;
-            z-index: -1;
-        }
-
         /* ─── About Page Styles ─── */
 
         .about-hero {
@@ -722,7 +699,7 @@
 
         /* Team / Voices - reuse voice card style */
         .about-team {
-            padding: 120px 6%;
+            padding: 0px 6% 120px 6%;
             background: #fff;
         }
 
@@ -734,7 +711,7 @@
         /* Join CTA */
         .about-cta {
             padding: 120px 6%;
-            background: #000;
+            background: #fff;
             text-align: center;
         }
 
@@ -747,7 +724,7 @@
             font-family: "Libre Caslon Text", serif;
             font-size: clamp(40px, 6vw, 72px);
             font-weight: 400;
-            color: #fff;
+            color: #000;
             line-height: 1.0;
             margin-bottom: 24px;
         }
@@ -755,7 +732,7 @@
         .about-cta-sub {
             font-family: "Kaisei HarunoUmi", serif;
             font-size: 15px;
-            color: rgba(255, 255, 255, 0.45);
+            color: rgba(0, 0, 0, 0.45);
             line-height: 1.7;
             margin-bottom: 40px;
         }
@@ -778,23 +755,23 @@
         }
 
         .about-cta-btn--primary {
-            background: #fff;
-            color: #000;
+            background: #000;
+            color: #fff;
         }
 
         .about-cta-btn--primary:hover {
-            background: #e0e0e0;
-            color: #000;
+            background: #222;
+            color: #fff;
         }
 
         .about-cta-btn--outline {
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            color: rgba(0, 0, 0, 0.7);
         }
 
         .about-cta-btn--outline:hover {
-            border-color: #fff;
-            color: #fff;
+            border-color: #000;
+            color: #000;
         }
 
         /* Responsive */
@@ -844,25 +821,15 @@
         }
 
         /* side lines for wrapper */
-        #wrapper .side-line {
-            position: absolute;
-            top: 0;
-            width: 1px;
-            height: 100%;
-            background: #222;
-            z-index: -1;
-        }
-
-        #wrapper .side-line.left {
-            left: 0;
-        }
-
-        #wrapper .side-line.right {
-            right: 0;
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: #222;
+        z-index: -1;
         }
     </style>
 </head>
-
 
 <body>
 
@@ -965,8 +932,7 @@
                     curiosity, late nights, and an obsession with making things that matter. That culture never left us.
                 </p>
                 <p class="about-story-body" data-anim="fade-up" data-delay="200">
-                    Today, we're building THANU — India's humanoid robot — alongside PHMS and Industrial Drive Systems
-                    that solve
+                    Today, we're building THANU — India's humanoid robot — alongside PHMS and Industrial Drive Systems that solve
                     real industrial and healthcare challenges. We're just getting started.
                 </p>
             </div>
@@ -1141,8 +1107,7 @@
                     </div>
                     <div class="about-team-name">Aananthal</div>
                     <div class="about-team-role">Founder &amp; CEO</div>
-                    <p class="about-team-bio">Visionary behind THANU, PHMS, and Industrial Drives. Drives the
-                        research-first culture
+                    <p class="about-team-bio">Visionary behind THANU, PHMS, and Industrial Drives. Drives the research-first culture
                         and long-term product strategy.</p>
                 </div>
                 <div class="about-team-card" data-anim="fade-up" data-delay="60">
@@ -1169,8 +1134,7 @@
                     </div>
                     <div class="about-team-name">Hardware Systems</div>
                     <div class="about-team-role">Embedded Systems Engineer</div>
-                    <p class="about-team-bio">Building the firmware and hardware integration layers for Industrial
-                        Drives and THANU's
+                    <p class="about-team-bio">Building the firmware and hardware integration layers for Industrial Drives and THANU's
                         physical systems.</p>
                 </div>
                 <div class="about-team-card" data-anim="fade-up" data-delay="60">
@@ -1372,10 +1336,6 @@
                 <div class="footer-copy">
                     © 2026 Aananthal Technologies Pvt. Ltd. All rights reserved.
                 </div>
-
-                <div class="footer-made">
-                    Made with ❤️ in India 🇮🇳
-                </div>
             </div>
         </div>0.
     </footer>
@@ -1453,51 +1413,4 @@
                 requestAnimationFrame(animateReveal);
             }
 
-            const showText = () => { revealWrapper.classList.add("hover-active"); hovered = true; };
-            const hideText = () => { revealWrapper.classList.remove("hover-active"); hovered = false; };
-
-            revealWrapper.addEventListener("mouseenter", showText);
-            revealWrapper.addEventListener("mouseleave", hideText);
-            revealWrapper.addEventListener("pointerdown", (event) => {
-                if (event.pointerType !== "mouse") showText();
-            });
-            revealWrapper.addEventListener("pointerup", (event) => {
-                if (event.pointerType !== "mouse") hideText();
-            });
-            revealWrapper.addEventListener("pointercancel", hideText);
-            window.addEventListener("resize", resizeReveal);
-            resizeReveal();
-            animateReveal();
-        })();
-    </script>
-
-
-    <!-- Stats counter -->
-    <script>
-        document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-            const target = parseInt(el.dataset.target);
-            const obs = new IntersectionObserver(entries => {
-                if (entries[0].isIntersecting) {
-                    let count = 0;
-                    const step = Math.ceil(target / 40);
-                    const timer = setInterval(() => {
-                        count = Math.min(count + step, target);
-                        el.textContent = count;
-                        if (count >= target) clearInterval(timer);
-                    }, 40);
-                    obs.disconnect();
-                }
-            }, { threshold: 0.5 });
-            obs.observe(el);
-        });
-    </script>
-    <script src="/js/page-loader.js"></script>
-    <script src="/js/nav-theme.js"></script>
-    <script src="/js/scroll-animations.js"></script>
-    <script src="/js/cursor.js"></script>
-    <script src="/js/mobile-menu.js"></script>
-    <script type="module" src="/js/globe-footer.js"></script>
-    <script src="/js/social-toast.js"></script>
-</body>
-
-</html>
+    <%- include('partials/footer.html') %>
