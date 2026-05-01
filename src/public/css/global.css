@@ -7848,3 +7848,122 @@ html {
     padding: 72px 6%;
   }
 }
+
+
+/* ─── Footer ─── */
+
+.footer-tagline {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.footer-cols {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-links-group {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-col h4 {
+  margin-bottom: 10px;
+}
+
+.footer-col ul {
+  padding: 0;
+}
+
+.footer-col ul li {
+  list-style: none;
+}
+
+.footer-col ul li a {
+  display: block;
+  padding: 6px 0;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-contact-col {
+  max-width: 250px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: white;
+}
+
+.contact-link.email-link:hover {
+  color: white;
+}
+
+.footer-divider {
+  margin: 30px 0;
+  height: 1px;
+  background: #333;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-copy {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-copy:hover {
+  color: #fff;
+}
+
+.footer-made {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-made:hover {
+  color: #fff;
+}
+
+/* Default state */
+.contact-link.whatsapp-link,
+.contact-link.email-link {
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+/* Hover state */
+.contact-link.whatsapp-link:hover,
+.contact-link.email-link:hover {
+  color: #fff;
+}

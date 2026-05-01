@@ -4,6 +4,7 @@ const themes = [
     { id: 'robotics', folder: 'hero-frames-robotics', start: 1, end: 207 },
     { id: 'vfd', folder: 'hero-frames-vfd', start: 1, end: 222 }
 ];
+
 let currentThemeIndex = 0;
 const imagesCache = { robotics: [], phms: [], vfd: [] };
 
@@ -12,10 +13,12 @@ const context = canvas.getContext('2d');
 const slides = document.querySelectorAll('.hero-slide');
 const indicators = document.querySelectorAll('.indicator');
 
+// ─── PRELOAD IMAGES (CORRECT PATH) ─────────────────────────
 const preloadTheme = (index) => {
     const theme = themes[index];
     const cache = imagesCache[theme.id];
     if (cache.length > 0) return;
+
     for (let i = theme.start; i <= theme.end; i++) {
         const img = new Image();
         img.src = `/hero-main-frames/${theme.folder}/ezgif-frame-${i.toString().padStart(3, '0')}.jpg`;
@@ -23,53 +26,92 @@ const preloadTheme = (index) => {
     }
 };
 
+// Preload themes
 preloadTheme(0);
 setTimeout(() => preloadTheme(1), 2000);
 setTimeout(() => preloadTheme(2), 4000);
 
+// ─── DRAW IMAGE ───────────────────────────────────────────
 function drawImageCover(ctx, img) {
     const c = ctx.canvas;
     const r = Math.max(c.width / img.width, c.height / img.height);
     const cx = (c.width - img.width * r) / 2;
     const cy = (c.height - img.height * r) / 2;
+
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.drawImage(img, 0, 0, img.width, img.height, cx, cy, img.width * r, img.height * r);
 }
 
+// ─── UPDATE FRAME ─────────────────────────────────────────
 function updateCanvas(frameIndex) {
     const cache = imagesCache[themes[currentThemeIndex].id];
     const img = cache[frameIndex];
-    if (img && img.complete) drawImageCover(context, img);
-    else if (img) img.onload = () => drawImageCover(context, img);
+
+    if (img && img.complete) {
+        drawImageCover(context, img);
+    } else if (img) {
+        img.onload = () => drawImageCover(context, img);
+    }
 }
 
+// ─── SWITCH THEME ─────────────────────────────────────────
 function switchTheme(index) {
     if (index === currentThemeIndex) return;
+
     slides[currentThemeIndex].classList.remove('active');
     indicators[currentThemeIndex].classList.remove('active');
+
     currentThemeIndex = index;
+
     slides[currentThemeIndex].classList.add('active');
     indicators[currentThemeIndex].classList.add('active');
+
+    frame = 0; // reset animation
     updateCanvas(0);
 }
 
-function switchSlide(index) { window.scrollTo({ top: 0, behavior: 'smooth' }); switchTheme(index); resetAutoplay(); }
+// ─── SLIDE CONTROLS ───────────────────────────────────────
+function switchSlide(index) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    switchTheme(index);
+    resetAutoplay();
+}
 
-document.getElementById('next-hero').onclick = () => switchSlide((currentThemeIndex + 1) % themes.length);
-document.getElementById('prev-hero').onclick = () => switchSlide((currentThemeIndex - 1 + themes.length) % themes.length);
-indicators.forEach((ind, i) => ind.onclick = () => switchSlide(i));
+document.getElementById('next-hero').onclick = () =>
+    switchSlide((currentThemeIndex + 1) % themes.length);
 
-let autoplayTimer = null, scrollPauseTimer = null;
+document.getElementById('prev-hero').onclick = () =>
+    switchSlide((currentThemeIndex - 1 + themes.length) % themes.length);
+
+indicators.forEach((ind, i) => {
+    ind.onclick = () => switchSlide(i);
+});
+
+// ─── AUTOPLAY (SLIDE SWITCH) ──────────────────────────────
+let autoplayTimer = null;
+let scrollPauseTimer = null;
 
 function startAutoplay() {
     clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(() => switchTheme((currentThemeIndex + 1) % themes.length), 5000);
+    autoplayTimer = setInterval(() => {
+        switchTheme((currentThemeIndex + 1) % themes.length);
+    }, 5000);
 }
-function stopAutoplay() { clearInterval(autoplayTimer); autoplayTimer = null; }
-function resetAutoplay() { stopAutoplay(); clearTimeout(scrollPauseTimer); scrollPauseTimer = setTimeout(startAutoplay, 2000); }
+
+function stopAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+}
+
+function resetAutoplay() {
+    stopAutoplay();
+    clearTimeout(scrollPauseTimer);
+    scrollPauseTimer = setTimeout(startAutoplay, 2000);
+}
 
 startAutoplay();
 
+// Pause autoplay on scroll
 window.addEventListener('scroll', () => {
     if (window.scrollY < window.innerHeight) {
         stopAutoplay();
@@ -78,26 +120,116 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; updateCanvas(0); }
+// ─── CANVAS RESIZE ────────────────────────────────────────
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    updateCanvas(0);
+}
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
+// ─── 🔥 MAIN ANIMATION LOOP (FIXED) ───────────────────────
+let frame = 0;
+
+function playAnimation() {
+    const cache = imagesCache[themes[currentThemeIndex].id];
+
+    if (cache.length > 0) {
+        updateCanvas(frame % cache.length);
+        frame++;
+    }
+
+    requestAnimationFrame(playAnimation);
+}
+
+playAnimation();
+
+// Ensure first frame renders
+setTimeout(() => updateCanvas(0), 300);
+
+// ─── SCROLL-BASED CONTROL ────────────────────────────────
 let ticking = false;
+
 window.addEventListener('scroll', () => {
     if (!ticking) {
         requestAnimationFrame(() => {
             const heroSequence = document.getElementById('hero-sequence');
             const maxScroll = heroSequence.scrollHeight - window.innerHeight;
+
             if (maxScroll > 0) {
                 const fraction = Math.max(0, Math.min(1, window.scrollY / maxScroll));
                 const cache = imagesCache[themes[currentThemeIndex].id];
-                if (cache.length > 0) updateCanvas(Math.min(cache.length - 1, Math.floor(fraction * cache.length)));
+
+                if (cache.length > 0) {
+                    updateCanvas(
+                        Math.min(cache.length - 1, Math.floor(fraction * cache.length))
+                    );
+                }
             }
+
             ticking = false;
         });
+
         ticking = true;
     }
 });
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
+
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+
+        // Skip non-number items (AI, ∞)
+        if (!target) return;
+
+        let count = 0;
+        const duration = 1200;
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            // smooth ease-out
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(eased * target);
+
+            counter.innerText = value + "+"; // ✅ important
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target + "+"; // final
+            }
+        };
+
+        requestAnimationFrame(update);
+    };
+
+    // Scroll trigger
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    counters.forEach(counter => {
+        if (counter.hasAttribute("data-target")) {
+            observer.observe(counter);
+        }
+    });
+});
+
 
 // ─── Scroll Reveal ────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
