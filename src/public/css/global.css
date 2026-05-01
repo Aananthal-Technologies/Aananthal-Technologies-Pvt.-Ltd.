@@ -7918,11 +7918,11 @@ html {
 }
 
 .contact-link:hover {
-  color: green;
+  color: white;
 }
 
 .contact-link.email-link:hover {
-  color: red;
+  color: white;
 }
 
 .footer-divider {
@@ -7952,5 +7952,18 @@ html {
 }
 
 .footer-made:hover {
+  color: #fff;
+}
+
+/* Default state */
+.contact-link.whatsapp-link,
+.contact-link.email-link {
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+/* Hover state */
+.contact-link.whatsapp-link:hover,
+.contact-link.email-link:hover {
   color: #fff;
 }
